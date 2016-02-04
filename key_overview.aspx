@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>RMS</title>
+    <link rel="stylesheet" href="/Styles/main.css" />
 </head>
 
 <body>
@@ -12,13 +13,6 @@
 
     <!-- header -->
     <header>
-        <!-- #bcitlogo -->
-        <h1 id="logo">
-            <img src="../Images/BCITlogo.svg" alt="BCIT logo" style="height: 96px; width: 104px"/>
-            BCIT housing
-        </h1>
-        <!-- /#bcitlogo -->
-
         <!-- #shortcut -->
         <div id="username"> 
             <ul>
@@ -27,8 +21,16 @@
            </ul>
         </div>
         <!-- /#shortcut -->
+
+        <!-- #bcitlogo -->
+        <div id="bcitlogo">
+            <img src="/Images/BCITlogo.svg" alt="BCIT logo" />
+            <h1 id="sys_name">BCIT housing</h1>
+        </div>
+        <!-- /#bcitlogo -->
+
         <!-- #navbar -->
-        <nav class="rshift_navbar">            
+        <nav id="rshift_navbar">            
             <div id="navbar">
                 <ul>
                     <li class="nav_key">
@@ -81,10 +83,12 @@
     <!-- /content --> 
 
     </form>
+    <!-- footer -->
     <footer>
         <div>
-            <small>Copyright&copy;2016    Maquinna Residenc</small>
+            <small>Copyright&copy;2016    Maquinna Residence</small>
         </div>
     </footer>
+    <!-- /footer -->
 </body>
 </html>
