@@ -10,45 +10,76 @@
 <body>
     <form id="form1" runat="server">
 
+    <!-- header -->
     <header>
-    
-        <asp:Image id="Image1" runat="server" Height="110px" Width="143px" />
-        <div>
-            <div> 
-                <table id="username">
-                <tr>
-                    <td><p id="display">username</p></td>
-                    <td><asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="LoginStatus1_LoggingOut" /></td>
-                </tr>
-                </table>
-            </div>
-            <div>
-                <h1>RMS KEY</h1>
-            </div>
+        <!-- #bcitlogo -->
+        <h1 id="logo">
+            <img src="../Images/BCITlogo.svg" alt="BCIT logo" style="height: 96px; width: 104px"/>
+            BCIT housing
+        </h1>
+        <!-- /#bcitlogo -->
+
+        <!-- #shortcut -->
+        <div id="username"> 
+            <ul>
+                <li><asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
+                <li><asp:LoginStatus ID="LoginStatus" runat="server" OnLoggingOut="LoginStatus1_LoggingOut" /></li>
+           </ul>
+        </div>
+        <!-- /#shortcut -->
+        <!-- #navbar -->
+        <nav class="rshift_navbar">            
             <div id="navbar">
-                <ul id="nav">
-                    <li><a href="key_lend.aspx">Key</a></li>
-                    <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="key_lend.aspx">Game</asp:HyperLink></li>
-                    <li><asp:HyperLink ID="HyperLink3" runat="server">Package</asp:HyperLink></li>
-                    <li><asp:HyperLink ID="HyperLink4" runat="server">Import</asp:HyperLink></li>
+                <ul>
+                    <li class="nav_key">
+                        <a href="key_overview.aspx">Key</a>
+                    </li>
+                    <li class="nav_game">
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_overview.aspx">Game</asp:HyperLink>
+                    </li>
+                    <li class="nav_package">
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_overview.aspx">Package</asp:HyperLink>
+                    </li>
+                    <li class="nav_import">
+                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="import.aspx">Import</asp:HyperLink>
+                    </li>
                 </ul>
             </div>
-        </div>
+        </nav>
+        <!-- /#navbar -->
     </header>
-   
-    <div id="content">
-        <div id="menuBar">
-            <ul>
-                <li><a href="">item</a></li>
-                <li><a href="">item</a></li>
-                <li><a href="">item</a></li>
-            </ul>
-        </div>
+    <!-- /header -->
 
-        <div id="main">
-        </div>
+    <!-- banner -->
+    <div id="banner">
+        <h1>KEY</h1>
     </div>
-    
+    <!-- /banner -->
+
+    <!-- content -->   
+    <section id="content">
+        <!-- #sidemenu -->
+        <aside id="menu">
+            <div id="sidemenu">
+                <ul>
+                    <li><a href="">item</a></li>
+                    <li><a href="">item</a></li>
+                    <li><a href="">item</a></li>
+                </ul>
+            </div>
+        </aside>
+        <!-- /#sidemenu -->
+        <!-- #primary -->
+        <div id="primary">
+            <h1></h1>
+            <div id="main">
+
+            </div>
+        </div>
+        <!-- /#primary -->
+    </section>
+    <!-- /content --> 
+
     </form>
     <footer>
         <div>
