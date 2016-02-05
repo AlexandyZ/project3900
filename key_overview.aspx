@@ -25,7 +25,7 @@
         <!-- #bcitlogo -->
         <div id="bcitlogo">
             <img src="/Images/BCITlogo.svg" alt="BCIT logo" />
-            <h1 id="sys_name">BCIT housing</h1>
+            <h1 id="sys_name">BCIT HOUSING</h1>
         </div>
         <!-- /#bcitlogo -->
 
@@ -33,16 +33,16 @@
         <nav id="rshift_navbar">            
             <div id="navbar">
                 <ul>
-                    <li class="nav_key">
+                    <li id="nav_key" class="r_nav">
                         <a href="key_overview.aspx">Key</a>
                     </li>
-                    <li class="nav_game">
+                    <li id="nav_game" class="r_nav">
                         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_overview.aspx">Game</asp:HyperLink>
                     </li>
-                    <li class="nav_package">
+                    <li id="nav_package" class="r_nav">
                         <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_overview.aspx">Package</asp:HyperLink>
                     </li>
-                    <li class="nav_import">
+                    <li id="nav_import" class="r_nav">
                         <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="import.aspx">Import</asp:HyperLink>
                     </li>
                 </ul>
@@ -62,13 +62,11 @@
     <section id="content">
         <!-- #sidemenu -->
         <aside id="menu">
-            <div id="sidemenu">
-                <ul>
-                    <li><a href="">item</a></li>
-                    <li><a href="">item</a></li>
-                    <li><a href="">item</a></li>
-                </ul>
-            </div>
+            <ul>
+                <li><a href="">item</a></li>
+                <li><a href="">item</a></li>
+                <li><a href="">item</a></li>
+            </ul>
         </aside>
         <!-- /#sidemenu -->
         <!-- #primary -->
