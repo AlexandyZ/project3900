@@ -83,8 +83,8 @@
     </form>
     <!-- footer -->
     <footer>
-        <div>
-            <small>Copyright&copy;2016    Maquinna Residence</small>
+        <div id="copyright">
+            <p>Copyright&copy;2016    Maquinna Residence</p>
         </div>
     </footer>
     <!-- /footer -->
