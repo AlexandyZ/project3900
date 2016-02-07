@@ -17,6 +17,7 @@ header{
     display:block;
     height:155px;
     width:100%;
+    min-width:980px;
     background:#3f3f3f;
     text-align:left;  
 }
@@ -147,62 +148,77 @@ img{
 #banner h1{
     font-size:28px;
     line-height:1.5;
-    width:100%;
-    padding:10px 50px 0 270px;
+    padding:10px 50px 0 300px;
 }
 
 #content{
     position:relative;
     display:block;
     width:980px;
+    min-height: 600px;
     margin:0 auto;
-    padding:10px 0;
+    padding:0;
     text-align:left;
     background-color:#fff;
 }
 
+aside{
+    position:relative;
+    float:left;
+    overflow:visible;
+    width:250px;
+    min-height:600px;
+    padding:0;
+    background-color:#aaa;
+    text-align:center;
+}
+
 #menu{
     display:block;
-    width:240px;
     height:100%;
     position:relative;
     float:left;
-    background-color:#f3f3f3;
-}
-
-#primary{
-    position:relative;
-    right:0;
-    background-color:#fff;
-    outline:0;
-    padding:15px 90px 50px 50px;
-}
-
-aside{
-    position:relative;
-    float:right;
-    overflow:visible;
-    width:200px;
-    padding:0 20px;
-    border-top:1px solid #f1f1f1;
-    background-color:#f2f2f2;
-    text-align:right;
+    background-color:#dcdcdc;
 }
 
 #menu ul{
     list-style-type:none;
     margin:0;
     padding:0;
-    z-index:190;
 }
 
 #menu li{
-    z-index:1;
+    height:40px;
+    padding:5px 0;
+    border-bottom:1px solid #fff;
 }
 
 #menu a{
-    color:#0974de;
+    color:#025ea1;
     font-weight:bold;
-    font-size: 18px;
-    padding: 8px 20px;
+    font-size: 20px;
+    padding: 8px 0;
+    line-height:2.1;
+}
+
+#primary{
+    position:relative;
+    float:right;
+    background-color:#fff;
+    outline:0;
+    padding:15px 90px 50px 50px;
+}
+footer{
+    width:980px;
+    height:80px;
+    margin:0 auto;
+    position:relative;
+    bottom:0;
+    color:#2d2d2d;
+    font-size:12px;
+    background-color:#808080;
+}
+
+#copyright{
+    padding:10px;
 }
