@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form id="form2" runat="server">
+    <form id="form1" runat="server">
 
     <!-- header -->
     <header>
@@ -17,7 +17,7 @@
         <div id="username"> 
             <ul>
                 <li><asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
-                <li>Logout</li>
+                <li>Login</li>
            </ul>
         </div>
         <!-- /#shortcut -->
@@ -29,23 +29,30 @@
         </div>
         <!-- /#bcitlogo -->
 
+        <!-- #navbar -->
+        <nav id="rshift_navbar">            
+            <div id="navbar">
+                
+            </div>
+        </nav>
+        <!-- /#navbar -->
     </header>
     <!-- /header -->
 
     <!-- banner -->
     <div id="banner">
-        <h1>LOGIN</h1>
+        <h1>SYSTEM LOGIN</h1>
     </div>
     <!-- /banner -->
+ 
+        <asp:Image ID="logo" runat="server" Height="151px" />
+        <h1 class="">resource</h1>
 
     <!-- content -->   
     <section id="content">
         <div id="login">
             <span>abc</span>
-        </div>
-    </section>
-    <!-- /content --> 
-        
+    </div>
     </form>
     <!-- footer -->
     <footer>
@@ -56,3 +63,4 @@
     <!-- /footer -->
 </body>
 </html>
+
