@@ -14,7 +14,7 @@
     <!-- header -->
     <header>
         <!-- #shortcut -->
-        <div id="username"> 
+        <div id="show_username"> 
             <ul>
                 <li><asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
                 <li>signout</li>
@@ -54,7 +54,7 @@
 
     <!-- banner -->
     <div id="banner">
-        <h1>KEY</h1>
+        <h1>ADD NEW COMPANY</h1>
     </div>
     <!-- /banner -->
 
@@ -84,7 +84,7 @@
     <!-- footer -->
     <footer>
         <div id="copyright">
-            <p>Copyright&copy;2016    BCIT Housing</p>
+            <p>&copy;2016    BCIT Housing</p>
         </div>
     </footer>
     <!-- /footer -->

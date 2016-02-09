@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="game_lend.aspx.cs" Inherits="key_addnew" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="game_signout.aspx.cs" Inherits="game_signout" %>
 
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@
     <!-- header -->
     <header>
         <!-- #shortcut -->
-        <div id="username"> 
+        <div id="show_username"> 
             <ul>
                 <li><asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
                 <li>SIGNOUT</li>
@@ -54,7 +54,7 @@
 
     <!-- banner -->
     <div id="banner">
-        <h1>KEY</h1>
+        <h1>SIGN OUT GAMES</h1>
     </div>
     <!-- /banner -->
 
@@ -65,7 +65,7 @@
             <ul>
                 <li><a href="game_overview.aspx">Overview</a></li>
                 <li><a href="game_return.aspx">Return</a></li>
-                <li><a href="game_lend.aspx">Lend</a></li>
+                <li><a href="game_signout.aspx">Sign Out</a></li>
                 <li><a href="game_manage.aspx">Add & Delete</a></li>
             </ul>
         </aside>
@@ -85,7 +85,7 @@
     <!-- footer -->
     <footer>
         <div id="copyright">
-            <p>Copyright&copy;2016    BCIT Housing</p>
+            <p>&copy;2016    BCIT Housing</p>
         </div>
     </footer>
     <!-- /footer -->
