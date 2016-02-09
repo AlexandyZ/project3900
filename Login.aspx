@@ -9,8 +9,41 @@
 </head>
 
 <body>
-    <form ID="form1" runat="server">
-    <div class="header">
+    <form id="form1" runat="server">
+
+    <!-- header -->
+    <header>
+        <!-- #shortcut -->
+        <div id="username"> 
+            <ul>
+                <li><asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
+                <li>Login</li>
+           </ul>
+        </div>
+        <!-- /#shortcut -->
+
+        <!-- #bcitlogo -->
+        <div id="bcitlogo">
+            <img src="/Images/BCITlogo.svg" alt="BCIT logo" />
+            <h1 id="sys_name">BCIT HRM DATABASE SYSTEM</h1>
+        </div>
+        <!-- /#bcitlogo -->
+
+        <!-- #navbar -->
+        <nav id="rshift_navbar">            
+            <div id="navbar">
+                
+            </div>
+        </nav>
+        <!-- /#navbar -->
+    </header>
+    <!-- /header -->
+
+    <!-- banner -->
+    <div id="banner">
+        <h1>SYSTEM LOGIN</h1>
+    </div>
+    <!-- /banner -->
  
         <asp:Image ID="logo" runat="server" Height="151px" />
         <h1 class="">resource</h1>
@@ -20,8 +53,6 @@
         <div id="login">
             <span>abc</span>
     </div>
-        <asp:Login ID="login" runat="server" OnAuthenticate="Login1_Authenticate">
-        </asp:Login>
     </form>
     <!-- footer -->
     <footer>

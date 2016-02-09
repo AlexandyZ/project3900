@@ -65,7 +65,7 @@
             <ul>
                 <li><a href="key_overview.aspx">Overview</a></li>
                 <li><a href="key_signout.aspx">Sign Out</a></li>
-                <li><a href="key_addnew">Add Company</a></li>
+                <li><a href="key_addnew.aspx">Add Company</a></li>
             </ul>
         </aside>
         <!-- /#sidemenu -->
