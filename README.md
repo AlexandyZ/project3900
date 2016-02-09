@@ -1,7 +1,7 @@
 COMP3900 project -- The BCIT Housing Resource Management System
 ===============================================================
 Group Name: ANT</br>
-Group Member:New Mai (email)</br>
+Group Member: New Mai (email)</br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;Tracy Liu (email)</br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;Alex Zhang zyf1014@hotmail.com</br>
 
