@@ -48,14 +48,14 @@ img{
     z-index:199;
 }
 
-#username{
+#show_username{
     position:relative;
     width:100%;
     margin:0 auto;
     height:20px;
     background-color:#2d2d2d;
 }
-#username ul{
+#show_username ul{
     width:980px;
     margin:0 auto;
     padding:0;
@@ -63,7 +63,7 @@ img{
     text-align:right;
     height:20px;
 }
-#username li{
+#show_username li{
     position:relative;
     top:5px;
     display:inline-block;
@@ -204,9 +204,11 @@ aside{
 #primary{
     position:relative;
     float:right;
+    width:720px;
     background-color:#fff;
     outline:0;
-    padding:15px 90px 50px 50px;
+    padding:0;
+    top: 0px;
 }
 footer{
     width:980px;

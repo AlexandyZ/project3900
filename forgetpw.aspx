@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="forgetpw.aspx.cs" Inherits="forgetpw" %>
 
 <!DOCTYPE html>
 
@@ -13,11 +13,6 @@
 
     <!-- header -->
     <header>
-        <!-- #shortcut -->
-        <div id="show_username"> 
-
-        </div>
-        <!-- /#shortcut -->
 
         <!-- #bcitlogo -->
         <div id="bcitlogo">
@@ -38,25 +33,19 @@
 
     <!-- banner -->
     <div id="banner">
-        <h1>SYSTEM LOGIN</h1>
+        <h1>FORGET YOUR PASSWORD?</h1>
     </div>
     <!-- /banner -->
- 
+
     <!-- content -->   
     <section id="content">
-        <div id="login">
-            <div id="group_form">
-                <label for="username">Username</label>
-                <input class="control" name="username" id="usename" title="Username" type="username" required="requried" />
-                <label for="password">Password</label>
-                <input class="control" name="password" id="password" title="Password" type="password" required="required" />
-            </div>
-            <input class="submit" value="LOG IN" type="submit" />      
+        <div id="securityq">
+            
         </div>
-        <p><a href="forgetpw.aspx">Forget your password?</a></p>
     </section>
     <!-- /content -->
     </form>
+
     <!-- footer -->
     <footer>
         <div id="copyright">
