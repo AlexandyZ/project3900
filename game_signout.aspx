@@ -72,9 +72,22 @@
         <!-- /#sidemenu -->
         <!-- #primary -->
         <div id="primary">
-            <h1></h1>
+            <h1><asp:Label ID="gamename" runat="server" Text="game"></asp:Label></h1>
             <div id="main">
-
+                <asp:Label ID="fname" CLASS="info" runat="server" Text="First name"></asp:Label>
+                <asp:TextBox ID="fnameText" Class="infoBox" runat="server"></asp:TextBox>
+                <asp:Label ID="lname" CLASS="info" runat="server" Text="Last name"></asp:Label>
+                <asp:TextBox ID="lnameText" Class="infoBox" runat="server"></asp:TextBox>
+                <asp:Label ID="stdid" CLASS="info" runat="server" Text="Student ID"></asp:Label>
+                <asp:TextBox ID="stdidText" Class="infoBox" runat="server"></asp:TextBox>
+                <asp:Label ID="house" CLASS="info" runat="server" Text="House"></asp:Label>
+                <asp:DropDownList ID="houseDropdown" runat="server"></asp:DropDownList>
+                <asp:Label ID="room" CLASS="info" runat="server" Text="Room"></asp:Label>
+                <asp:DropDownList ID="roomDropdown" runat="server"></asp:DropDownList>
+                <asp:Label ID="phone" CLASS="info" runat="server" Text="Phone"></asp:Label>
+                <asp:TextBox ID="phoneText" Class="infoBox" runat="server"></asp:TextBox>
+                <asp:Label ID="amount" CLASS="info" runat="server" Text="Amount"></asp:Label>
+                <asp:TextBox ID="amountNum" runat="server"></asp:TextBox>
             </div>
         </div>
         <!-- /#primary -->

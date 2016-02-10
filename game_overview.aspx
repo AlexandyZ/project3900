@@ -1,11 +1,35 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="game_overview.aspx.cs" Inherits="key_addnew" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="game_overview.aspx.cs" Inherits="game_overview" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>HRM system</title>
+    <script src="jquery-1.8.2.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="/Styles/main.css" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var searchText = $("#<%=searchText.ClientID%>");
+
+            $("#searchText").focus(function () {
+                if (searchText.val() == this.title) {
+                    searchText.val("");
+
+                    this.className = "text-focus";
+                }
+            });
+
+            $("#searchText").blur(function () {
+
+                if (searchText.val() == "") {
+                    searchText.val(this.title);
+                    this.className = "text";
+                }
+            });
+            searchText.blur();
+        });
+
+    </script>
 </head>
 
 <body>
@@ -72,9 +96,26 @@
         <!-- /#sidemenu -->
         <!-- #primary -->
         <div id="primary">
-            <h1></h1>
             <div id="main">
-                
+                <div id="searchbar">
+                    &nbsp;
+                    <asp:TextBox ID="searchText" runat="server" OnTextChanged="searchText_TextChanged" ToolTip="Enter game name"></asp:TextBox>
+                    <asp:Button ID="searchButton" runat="server" OnClick="searchButton_Click" Text="Search" />
+                </div>
+                <div id="overview_game">
+                    <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="game_overview" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged">
+                        <Columns>
+                            <asp:BoundField DataField="game_name" HeaderText="Games" SortExpression="game_name" />
+                            <asp:BoundField DataField="game_amount" HeaderText="Inventory" SortExpression="game_amount" />
+                            <asp:TemplateField ShowHeader="false">
+                                <Itemtemplate>
+                                    <asp:Button ID="game_lend" runat="server" Text="Lend" />
+                                </Itemtemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="game_overview" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT [game_name], [game_amount] FROM [game]"></asp:SqlDataSource>
+                </div>
             </div>
         </div>
         <!-- /#primary -->
