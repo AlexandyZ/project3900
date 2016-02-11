@@ -5,31 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>HRM system</title>
-    <script src="jquery-1.8.2.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="/Styles/main.css" />
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var searchText = $("#<%=searchText.ClientID%>");
-
-            $("#searchText").focus(function () {
-                if (searchText.val() == this.title) {
-                    searchText.val("");
-
-                    this.className = "text-focus";
-                }
-            });
-
-            $("#searchText").blur(function () {
-
-                if (searchText.val() == "") {
-                    searchText.val(this.title);
-                    this.className = "text";
-                }
-            });
-            searchText.blur();
-        });
-
-    </script>
 </head>
 
 <body>

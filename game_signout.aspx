@@ -78,16 +78,22 @@
                 <asp:TextBox ID="fnameText" Class="infoBox" runat="server"></asp:TextBox>
                 <asp:Label ID="lname" CLASS="info" runat="server" Text="Last name"></asp:Label>
                 <asp:TextBox ID="lnameText" Class="infoBox" runat="server"></asp:TextBox>
+                <br />
                 <asp:Label ID="stdid" CLASS="info" runat="server" Text="Student ID"></asp:Label>
                 <asp:TextBox ID="stdidText" Class="infoBox" runat="server"></asp:TextBox>
+                <br />
                 <asp:Label ID="house" CLASS="info" runat="server" Text="House"></asp:Label>
-                <asp:DropDownList ID="houseDropdown" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="houseDropdown" runat="server" DataSourceID="SqlDataSource" DataTextField="house_id" DataValueField="house_id"></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT [house_name], [house_id], [room_id] FROM [house]"></asp:SqlDataSource>
                 <asp:Label ID="room" CLASS="info" runat="server" Text="Room"></asp:Label>
                 <asp:DropDownList ID="roomDropdown" runat="server"></asp:DropDownList>
+                <br />
                 <asp:Label ID="phone" CLASS="info" runat="server" Text="Phone"></asp:Label>
                 <asp:TextBox ID="phoneText" Class="infoBox" runat="server"></asp:TextBox>
                 <asp:Label ID="amount" CLASS="info" runat="server" Text="Amount"></asp:Label>
                 <asp:TextBox ID="amountNum" runat="server"></asp:TextBox>
+                <br />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
             </div>
         </div>
         <!-- /#primary -->
