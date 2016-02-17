@@ -6,6 +6,7 @@
 <head runat="server">
     <title>HRM system</title>
     <link rel="stylesheet" href="/Styles/main.css" />
+    <link rel="stylesheet" href="/Styles/game.css" />
 </head>
 
 <body>
@@ -72,9 +73,19 @@
         <!-- /#sidemenu -->
         <!-- #primary -->
         <div id="primary">
-            <h1></h1>
             <div id="main">
-
+                <div id="searchbar">
+                    <asp:TextBox ID="searchText" runat="server" ToolTip="Enter game name" ></asp:TextBox>
+                    <asp:Button ID="searchButton" runat="server" OnServerClick="searchButton_Click" Text="Search" />
+                </div>
+                <asp:gridview ID ="GameSearch" runat="server" AutoGenerateColumns ="False" AllowSorting="True">
+                    <Columns>
+                        <asp:BoundField DataField="std_name" HeaderText="Student" ReadOnly="True" SortExpression="Column1" />
+                        <asp:BoundField DataField="game_name" HeaderText="Game" ReadOnly="True" SortExpression="Column2" />
+                        <asp:BoundField DataField="glend_date" HeaderText="Sign-out" SortExpression="glend_date" />
+                        <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Return" ShowHeader="True" Text="Return" />
+                    </Columns>
+                </asp:gridview>
             </div>
         </div>
         <!-- /#primary -->

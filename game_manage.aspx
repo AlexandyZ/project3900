@@ -6,6 +6,7 @@
 <head runat="server">
     <title>HRM system</title>
     <link rel="stylesheet" href="/Styles/main.css" />
+    <link rel="stylesheet" href="/Styles/game.css" />
 </head>
 
 <body>
@@ -72,7 +73,6 @@
         <!-- /#sidemenu -->
         <!-- #primary -->
         <div id="primary">
-            <h1></h1>
             <div id="main">
 
             </div>

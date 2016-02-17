@@ -19,6 +19,6 @@ public partial class game_signout : System.Web.UI.Page
 
     protected void stdidText_TextChanged(object sender, EventArgs e)
     {
-        SqlDataSource sds = new SqlDataSource("SELECT * FROM student");
+        
     }
 }

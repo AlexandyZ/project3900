@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class game_overview : System.Web.UI.Page
@@ -13,18 +9,16 @@ public partial class game_overview : System.Web.UI.Page
     }
 
 
-    protected void searchText_TextChanged(object sender, EventArgs e)
+    protected void GameGridView_RowDataBound(object sender, GridViewRowEventArgs e)
     {
-
-    }
-
-    protected void searchButton_Click(object sender, EventArgs e)
-    {
-        Session["searchKeyWord"] = searchText.Text;
-    }
-
-    protected void GameGridView_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
+        
+        if (((Button)e.Row.Cells[1].Controls[0]).Text == "0")
+        {
+            ((Button)e.Row.Cells[2].Controls[0]).Enabled = false;
+        }
+        else
+        {
+            Response.Redirect("game_signout.aspx");
+        }
     }
 }

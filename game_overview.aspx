@@ -10,8 +10,7 @@
 </head>
 
 <body>
-    <form id="form1" runat="server">
-
+    
     <!-- header -->
     <header>
         <!-- #shortcut -->
@@ -73,38 +72,27 @@
         <!-- /#sidemenu -->
         <!-- #primary -->
         <div id="primary">
+            <form id="form1" runat="server">
             <div id="main">
-                <div id="searchbar">
-                    <asp:TextBox ID="searchText" runat="server" OnTextChanged="searchText_TextChanged" ToolTip="Enter game name" ></asp:TextBox>
-                    <asp:Button ID="searchButton" runat="server" OnClick="searchButton_Click" Text="Search" />
-                </div>
                 <div id="overview_game">
-                    <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
-                        <AlternatingRowStyle BackColor="Gainsboro" />
+                    <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame" OnRowDataBound="GameGridView_RowDataBound">
                         <Columns>
                             <asp:BoundField DataField="game_name" HeaderText="Games" SortExpression="game_name" />
                             <asp:BoundField DataField="game_amount" HeaderText="Inventory" SortExpression="game_amount" />
-                            <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Lend" />
+                            <asp:ButtonField ButtonType="Button" CommandName="Click" Text="Sign-out" />
                         </Columns>
-                        <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                        <HeaderStyle BackColor="#025ea1" Font-Bold="True" ForeColor="White" Font-Size="Large" />
-                        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                        <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                        <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                        <SortedAscendingHeaderStyle BackColor="#0000A9" />
-                        <SortedDescendingCellStyle BackColor="#CAC9C9" Font-Size="Medium" />
-                        <SortedDescendingHeaderStyle BackColor="#000065" />
+                        <HeaderStyle Font-Size="Large" />
+                        <SortedDescendingCellStyle Font-Size="Medium" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="SqlDataSourceGame" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT [game_name], [game_amount] FROM [game] ORDER BY [game_name]"></asp:SqlDataSource>
                 </div>
             </div>
+            </form>
         </div>
         <!-- /#primary -->
     </section>
     <!-- /content --> 
 
-    </form>
     <!-- footer -->
     <footer>
         <div id="copyright">
