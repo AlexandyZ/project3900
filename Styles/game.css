@@ -1,10 +1,28 @@
-﻿#search_text {
+﻿#searchbar {
+    position:relative;
+    width:500px;
+    margin:30px 0;
 }
 
-#search_button{
-
+#searchText{
+    position:relative;
+    width:300px;
+}
+#searchButton{
+    position:relative;
+    width:100px;
+    margin:0 10px;
 }
 
 #overview_game{
+    position:relative;
+}
+
+#GameGridView{
+    position:relative;
+    width:500px;
+}
+#gamename{
+    position:relative;
 
 }

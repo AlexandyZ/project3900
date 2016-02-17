@@ -211,6 +211,10 @@ aside{
     top: 0;
     left: 0;
 }
+#main{
+    position:relative;
+    padding:20px 30px;
+}
 footer{
     width:980px;
     height:80px;

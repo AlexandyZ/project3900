@@ -12,8 +12,13 @@ public partial class game_signout : System.Web.UI.Page
 
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
+    protected void Submit_Click(object sender, EventArgs e)
     {
 
+    }
+
+    protected void stdidText_TextChanged(object sender, EventArgs e)
+    {
+        SqlDataSource sds = new SqlDataSource("SELECT * FROM student");
     }
 }

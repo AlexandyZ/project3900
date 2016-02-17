@@ -6,6 +6,7 @@
 <head runat="server">
     <title>HRM system</title>
     <link rel="stylesheet" href="/Styles/main.css" />
+    <link rel="stylesheet" href="/Styles/game.css" />
 </head>
 
 <body>
@@ -74,23 +75,28 @@
         <div id="primary">
             <div id="main">
                 <div id="searchbar">
-                    &nbsp;
-                    <asp:TextBox ID="searchText" runat="server" OnTextChanged="searchText_TextChanged" ToolTip="Enter game name"></asp:TextBox>
+                    <asp:TextBox ID="searchText" runat="server" OnTextChanged="searchText_TextChanged" ToolTip="Enter game name" ></asp:TextBox>
                     <asp:Button ID="searchButton" runat="server" OnClick="searchButton_Click" Text="Search" />
                 </div>
                 <div id="overview_game">
-                    <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="game_overview" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged">
+                    <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
+                        <AlternatingRowStyle BackColor="Gainsboro" />
                         <Columns>
                             <asp:BoundField DataField="game_name" HeaderText="Games" SortExpression="game_name" />
                             <asp:BoundField DataField="game_amount" HeaderText="Inventory" SortExpression="game_amount" />
-                            <asp:TemplateField ShowHeader="false">
-                                <Itemtemplate>
-                                    <asp:Button ID="game_lend" runat="server" Text="Lend" />
-                                </Itemtemplate>
-                            </asp:TemplateField>
+                            <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Lend" />
                         </Columns>
+                        <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                        <HeaderStyle BackColor="#025ea1" Font-Bold="True" ForeColor="White" Font-Size="Large" />
+                        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                        <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                        <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                        <SortedDescendingCellStyle BackColor="#CAC9C9" Font-Size="Medium" />
+                        <SortedDescendingHeaderStyle BackColor="#000065" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="game_overview" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT [game_name], [game_amount] FROM [game]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSourceGame" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT [game_name], [game_amount] FROM [game] ORDER BY [game_name]"></asp:SqlDataSource>
                 </div>
             </div>
         </div>
