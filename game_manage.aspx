@@ -74,7 +74,23 @@
         <!-- #primary -->
         <div id="primary">
             <div id="main">
-
+                <table id="addform">
+                    <tr>
+                        <td>
+                            <asp:Label ID="game" class="info" runat="server" Text="Game Name"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="gameText" class="infoBox" runat="server"></asp:TextBox>
+                        </td>
+                        <td>
+                            <asp:Label ID="amount" class="info" runat="server" Text="Amount"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="amoutText" class="infoBox" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+                <asp:Button ID="addSubmit" class="submit" runat="server" Text="Submit" OnClick="add_submit_Click" />
             </div>
         </div>
         <!-- /#primary -->

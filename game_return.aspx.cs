@@ -27,4 +27,9 @@ public partial class game_return : System.Web.UI.Page
         GameSearch.DataSource = ds.Tables[0];
         GameSearch.DataBind();
     }
+
+    protected void GameSearch_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

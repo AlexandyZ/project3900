@@ -78,7 +78,7 @@
                     <asp:TextBox ID="searchText" runat="server" ToolTip="Enter game name" ></asp:TextBox>
                     <asp:Button ID="searchButton" runat="server" OnServerClick="searchButton_Click" Text="Search" />
                 </div>
-                <asp:gridview ID ="GameSearch" runat="server" AutoGenerateColumns ="False" AllowSorting="True">
+                <asp:gridview ID ="GameSearch" runat="server" AutoGenerateColumns ="False" AllowSorting="True" OnSelectedIndexChanged="GameSearch_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField DataField="std_name" HeaderText="Student" ReadOnly="True" SortExpression="Column1" />
                         <asp:BoundField DataField="game_name" HeaderText="Game" ReadOnly="True" SortExpression="Column2" />

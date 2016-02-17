@@ -127,7 +127,7 @@
                         </td>
                     </tr>            
                 </table>
-                <asp:Button ID="submit" runat="server" OnClick="Submit_Click" Text="Submit" />
+                <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" />
             </div>
             </form>
         </div>

@@ -29,13 +29,14 @@
     position:relative;
     padding:20px 0;
 }
-.infoBox{
-    margin:10px 0;
-}
 .info{
     margin:10px;
 }
-#submit{
+.infoBox{
+    margin:10px 0;
+}
+
+.submit{
     position:relative;
     margin:10px;
 }
