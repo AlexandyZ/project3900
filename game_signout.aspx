@@ -81,13 +81,13 @@
                             <asp:Label ID="fname" CLASS="info" runat="server" Text="First name"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="fnameText" Class="infoBox" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="fnameText" Class="infoBox" runat="server" AutoCompleteType="FirstName" AutoPostBack="True"></asp:TextBox>
                         </td>
                         <td> 
                             <asp:Label ID="lname" CLASS="info" runat="server" Text="Last name"></asp:Label>
                         </td>
                         <td>
-                             <asp:TextBox ID="lnameText" Class="infoBox" runat="server"></asp:TextBox>
+                             <asp:TextBox ID="lnameText" Class="infoBox" runat="server" OnTextChanged="lnameText_TextChanged" AutoCompleteType="LastName" AutoPostBack="True"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -95,7 +95,7 @@
                             <asp:Label ID="stdid" CLASS="info" runat="server" Text="Student ID"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="stdidText" Class="infoBox" runat="server" OnTextChanged="stdidText_TextChanged"></asp:TextBox>
+                            <asp:TextBox ID="stdidText" Class="infoBox" runat="server" OnTextChanged="stdidText_TextChanged" AutoCompleteType="Enabled" AutoPostBack="True"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -128,6 +128,7 @@
                     </tr>            
                 </table>
                 <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Button" />
             </div>
             </form>
         </div>

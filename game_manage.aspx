@@ -90,7 +90,7 @@
                         </td>
                     </tr>
                 </table>
-                <asp:Button ID="addSubmit" class="submit" runat="server" Text="Submit" OnClick="add_submit_Click" />
+                <asp:Button ID="addSubmit" class="submit" runat="server" Text="Submit" OnClick="addSubmit_Click" />
             </div>
         </div>
         <!-- /#primary -->

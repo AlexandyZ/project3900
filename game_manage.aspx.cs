@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using project3900.App_Code;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 public partial class game_manage : System.Web.UI.Page
 {
@@ -16,13 +17,21 @@ public partial class game_manage : System.Web.UI.Page
 
     protected void addSubmit_Click(object sender, EventArgs e)
     {
-        List<SqlParameter> sp = new List<SqlParameter>();
-        sp.Add(new SqlParameter("@gameName", gameText.Text));
-        sp.Add(new SqlParameter("@gameInven", amoutText.Text));
+        string con = "Data Source = ant-comp3900.database.windows.net;Database=RMS;User Id=ant;Password=Tna12345";
+        using (SqlConnection conn = new SqlConnection(con))
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO game VALUES (@game_name,@game_amount)");
+            cmd.Connection = conn;
 
-        DBHelper.ExecuteNonQueryBySPName("Game_Insert", sp.ToArray());
 
-        Response.Write("<script>alert('Game added... ;-)');window.location='game_overview.aspx'</script>");
-        Response.Redirect(Request.RawUrl);
+            cmd.Parameters.AddWithValue("@game_name", gameText.Text);
+            cmd.Parameters.AddWithValue("@game_amount", amoutText.Text);
+
+            conn.Open();
+
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Game added...");
+            Response.Redirect("");
+        }
     }
 }
