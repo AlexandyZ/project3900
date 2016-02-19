@@ -75,16 +75,14 @@
             <form id="form1" runat="server">
             <div id="main">
                 <div id="overview_game">
-                    <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame" OnRowDataBound="GameGridView_RowDataBound" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged">
+                    <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame" OnRowDataBound="GameGridView_RowDataBound" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged" OnRowCommand="Signout_RowCommand" DataKeyNames="game_id">
                         <Columns>
                             <asp:BoundField DataField="game_name" HeaderText="Games" SortExpression="game_name" />
                             <asp:BoundField DataField="game_amount" HeaderText="Inventory" SortExpression="game_amount" />
-                            <asp:ButtonField ButtonType="Button" CommandName="Click" Text="Sign-out" />
+                            <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Sign Out" />
                         </Columns>
-                        <HeaderStyle Font-Size="Large" />
-                        <SortedDescendingCellStyle Font-Size="Medium" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSourceGame" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT [game_name], [game_amount] FROM [game] ORDER BY [game_name]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSourceGame" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT * FROM [game]"></asp:SqlDataSource>
                 </div>
             </div>
             </form>

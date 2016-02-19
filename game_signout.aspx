@@ -81,13 +81,13 @@
                             <asp:Label ID="fname" CLASS="info" runat="server" Text="First name"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="fnameText" Class="infoBox" runat="server" AutoCompleteType="FirstName" AutoPostBack="True"></asp:TextBox>
+                            <asp:TextBox ID="fnameText" Class="infoBox" runat="server" AutoCompleteType="FirstName"></asp:TextBox>
                         </td>
                         <td> 
                             <asp:Label ID="lname" CLASS="info" runat="server" Text="Last name"></asp:Label>
                         </td>
                         <td>
-                             <asp:TextBox ID="lnameText" Class="infoBox" runat="server" OnTextChanged="lnameText_TextChanged" AutoCompleteType="LastName" AutoPostBack="True"></asp:TextBox>
+                             <asp:TextBox ID="lnameText" Class="infoBox" runat="server" ></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -95,40 +95,19 @@
                             <asp:Label ID="stdid" CLASS="info" runat="server" Text="Student ID"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="stdidText" Class="infoBox" runat="server" OnTextChanged="stdidText_TextChanged" AutoCompleteType="Enabled" AutoPostBack="True"></asp:TextBox>
-                        </td>
+                            <asp:TextBox ID="stdidText" Class="infoBox" runat="server" ></asp:TextBox>
+                             </td>
                     </tr>
                     <tr>
-                        <td>
-                            <asp:Label ID="house" CLASS="info" runat="server" Text="House"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="houseText" Class="infoBox" runat="server"></asp:TextBox>
-                        </td>
-                        <td>
-                            <asp:Label ID="room" CLASS="info" runat="server" Text="Room"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="roomText" Class="infoBox" runat="server"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="phone" CLASS="info" runat="server" Text="Phone"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="phoneText" Class="infoBox" runat="server"></asp:TextBox>
-                        </td>
                         <td>
                             <asp:Label ID="amount" CLASS="info" runat="server" Text="Amount"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="amountNum" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="amountNum" CLASS="infoBox" runat="server"></asp:TextBox>
                         </td>
                     </tr>            
                 </table>
                 <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" />
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Button" />
             </div>
             </form>
         </div>

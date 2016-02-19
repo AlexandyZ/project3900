@@ -12,26 +12,51 @@ public partial class game_signout : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
+        int gameID = Int32.Parse(Request.QueryString.ToString());
+        SqlConnection conn = new SqlConnection(constring);
+        conn.Open();
+        SqlCommand cmd = new SqlCommand("select game_name from game where game_id  = '"+ gameID+ "'", conn);
+        using (SqlDataReader reader = cmd.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                gamename.Text = (reader["game_name"].ToString());
+            }
+        }
+        conn.Close();
     }
 
     protected void Submit_Click(object sender, EventArgs e)
     {
         string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
+        int gameID = Int32.Parse(Request.QueryString.ToString());
 
-        using (SqlConnection conn = new SqlConnection(constring))
+        SqlConnection conn = new SqlConnection(constring);
+        conn.Open();
+        SqlCommand cmd = new SqlCommand("INSERT INTO lend_game VALUES((SELECT std_id FROM student WHERE student_id  = '" + stdidText.Text + "'), '" + gameID+"', @glend_date, NULL)", conn);
+        cmd.Parameters.AddWithValue("@glend_date", DateTime.Now.ToShortDateString());
+
+        cmd.ExecuteNonQuery();
+
+        SqlCommand sc = new SqlCommand("UPDATE game SET game_amount = (SELECT game_amount from game WHERE game_id = '" + gameID + "') - '" + amountNum.Text + "' WHERE game_id = '"+gameID+"'", conn);
+        sc.ExecuteNonQuery();
+
+        conn.Close();
+
+        /*using (SqlConnection conn = new SqlConnection(constring))
         {
             conn.Open();
-            SqlCommand myCommand = new SqlCommand("select [std_id] from student where student_id  = '" + stdidText.Text + "'; ", conn);
+            SqlCommand myCommand = new SqlCommand("select std_id from student where student_id  = '" + stdidText.Text + "'; ", conn);
 
             using (SqlDataReader reader = myCommand.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    SqlCommand cmd = new SqlCommand(@"INSERT INTO lend_game VALUES (@std_id, @game_id @glend_date)", conn);
+                    SqlCommand cmd = new SqlCommand(@"INSERT INTO lend_game VALUES (@std_id, '"+gameID+"', @glend_date)", conn);
 
                     cmd.Parameters.AddWithValue("@std_id", reader["std_id"]);
-                    cmd.Parameters.AddWithValue("@game_id", 1);
+                    cmd.Parameters.AddWithValue("@game_id", gameID);
                     cmd.Parameters.AddWithValue("@glend_date", DateTime.Now.ToShortDateString());
 
                     cmd.ExecuteNonQuery();  
@@ -39,82 +64,20 @@ public partial class game_signout : System.Web.UI.Page
             }
             myCommand.ExecuteNonQuery();
 
-            SqlCommand sc = new SqlCommand("UPDATE game SET game_amount = (SELECT game_amount from game WHERE game_id = @game_id) - '" + amountNum.Text + "' WHERE game_id = @game_id", conn);
+            SqlCommand sc = new SqlCommand("UPDATE game SET game_amount = (SELECT game_amount from game WHERE game_id = '"+gameID+"') - '" + amountNum.Text + "' WHERE game_id = @game_id", conn);
             sc.Parameters.AddWithValue("@game_id", 1);
             sc.ExecuteNonQuery();
             
             conn.Close();
         }
-        MessageBox.Show("Data Inserted");
+        */
+        MessageBox.Show("Sign out the game...");
         Response.Redirect("game_overview.aspx");
     }
 
     protected void stdidText_TextChanged(object sender, EventArgs e)
     {
-        string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
-
-        using (SqlConnection conn = new SqlConnection(constring))
-        {
-            conn.Open();
-            SqlCommand cmd2 = new SqlCommand("select std_id, student_id, student_phone, student_email, (select house_name from house h where h.house_id = s.house_id) AS house, (select room_name from room r where r.room_id = s.room_id) AS room from student s where student_id  = '" + stdidText.Text + "' ", conn);
-
-            using (SqlDataReader reader = cmd2.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    fnameText.Text = (reader["student_fname"].ToString());
-                    lnameText.Text = (reader["student_lname"].ToString());
-                    houseText.Text = (reader["house"].ToString());
-                    roomText.Text = (reader["room"].ToString());
-                    phoneText.Text = (reader["student_phone"].ToString());
-                }
-            }
-            conn.Close();
-        }
+        
     }
 
-    protected void lnameText_TextChanged(object sender, EventArgs e)
-    {
-        string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
-
-        using (SqlConnection conn = new SqlConnection(constring))
-        {
-            conn.Open();
-            SqlCommand cmd2 = new SqlCommand("select std_id, student_id, student_phone, student_email, (select house_name from house h where h.house_id = s.house_id) AS house, (select room_name from room r where r.room_id = s.room_id) AS room from student s where student_fname  = '" + fnameText.Text + "' and student_lname = '" + lnameText.Text + "' ", conn);
-
-            using (SqlDataReader reader = cmd2.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    stdidText.Text = (reader["student_id"].ToString());
-                    houseText.Text = (reader["house"].ToString());
-                    roomText.Text = (reader["room"].ToString());
-                    phoneText.Text = (reader["student_phone"].ToString());
-                }
-            }
-            conn.Close();
-        } 
-    }
-
-    protected void Button1_Click1(object sender, EventArgs e)
-    {
-        string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
-        using (SqlConnection conn = new SqlConnection(constring))
-        {
-            conn.Open();
-            SqlCommand cmd2 = new SqlCommand("select std_id, student_id, student_phone, student_email, (select house_name from house h where h.house_id = s.house_id) AS house, (select room_name from room r where r.room_id = s.room_id) AS room from student s where student_fname  = '" + fnameText.Text + "' and student_lname = '" + lnameText.Text + "' ", conn);
-
-            using (SqlDataReader reader = cmd2.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    stdidText.Text = (reader["student_id"].ToString());
-                    houseText.Text = (reader["house"].ToString());
-                    roomText.Text = (reader["room"].ToString());
-                    phoneText.Text = (reader["student_phone"].ToString());
-                }
-            }
-            conn.Close();
-        }
-    }
 }
