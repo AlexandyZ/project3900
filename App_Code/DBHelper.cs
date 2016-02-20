@@ -40,7 +40,7 @@ namespace project3900.App_Code
                     using (DbDataAdapter da = DbProviderFactories.GetFactory("System.Data.SqlClient").CreateDataAdapter())
                     {
                         da.SelectCommand = command;
-                        tda.Fill(ds);
+                        da.Fill(ds);
                     }
                 }
             }
