@@ -34,12 +34,12 @@ public partial class game_signout : System.Web.UI.Page
 
         SqlConnection conn = new SqlConnection(constring);
         conn.Open();
-        SqlCommand cmd = new SqlCommand("INSERT INTO lend_game VALUES((SELECT std_id FROM student WHERE student_id  = '" + stdidText.Text + "'), '" + gameID+"', @glend_date, NULL)", conn);
-        cmd.Parameters.AddWithValue("@glend_date", DateTime.Now.ToShortDateString());
+        SqlCommand cmd = new SqlCommand("INSERT INTO lend_game VALUES((SELECT std_id FROM student WHERE student_id  = '" + stdidText.Text + "'), '" + gameID+ "', '"+DateTime.Now.ToShortDateString()+ "', NULL, '" + amountNum.Text + "')", conn);
+        //cmd.Parameters.AddWithValue("glend_date", DateTime.Now.ToShortDateString());
 
         cmd.ExecuteNonQuery();
 
-        SqlCommand sc = new SqlCommand("UPDATE game SET game_amount = (SELECT game_amount from game WHERE game_id = '" + gameID + "') - '" + amountNum.Text + "' WHERE game_id = '"+gameID+"'", conn);
+        SqlCommand sc = new SqlCommand("UPDATE game SET game_qty = (SELECT game_qty from game WHERE game_id = '" + gameID + "') - '" + amountNum.Text + "' WHERE game_id = '"+gameID+"'", conn);
         sc.ExecuteNonQuery();
 
         conn.Close();

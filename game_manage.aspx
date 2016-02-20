@@ -64,10 +64,10 @@
         <!-- #sidemenu -->
         <aside id="menu">
             <ul>
-                <li><a href="game_overview.aspx">Overview</a></li>
-                <li><a href="game_return.aspx">Return</a></li>
-                <li><a href="game_signout.aspx">Sign Out</a></li>
-                <li><a href="game_manage.aspx">Add & Delete</a></li>
+                <li><a href="game_overview.aspx">Game Overview</a></li>
+                <li><a href="game_return.aspx">Game Return</a></li>
+                <li><a href="game_manage.aspx">Game Add & Delete</a></li>
+                <li><a href="game_report.aspx">Game Report</a></li>
             </ul>
         </aside>
         <!-- /#sidemenu -->
