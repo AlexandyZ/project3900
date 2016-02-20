@@ -12,9 +12,9 @@ namespace project3900.App_Code
 {
     public class DBHelper
     {
-        public static String GetConfiguration(string name)
+        public static String GetConfiguration(string key)
         {
-            return ConfigurationManager.AppSettings[name];
+            return ConfigurationManager.AppSettings[key];
         }
 
         public static DataSet ExecuteBySPName(string spName, SqlParameter[] spParams)
@@ -40,7 +40,7 @@ namespace project3900.App_Code
                     using (DbDataAdapter da = DbProviderFactories.GetFactory("System.Data.SqlClient").CreateDataAdapter())
                     {
                         da.SelectCommand = command;
-                        da.Fill(ds);
+                        tda.Fill(ds);
                     }
                 }
             }
