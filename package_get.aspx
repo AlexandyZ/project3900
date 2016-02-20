@@ -62,8 +62,9 @@
         <!-- #sidemenu -->
         <aside id="menu">
             <ul>
-                <li><a href="package_overview.aspx">Overview</a></li>
-                <li><a href="package_get.aspx">Tracking</a></li>
+                <li><a href="package_get.aspx">Package Tracking</a></li>
+                <li><a href="package_pickup.aspx">Package Pickup</a></li>
+                <li><a href="package_report.aspx">Package Report</a></li>
             </ul>
         </aside>
         <!-- /#sidemenu -->

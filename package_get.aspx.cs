@@ -76,14 +76,10 @@ public partial class key_addnew : System.Web.UI.Page
                     cmd.Parameters.AddWithValue("@std_id", reader["std_id"]);
                     cmd.Parameters.AddWithValue("@delivery_date", DelDate.Text);
                     cmd.Parameters.AddWithValue("@description", Des.Text);
-
-
-
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Data Inserted");
+                    //MessageBox.Show("Data Inserted");
                     Response.Redirect(Request.RawUrl);
                     //reader.Close();
-                    //yield return reader;
                 }
             }
             myCommand.ExecuteNonQuery();
@@ -114,4 +110,5 @@ public partial class key_addnew : System.Web.UI.Page
             conn.Close();
         }
     }
+
 }
