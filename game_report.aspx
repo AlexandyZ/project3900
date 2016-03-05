@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="game_overview.aspx.cs" Inherits="game_report" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="game_report.aspx.cs" Inherits="game_report" %>
 
 <!DOCTYPE html>
 
@@ -51,7 +51,7 @@
 
     <!-- banner -->
     <div id="banner">
-        <h1>GAME OVERVIEW</h1>
+        <h1>GAME REPORT</h1>
     </div>
     <!-- /banner -->
 
@@ -71,15 +71,18 @@
         <div id="primary">
             <form id="form1" runat="server">
                 <div id="main">
-                    <div id="overview_game">
-                        <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame" OnRowDataBound="GameGridView_RowDataBound" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged" OnRowCommand="Signout_RowCommand" DataKeyNames="game_id">
+                    <div id="view_game">
+                        <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame" >
                             <Columns>
-                                <asp:BoundField DataField="game_name" HeaderText="Games" SortExpression="game_name" />
-                                <asp:BoundField DataField="game_qty" HeaderText="Inventory" SortExpression="game_amount" />
-                                <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Sign Out" />
+                                <asp:BoundField DataField="game_record" HeaderText="game_record" SortExpression="game_record" InsertVisible="False" ReadOnly="True" />
+                                <asp:BoundField DataField="std_id" HeaderText="std_id" SortExpression="std_id" />
+                                <asp:BoundField DataField="game_id" HeaderText="game_id" SortExpression="game_id" />
+                                <asp:BoundField DataField="glend_date" HeaderText="glend_date" SortExpression="glend_date" />
+                                <asp:BoundField DataField="greturn_date" HeaderText="greturn_date" SortExpression="greturn_date" />
+                                <asp:BoundField DataField="game_qty" HeaderText="game_qty" SortExpression="game_qty" />
                             </Columns>
                         </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSourceGame" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT * FROM [game]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSourceGame" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT * FROM [lend_game]"></asp:SqlDataSource>
                     </div>
                 </div>
             </form>
