@@ -54,7 +54,7 @@
 
     <!-- banner -->
     <div id="banner">
-        <h1>PACKAGE OVERVIEW</h1>
+        <h1>PACKAGE PICKUP</h1>
     </div>
     <!-- /banner -->
 
@@ -71,19 +71,26 @@
         <!-- /#sidemenu -->
         <!-- #primary -->
         <div id="primary">
-            <asp:TextBox ID="searchbar_key" runat="server" Width="281px"></asp:TextBox>
-            <asp:Button ID="searchbutton" runat="server" OnClick="SearchBtn_Click" Text="Search" />
+          <div id="search_bar">
+           <br />
+                
+               <input type="text" runat="server" id="searchbar" />
+        <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click"/><br />
+                
+        </div>
             <div id="main" style ="height:500px; overflow:scroll">
-               <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSourcePackage" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" DataKeyNames="package_id">
-                    <AlternatingRowStyle BackColor="White" />
+              <asp:Gridview ID ="SearchResult"
+        autogeneratecolumns ="FALSE" OnRowCommand="GridView1_RowCommand"
+        runat="server" >
                     <Columns>
-                        <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
+                        <%--<asp:BoundField DataField="package_id" HeaderText="package_id" SortExpression="package_id" InsertVisible="False" ReadOnly="True" />
+                        --%><asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
                         <asp:BoundField DataField="lastname" HeaderText="lastname" SortExpression="lastname" />
                         <asp:BoundField DataField="house" HeaderText="house" SortExpression="house" />
                         <asp:BoundField DataField="room" HeaderText="room" SortExpression="room" />
-                        <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
-                        <asp:BoundField DataField="delivery_date" HeaderText="delivery_date" SortExpression="delivery_date" DataFormatString="{0:d}" />
-                        <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Status" ShowHeader="True" Text="Pick up" />
+                        <asp:BoundField DataField="descript" HeaderText="descript" SortExpression="descript" />
+                        <asp:BoundField DataField="delivery_date" HeaderText="delivery_date" SortExpression="delivery_date" />
+                        <asp:ButtonField ButtonType="Button" CommandName="select" ShowHeader="True" Text="Pick Up" />
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -95,15 +102,10 @@
                     <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:GridView>
+                </asp:Gridview>
                 
 
-                <asp:SqlDataSource ID="SqlDataSourcePackage" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="select p.package_id, s.student_fname as firstname, s.student_lname as lastname, h.house_name as house, r.room_name as room, p.description, p.delivery_date
-from student s
-inner join house h on s.house_id = h.house_id
-inner join room r on s.room_id = r.room_id
-inner join package p on s.std_id = p.std_id
-where pickup_date is NULL"></asp:SqlDataSource>
+                <br />
 
             </div>
         </div>

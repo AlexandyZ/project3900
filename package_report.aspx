@@ -60,7 +60,7 @@
         <!-- #sidemenu -->
         <aside id="menu">
             <ul>
-                <li><a href="package_pickage.aspx">Package Pickup</a></li>
+                <li><a href="package_pickup.aspx">Package Pickup</a></li>
                 <li><a href="package_get.aspx">Package Tracking</a></li>
                 <li><a href="package_report.aspx">Package Report</a></li>
             </ul>
@@ -76,7 +76,7 @@
                         <asp:BoundField DataField="lastname" HeaderText="lastname" SortExpression="lastname" />
                         <asp:BoundField DataField="house" HeaderText="house" SortExpression="house" />
                         <asp:BoundField DataField="room" HeaderText="room" SortExpression="room" />
-                        <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
+                        <asp:BoundField DataField="descript" HeaderText="description" SortExpression="description" />
                         <asp:BoundField DataField="delivery_date" DataFormatString="{0:d}" HeaderText="delivery_date" SortExpression="delivery_date" />
                         <asp:BoundField DataField="pickup_date" DataFormatString="{0:d}" HeaderText="pickup_date" SortExpression="pickup_date" />
                     </Columns>
@@ -90,7 +90,7 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSourcePackage" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="select s.student_fname as firstname, s.student_lname as lastname, h.house_name as house, r.room_name as room, p.description, p.delivery_date, p.pickup_date from student s inner join house h on s.house_id = h.house_id inner join room r on s.room_id = r.room_id inner join package p on s.std_id = p.std_id"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSourcePackage" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="select s.student_fname as firstname, s.student_lname as lastname, h.house_name as house, r.room_name as room, p.descript, p.delivery_date, p.pickup_date from student s inner join house h on s.house_id = h.house_id inner join room r on s.room_id = r.room_id inner join package p on s.std_id = p.std_id"></asp:SqlDataSource>
             </div>
         </div>
         <!-- /#primary -->
