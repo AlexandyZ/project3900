@@ -37,6 +37,5 @@ public partial class game_overview : System.Web.UI.Page
             
             Response.Redirect("game_signout.aspx?" + gameID);
         }
-
     }
 }
