@@ -35,19 +35,21 @@ public partial class key_addnew : System.Web.UI.Page
     {
         if (e.CommandName == "select")
         {
+            int rowIndex = Int32.Parse((e.CommandArgument).ToString());
+            int package_id = Int32.Parse(SearchResult.DataKeys[rowIndex].Value.ToString());
+
             string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
             SqlConnection conn = new SqlConnection(constring);
             conn.Open();
-            int rowIndex = Int32.Parse((e.CommandArgument).ToString());
-            int package_id = Int32.Parse(SearchResult.DataKeys[rowIndex].Value.ToString());
+            
             SqlCommand cmd = new SqlCommand("update package set pickup_date = @pickup_date where package_id = '" + package_id + "'", conn);
             cmd.Parameters.AddWithValue("@pickup_date", DateTime.Today.ToShortDateString());
             cmd.ExecuteNonQuery();
             conn.Close();
-        }
-        MessageBox.Show("Are you sure?");
-        Response.Redirect(Request.RawUrl);
 
+            MessageBox.Show("Are you sure?");
+            Response.Redirect(Request.RawUrl);
+        }
     }
 
 

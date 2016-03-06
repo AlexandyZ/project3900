@@ -65,7 +65,7 @@
             <ul>
                 <li><a href="game_overview.aspx">Game Overview</a></li>
                 <li><a href="game_return.aspx">Game Return</a></li>
-                <li><a href="game_manage.aspx">Game Add & Delete</a></li>
+                <li><a href="game_manage.aspx">Game Management</a></li>
                 <li><a href="game_report.aspx">Game Report</a></li>
             </ul>
         </aside>
@@ -74,16 +74,24 @@
         <div id="primary">
             <form id="form1" runat="server">
             <div id="main">
+                <!-- #search bar -->
+                <div id="searchbar">
+                    <input type="text" runat="server" id="searchText" />
+                    <input type="submit" runat="server" id="searchBtn" value="Search" onserverclick="SearchBtn_Click" />
+                </div>
+                <!-- /#search bar -->
+                <!-- #overview table -->
                 <div id="view_game">
-                    <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame" OnRowDataBound="GameGridView_RowDataBound" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged" OnRowCommand="Signout_RowCommand" DataKeyNames="game_id">
+                    <asp:GridView ID="GameView" runat="server" AllowSorting="True" AutoGenerateColumns="False" OnRowDataBound="GameGridView_RowDataBound" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged" OnRowCommand="Signout_RowCommand" DataKeyNames="game_id">
                         <Columns>
                             <asp:BoundField DataField="game_name" HeaderText="Games" SortExpression="game_name" />
                             <asp:BoundField DataField="game_invent" HeaderText="Inventory" SortExpression="game_invent" />
                             <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Sign Out" />
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSourceGame" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT * FROM [game]"></asp:SqlDataSource>
+                    <!--<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>-->
                 </div>
+                <!-- /#overview table -->
             </div>
             </form>
         </div>

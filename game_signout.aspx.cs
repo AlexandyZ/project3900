@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 public partial class game_signout : System.Web.UI.Page
@@ -16,6 +11,7 @@ public partial class game_signout : System.Web.UI.Page
         int gameID = Int32.Parse(Request.QueryString.ToString());
         SqlConnection conn = new SqlConnection(constring);
         conn.Open();
+
         SqlCommand cmd = new SqlCommand("select game_name from game where game_id  = '"+ gameID+ "'", conn);
         using (SqlDataReader reader = cmd.ExecuteReader())
         {
