@@ -48,6 +48,11 @@ namespace project3900.App_Code
             return ds;
         }
 
+        public static DataSet ExecuteBySPName(string v, SqlParameter spParams)
+        {
+            throw new NotImplementedException();
+        }
+
         public static Object ExecuteScalarBySPName(string spName, SqlParameter[] spParams)
         {
             Object obj;

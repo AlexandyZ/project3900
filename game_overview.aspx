@@ -74,6 +74,13 @@
         <div id="primary">
             <form id="form1" runat="server">
             <div id="main">
+                <!-- #search bar -->
+                <div id="searchbar">
+                    <input type="text" runat="server" id="searchText" />
+                    <input type="submit" runat="server" id="searchBtn" value="Search" onserverclick="SearchBtn_Click" />
+                </div>
+                <!-- /#search bar -->
+                <!-- #overview table -->
                 <div id="view_game">
                     <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame" OnRowDataBound="GameGridView_RowDataBound" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged" OnRowCommand="Signout_RowCommand" DataKeyNames="game_id">
                         <Columns>
@@ -84,6 +91,7 @@
                     </asp:GridView>
                     <asp:SqlDataSource ID="SqlDataSourceGame" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT * FROM [game]"></asp:SqlDataSource>
                 </div>
+                <!-- /#overview table -->
             </div>
             </form>
         </div>

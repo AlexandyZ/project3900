@@ -72,32 +72,28 @@
         <!-- #primary -->
         <div id="primary">
             <div id="main">
-            <div id="search_bar">
-           <br />
-                <br>
-               <input type="text" runat="server" id="searchbar" />
-        <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click"/><br />
-                <br>
-        </div>
-        <div id="result" style ="height:600px; overflow:auto;">
-               <asp:gridview ID ="SearchResult"
-        autogeneratecolumns ="FALSE"
-        runat="server" CommandArgument='<%# Eval("KeyId") %>'
-      Text="KeyId" >
-        <Columns>
-           
-            <asp:BoundField DataField="KeyNumber" HeaderText="KeyNumber" />
-            <asp:BoundField DataField="Name" HeaderText="Name" />
-            <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />
-            <asp:BoundField DataField="Time_Out" HeaderText="Time_Out" />
-            <asp:TemplateField HeaderText="Status">
-                <ItemTemplate>
-                    <asp:Button id="Return" Text="Return" runat="server" CommandName="ReturnKey" OnClick="Button_click_event" ></asp:Button>   
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-      </asp:gridview>
-            </div>
+                <div id="search_bar">
+                    <input type="text" runat="server" id="searchbar" />
+                    <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" />
+                </div>
+                <div id="result" style="height: 600px; overflow: auto;">
+                    <asp:GridView ID="SearchResult"
+                        AutoGenerateColumns="FALSE"
+                        runat="server" CommandArgument='<%# Eval("KeyId") %>'
+                        Text="KeyId">
+                        <Columns>
+                            <asp:BoundField DataField="KeyNumber" HeaderText="KeyNumber" />
+                            <asp:BoundField DataField="Name" HeaderText="Name" />
+                            <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />
+                            <asp:BoundField DataField="Time_Out" HeaderText="Time_Out" />
+                            <asp:TemplateField HeaderText="Status">
+                                <ItemTemplate>
+                                    <asp:Button ID="Return" Text="Return" runat="server" CommandName="ReturnKey" OnClick="Button_click_event"></asp:Button>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </div>
             </div>
         </div>
         <!-- /#primary -->
