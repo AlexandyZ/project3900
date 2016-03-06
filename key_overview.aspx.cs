@@ -13,15 +13,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using System.Configuration;
 
 public partial class key_overview : System.Web.UI.Page
 {
-
     
 
     protected void Page_Load(object sender, EventArgs e)
 
     {
+        
+        Return.Command += new CommandEventHandler(this.Button_click_event);
 
         List<SqlParameter> spParams = new List<SqlParameter>();
         spParams.Add(new SqlParameter("@KeyName", searchbar.Value));
@@ -48,12 +50,20 @@ public partial class key_overview : System.Web.UI.Page
 
     
 
-     public void Button_click_event(Object sender, EventArgs e)
+     public void Button_click_event(Object sender, CommandEventArgs e)
          {
         DialogResult result = MessageBox.Show("Are you sure to return a key?", "Confirmation", MessageBoxButtons.YesNo);
-        if (result == DialogResult.Yes)
+        if ( e.CommandName == "ReturnKey")
         {
-           //....
+            string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
+            SqlConnection conn = new SqlConnection(constring);
+            conn.Open();
+            int rowIndex = Int32.Parse((e.CommandArgument).ToString());
+            int keys_id = Int32.Parse(SearchResult.DataKeys[rowIndex].Value.ToString());
+            SqlCommand cmd = new SqlCommand("update lend_key set keyreturn_date = @return_date where keys_id = '" + keys_id + "'", conn);
+            cmd.Parameters.AddWithValue("@return_date", DateTime.Today.ToShortDateString());
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
         else if (result == DialogResult.No)
         {

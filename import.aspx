@@ -40,7 +40,7 @@
                         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_overview.aspx">GAMES</asp:HyperLink>
                     </li>
                     <li id="nav_package" class="r_nav">
-                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_pickup.aspx">PACKAGES</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_overview.aspx">PACKAGES</asp:HyperLink>
                     </li>
                     <li id="nav_import" class="r_nav">
                         <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="import.aspx">IMPORT</asp:HyperLink>
@@ -71,7 +71,9 @@
         <div id="primary">
             <div id="main">
                 <asp:FileUpload ID="FileUpload1" runat="server" />
-                <input id="upload" type="submit" value="Upload" />
+                &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Upload" />
+                <br />
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             </div>
         </div>
         <!-- /#primary -->

@@ -40,7 +40,7 @@
                         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_overview.aspx">GAMES</asp:HyperLink>
                     </li>
                     <li id="nav_package" class="r_nav">
-                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_pickup.aspx">PACKAGES</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_overview.aspx">PACKAGES</asp:HyperLink>
                     </li>
                     <li id="nav_import" class="r_nav">
                         <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="import.aspx">IMPORT</asp:HyperLink>
@@ -82,7 +82,8 @@
         <div id="result" style ="height:600px; overflow:auto;">
                <asp:gridview ID ="SearchResult"
         autogeneratecolumns ="FALSE"
-        runat="server" >
+        runat="server" CommandArgument='<%# Eval("KeyId") %>'
+      Text="KeyId" >
         <Columns>
            
             <asp:BoundField DataField="KeyNumber" HeaderText="KeyNumber" />
@@ -91,12 +92,11 @@
             <asp:BoundField DataField="Time_Out" HeaderText="Time_Out" />
             <asp:TemplateField HeaderText="Status">
                 <ItemTemplate>
-                    <asp:Button ID="Return" Text="Return" runat="server" CommandName="ReturnKey" OnClick="Button_click_event" ></asp:Button>   
+                    <asp:Button id="Return" Text="Return" runat="server" CommandName="ReturnKey" OnClick="Button_click_event" ></asp:Button>   
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
       </asp:gridview>
-                <asp:SqlDataSource ID="overviewkey" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="select k.keys_name, w.worker_fname ,w.worker_lname, c.comp_phone, lk.keylend_date, lk.keyreturn_date, k.keyoutstanding as Status FROM lend_key as lk INNER JOIN keys as k ON lk.keys_id = k.keys_id INNER JOIN worker as w ON w.worker_id = lk.worker_id INNER JOIN company as c ON c.comp_id = w.comp_id "></asp:SqlDataSource>
             </div>
             </div>
         </div>

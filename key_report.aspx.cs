@@ -54,11 +54,11 @@ public partial class key_report : System.Web.UI.Page
         DialogResult result = MessageBox.Show("Are you sure to return a key?", "Confirmation", MessageBoxButtons.YesNo);
         if (result == DialogResult.Yes)
         {
-            //...
+            //.....
         }
         else if (result == DialogResult.No)
         {
-            //...
+            //.....
         }
 
     }

@@ -19,7 +19,6 @@ public partial class key_lend : System.Web.UI.Page
           
         }
     
-       
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             List<SqlParameter> spParams = new List<SqlParameter>();
