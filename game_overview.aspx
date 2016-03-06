@@ -74,11 +74,11 @@
         <div id="primary">
             <form id="form1" runat="server">
             <div id="main">
-                <div id="overview_game">
+                <div id="view_game">
                     <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame" OnRowDataBound="GameGridView_RowDataBound" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged" OnRowCommand="Signout_RowCommand" DataKeyNames="game_id">
                         <Columns>
                             <asp:BoundField DataField="game_name" HeaderText="Games" SortExpression="game_name" />
-                            <asp:BoundField DataField="game_qty" HeaderText="Inventory" SortExpression="game_amount" />
+                            <asp:BoundField DataField="game_invent" HeaderText="Inventory" SortExpression="game_invent" />
                             <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Sign Out" />
                         </Columns>
                     </asp:GridView>

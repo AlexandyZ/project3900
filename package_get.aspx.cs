@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Configuration;
 
 public partial class key_addnew : System.Web.UI.Page
 {
@@ -58,8 +59,8 @@ public partial class key_addnew : System.Web.UI.Page
     // insert package record into tables: package(delivery_date, description) & student(std_id).
     protected void Add_Click(object sender, EventArgs e)
     {
-        string connection = "Data Source = ant-comp3900.database.windows.net; Initial Catalog = RMS;  MultipleActiveResultSets=true; User ID = ant; Password = Tna12345";
-      
+        string connection = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
+
         using (SqlConnection conn = new SqlConnection(connection))
         {
             conn.Open();
@@ -71,7 +72,7 @@ public partial class key_addnew : System.Web.UI.Page
                 {
                     //int @std_id = Convert.ToInt32(reader["std_id"]);
 
-                    SqlCommand cmd = new SqlCommand(@"INSERT INTO package(std_id, delivery_date, description) VALUES (@std_id, @delivery_date, @description)", conn);
+                    SqlCommand cmd = new SqlCommand(@"INSERT INTO package(std_id, delivery_date, descript) VALUES (@std_id, @delivery_date, @description)", conn);
 
                     cmd.Parameters.AddWithValue("@std_id", reader["std_id"]);
                     cmd.Parameters.AddWithValue("@delivery_date", DelDate.Text);
@@ -92,7 +93,7 @@ public partial class key_addnew : System.Web.UI.Page
     // show phone and email based on inputting the firstname and lastname
     protected void RoomID_SelectedIndexChanged(object sender, EventArgs e)
     {
-        string constring = "Data Source = ant-comp3900.database.windows.net; Initial Catalog = RMS; User ID = ant; Password = Tna12345";
+        string constring = "Data Source = comp3900.database.windows.net; Initial Catalog = RMS; User ID = ant; Password = Tna12345";
 
         using (SqlConnection conn = new SqlConnection(constring))
         {
