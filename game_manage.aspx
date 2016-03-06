@@ -55,7 +55,7 @@
 
     <!-- banner -->
     <div id="banner">
-        <h1>MANAGE GAMES</h1>
+        <h1>GAME MANAGEMENT</h1>
     </div>
     <!-- /banner -->
 
@@ -66,7 +66,7 @@
             <ul>
                 <li><a href="game_overview.aspx">Game Overview</a></li>
                 <li><a href="game_return.aspx">Game Return</a></li>
-                <li><a href="game_manage.aspx">Game Add & Delete</a></li>
+                <li><a href="game_manage.aspx">Game Management</a></li>
                 <li><a href="game_report.aspx">Game Report</a></li>
             </ul>
         </aside>
@@ -83,14 +83,15 @@
                             <asp:TextBox ID="gameText" class="infoBox" runat="server"></asp:TextBox>
                         </td>
                         <td>
-                            <asp:Label ID="amount" class="info" runat="server" Text="Amount"></asp:Label>
+                            <asp:Label ID="game_qty" class="info" runat="server" Text="Amount"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="amoutText" class="infoBox" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="qtyText" class="infoBox" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
-                <asp:Button ID="addSubmit" class="submit" runat="server" Text="Submit" OnClick="addSubmit_Click" />
+                <asp:Button ID="addSubmit" class="submit" runat="server" Text="Add New Game" OnClick="addSubmit_Click" />
+                <asp:Button ID="deleteSubmit" class="submit" runat="server" Text="Delete Game" OnClick="deleteSubmit_Click" />
             </div>
         </div>
         <!-- /#primary -->

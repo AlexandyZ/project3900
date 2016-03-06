@@ -56,7 +56,7 @@
 
         <!-- banner -->
         <div id="banner">
-            <h1>RETURN GAMES</h1>
+            <h1>GAME RETURN</h1>
         </div>
         <!-- /banner -->
 
@@ -67,7 +67,7 @@
                 <ul>
                     <li><a href="game_overview.aspx">Game Overview</a></li>
                     <li><a href="game_return.aspx">Game Return</a></li>
-                    <li><a href="game_manage.aspx">Game Add & Delete</a></li>
+                    <li><a href="game_manage.aspx">Game Management</a></li>
                     <li><a href="game_report.aspx">Game Report</a></li>
                 </ul>
             </aside>
@@ -75,21 +75,23 @@
             <!-- #primary -->
             <div id="primary">
                 <div id="main">
-                    <!--<div id="searchbar">
-                        <asp:TextBox ID="searchText" runat="server" ToolTip="Enter game name"></asp:TextBox>
-                        <asp:Button ID="searchButton" runat="server" OnServerClick="searchButton_Click" Text="Search" />
-                    </div>-->
-                    <asp:GridView ID="GameReturn" runat="server" AutoGenerateColumns="False" AllowSorting="True" OnSelectedIndexChanged="GameReturn_SelectedIndexChanged" DataSourceID="SqlGameReturn" OnRowDataBound="GameReturn_RowDataBound" OnRowCommand="Return_RowCommand">
+                    <!-- #search bar -->
+                    <div id="searchbar">
+                        <input type="text" runat="server" id="searchText" />
+                        <input type="submit" runat="server" id="searchBtn" value="Search" onserverclick="SearchBtn_Click" />
+                    </div>
+                    <!-- /#search bar -->
+
+                    <asp:GridView ID="GameReturn" runat="server" AutoGenerateColumns="False" AllowSorting="True" OnSelectedIndexChanged="GameReturn_SelectedIndexChanged" OnRowDataBound="GameReturn_RowDataBound" OnRowCommand="Return_RowCommand" DataKeyNames="game_id">
                         <Columns>
-                            <asp:BoundField DataField="Column1" HeaderText="Student ID" ReadOnly="True" SortExpression="Column1" />
-                            <asp:BoundField DataField="Column2" HeaderText="Student Name" SortExpression="Column2" ReadOnly="True"></asp:BoundField>
-                            <asp:BoundField DataField="Column3" HeaderText="Game Name" SortExpression="Column3" ReadOnly="True" />
+                            <asp:BoundField DataField="student_id" HeaderText="Student ID" ReadOnly="True" SortExpression="student_id" />
+                            <asp:BoundField DataField="std_name" HeaderText="Student Name" SortExpression="std_name" ReadOnly="True" />
+                            <asp:BoundField DataField="game_name" HeaderText="Game Name" SortExpression="game_name" ReadOnly="True" />
                             <asp:BoundField DataField="game_qty" HeaderText="QTY" SortExpression="game_qty" />
-                            <asp:BoundField DataField="glend_date" HeaderText="SignOut Date" SortExpression="glend_date" ReadOnly="True" />
+                            <asp:BoundField DataField="glend_date" HeaderText="SignOut Date" SortExpression="glend_date" ReadOnly="True" DataFormatString="{0:MM/dd/yyyy}" />
                             <asp:ButtonField ButtonType="Button" Text="Return" CommandName="Select" />
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlGameReturn" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="select game_id, (select student_id from student s where s.std_id = lg.std_id), (select student_fname + ' ' + student_lname from student s where s.std_id = lg.std_id), (select game_name from game g where g.game_id = lg.game_id), game_qty, glend_date from lend_game lg"></asp:SqlDataSource>
                 </div>
             </div>
             <!-- /#primary -->

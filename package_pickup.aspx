@@ -71,20 +71,19 @@
         <!-- /#sidemenu -->
         <!-- #primary -->
         <div id="primary">
-          <div id="search_bar">
-           <br />
-                
-               <input type="text" runat="server" id="searchbar" />
-        <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click"/><br />
-                
-        </div>
-            <div id="main" style ="height:500px; overflow:scroll">
-              <asp:Gridview ID ="SearchResult"
-        autogeneratecolumns ="FALSE" OnRowCommand="GridView1_RowCommand"
-        runat="server" >
+            <div id="search_bar">
+                <br />
+
+                <input type="text" runat="server" id="searchbar" />
+                <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" /><br />
+
+            </div>
+            <div id="main" style="height: 500px; overflow: scroll">
+                <asp:GridView ID="SearchResult"
+                    AutoGenerateColumns="FALSE" OnRowCommand="GridView1_RowCommand"
+                    runat="server">
                     <Columns>
-                        <%--<asp:BoundField DataField="package_id" HeaderText="package_id" SortExpression="package_id" InsertVisible="False" ReadOnly="True" />
-                        --%><asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
+                        <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
                         <asp:BoundField DataField="lastname" HeaderText="lastname" SortExpression="lastname" />
                         <asp:BoundField DataField="house" HeaderText="house" SortExpression="house" />
                         <asp:BoundField DataField="room" HeaderText="room" SortExpression="room" />
@@ -102,11 +101,7 @@
                     <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:Gridview>
-                
-
-                <br />
-
+                </asp:GridView>
             </div>
         </div>
         <!-- /#primary -->
