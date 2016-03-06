@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="package_get.aspx.cs" Inherits="key_addnew" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="package_track.aspx.cs" Inherits="key_addnew" %>
 
 <!DOCTYPE html>
 
@@ -63,7 +63,7 @@
         <aside id="menu">
             <ul>
                 <li><a href="package_pickup.aspx">Package Pickup</a></li>
-                <li><a href="package_get.aspx">Package Tracking</a></li>
+                <li><a href="package_track.aspx">Package Tracking</a></li>
                 <li><a href="package_report.aspx">Package Report</a></li>
             </ul>
         </aside>
