@@ -10,15 +10,16 @@
 </head>
 
 <body>
-    
+
     <!-- header -->
     <header>
         <!-- #shortcut -->
-        <div id="show_username"> 
+        <div id="show_username">
             <ul>
-                <li><asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
+                <li>
+                    <asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
                 <li>SIGNOUT</li>
-           </ul>
+            </ul>
         </div>
         <!-- /#shortcut -->
 
@@ -30,7 +31,7 @@
         <!-- /#bcitlogo -->
 
         <!-- #navbar -->
-        <nav id="rshift_navbar">            
+        <nav id="rshift_navbar">
             <div id="navbar">
                 <ul>
                     <li id="nav_key" class="r_nav">
@@ -58,7 +59,7 @@
     </div>
     <!-- /banner -->
 
-    <!-- content -->   
+    <!-- content -->
     <section id="content">
         <!-- #sidemenu -->
         <aside id="menu">
@@ -73,47 +74,48 @@
         <!-- #primary -->
         <div id="primary">
             <form id="form1" runat="server">
-            <div id="main">
-                <h1><asp:Label ID="gamename" runat="server" Text="game name"></asp:Label></h1>
-                <table id="gameout">
-                    <tr>
-                        <td>                
-                            <asp:Label ID="fname" CLASS="info" runat="server" Text="First name"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="fnameText" Class="infoBox" runat="server" AutoCompleteType="FirstName"></asp:TextBox>
-                        </td>
-                        <td> 
-                            <asp:Label ID="lname" CLASS="info" runat="server" Text="Last name"></asp:Label>
-                        </td>
-                        <td>
-                             <asp:TextBox ID="lnameText" Class="infoBox" runat="server" ></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="stdid" CLASS="info" runat="server" Text="Student ID"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="stdidText" Class="infoBox" runat="server" ></asp:TextBox>
-                             </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="amount" CLASS="info" runat="server" Text="QTY"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="amountNum" CLASS="infoBox" runat="server"></asp:TextBox>
-                        </td>
-                    </tr>            
-                </table>
-                <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" />
-            </div>
+                <div id="main">
+                    <h1>
+                        <asp:Label ID="gamename" runat="server" Text="game name"></asp:Label></h1>
+                    <table id="gameout">
+                        <tr>
+                            <td>
+                                <asp:Label ID="fname" CLASS="info" runat="server" Text="First name"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="fnameText" Class="infoBox" runat="server" AutoCompleteType="FirstName"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:Label ID="lname" CLASS="info" runat="server" Text="Last name"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="lnameText" Class="infoBox" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="stdid" CLASS="info" runat="server" Text="Student ID"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="stdidText" Class="infoBox" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="amount" CLASS="info" runat="server" Text="QTY"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="amountNum" CLASS="infoBox" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                    </table>
+                    <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" />
+                </div>
             </form>
         </div>
         <!-- /#primary -->
     </section>
-    <!-- /content --> 
+    <!-- /content -->
 
     <!-- footer -->
     <footer>

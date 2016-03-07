@@ -10,15 +10,16 @@
 </head>
 
 <body>
-    
+
     <!-- header -->
     <header>
         <!-- #shortcut -->
-        <div id="show_username"> 
+        <div id="show_username">
             <ul>
-                <li><asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
+                <li>
+                    <asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
                 <li>SIGNOUT</li>
-           </ul>
+            </ul>
         </div>
         <!-- /#shortcut -->
 
@@ -30,7 +31,7 @@
         <!-- /#bcitlogo -->
 
         <!-- #navbar -->
-        <nav id="rshift_navbar">            
+        <nav id="rshift_navbar">
             <div id="navbar">
                 <ul>
                     <li id="nav_key" class="r_nav">
@@ -58,7 +59,7 @@
     </div>
     <!-- /banner -->
 
-    <!-- content -->   
+    <!-- content -->
     <section id="content">
         <!-- #sidemenu -->
         <aside id="menu">
@@ -73,37 +74,37 @@
         <!-- #primary -->
         <div id="primary">
             <form id="form1" runat="server">
-            <div id="main">
-                <!-- #search bar -->
-                <div id="searchbar">
-                    <input type="text" runat="server" id="searchText" />
-                    <input type="submit" runat="server" id="searchBtn" value="Search" onserverclick="SearchBtn_Click" />
+                <div id="main">
+                    <!-- #search bar -->
+                    <div id="searchbar">
+                        <input type="text" runat="server" id="searchText" />
+                        <input type="submit" runat="server" id="searchBtn" value="Search" onserverclick="SearchBtn_Click" />
+                    </div>
+                    <!-- /#search bar -->
+                    <!-- #overview table -->
+                    <div id="view_game">
+                        <asp:GridView ID="GameView" runat="server"
+                            AllowSorting="True"
+                            AutoGenerateColumns="False"
+                            OnRowDataBound="GameGridView_RowDataBound"
+                            OnSelectedIndexChanged="GameGridView_SelectedIndexChanged"
+                            OnRowCommand="Signout_RowCommand"
+                            DataKeyNames="game_id">
+                            <Columns>
+                                <asp:BoundField DataField="game_name" HeaderText="Games" SortExpression="game_name" />
+                                <asp:BoundField DataField="game_invent" HeaderText="Inventory" SortExpression="game_invent" />
+                                <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Sign Out" />
+                            </Columns>
+                        </asp:GridView>
+                        <!--<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>-->
+                    </div>
+                    <!-- /#overview table -->
                 </div>
-                <!-- /#search bar -->
-                <!-- #overview table -->
-                <div id="view_game">
-                    <asp:GridView ID="GameView" runat="server" 
-                        AllowSorting="True" 
-                        AutoGenerateColumns="False" 
-                        OnRowDataBound="GameGridView_RowDataBound" 
-                        OnSelectedIndexChanged="GameGridView_SelectedIndexChanged" 
-                        OnRowCommand="Signout_RowCommand" 
-                        DataKeyNames="game_id">
-                        <Columns>
-                            <asp:BoundField DataField="game_name" HeaderText="Games" SortExpression="game_name" />
-                            <asp:BoundField DataField="game_invent" HeaderText="Inventory" SortExpression="game_invent" />
-                            <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Sign Out" />
-                        </Columns>
-                    </asp:GridView>
-                    <!--<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>-->
-                </div>
-                <!-- /#overview table -->
-            </div>
             </form>
         </div>
         <!-- /#primary -->
     </section>
-    <!-- /content --> 
+    <!-- /content -->
 
     <!-- footer -->
     <footer>

@@ -72,7 +72,7 @@
             <form id="form1" runat="server">
                 <div id="main">
                     <div id="view_game">
-                        <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame" >
+                        <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame">
                             <Columns>
                                 <asp:BoundField DataField="game_record" HeaderText="game_record" SortExpression="game_record" InsertVisible="False" ReadOnly="True" />
                                 <asp:BoundField DataField="std_id" HeaderText="std_id" SortExpression="std_id" />

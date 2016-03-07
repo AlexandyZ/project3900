@@ -82,12 +82,12 @@
                     </div>
                     <!-- /#search bar -->
 
-                    <asp:GridView ID="GameReturn" runat="server" 
-                        AutoGenerateColumns="False" 
-                        AllowSorting="True" 
-                        OnSelectedIndexChanged="GameReturn_SelectedIndexChanged" 
-                        OnRowDataBound="GameReturn_RowDataBound" 
-                        OnRowCommand="Return_RowCommand" 
+                    <asp:GridView ID="GameReturn" runat="server"
+                        AutoGenerateColumns="False"
+                        AllowSorting="True"
+                        OnSelectedIndexChanged="GameReturn_SelectedIndexChanged"
+                        OnRowDataBound="GameReturn_RowDataBound"
+                        OnRowCommand="Return_RowCommand"
                         DataKeyNames="game_id">
                         <Columns>
                             <asp:BoundField DataField="student_id" HeaderText="Student ID" ReadOnly="True" SortExpression="student_id" />

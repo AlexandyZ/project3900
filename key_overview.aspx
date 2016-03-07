@@ -11,89 +11,90 @@
 <body>
     <form id="form1" runat="server">
 
-    <!-- header -->
-    <header>
-        <!-- #shortcut -->
-        <div id="show_username"> 
-            <ul>
-                <li><asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
-                <li>signout</li>
-           </ul>
-        </div>
-        <!-- /#shortcut -->
-
-        <!-- #bcitlogo -->
-        <div id="bcitlogo">
-            <img src="/Images/BCITlogo.svg" alt="BCIT logo" />
-            <h1 id="sys_name">BCIT HRM DATABASE SYSTEM</h1>
-        </div>
-        <!-- /#bcitlogo -->
-
-        <!-- #navbar -->
-        <nav id="rshift_navbar">            
-            <div id="navbar">
+        <!-- header -->
+        <header>
+            <!-- #shortcut -->
+            <div id="show_username">
                 <ul>
-                    <li id="nav_key" class="r_nav">
-                        <a href="key_overview.aspx">KEYS</a>
-                    </li>
-                    <li id="nav_game" class="r_nav">
-                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_overview.aspx">GAMES</asp:HyperLink>
-                    </li>
-                    <li id="nav_package" class="r_nav">
-                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_pickup.aspx">PACKAGES</asp:HyperLink>
-                    </li>
-                    <li id="nav_import" class="r_nav">
-                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="import.aspx">IMPORT</asp:HyperLink>
-                    </li>
+                    <li>
+                        <asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
+                    <li>signout</li>
                 </ul>
             </div>
-        </nav>
-        <!-- /#navbar -->
-    </header>
-    <!-- /header -->
+            <!-- /#shortcut -->
 
-    <!-- banner -->
-    <div id="banner">
-        <h1>KEY OVERVIEW</h1>
-    </div>
-    <!-- /banner -->
+            <!-- #bcitlogo -->
+            <div id="bcitlogo">
+                <img src="/Images/BCITlogo.svg" alt="BCIT logo" />
+                <h1 id="sys_name">BCIT HRM DATABASE SYSTEM</h1>
+            </div>
+            <!-- /#bcitlogo -->
 
-    <!-- content -->   
-    <section id="content">
-        <!-- #sidemenu -->
-        <aside id="menu">
-             <ul>
-                <li><a href="key_overview.aspx">Key Overview</a></li>
-                <li><a href="key_signout.aspx">Key Sign Out</a></li>
-                <li><a href="key_report.aspx">Key Report</a></li>
-            </ul>
-        </aside>
-        <!-- /#sidemenu -->
-        <!-- #primary -->
-        <div id="primary">
-            <div id="main">
-                <div id="search_bar">
-                    <input type="text" runat="server" id="searchbar" />
-                    <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" />
+            <!-- #navbar -->
+            <nav id="rshift_navbar">
+                <div id="navbar">
+                    <ul>
+                        <li id="nav_key" class="r_nav">
+                            <a href="key_overview.aspx">KEYS</a>
+                        </li>
+                        <li id="nav_game" class="r_nav">
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_overview.aspx">GAMES</asp:HyperLink>
+                        </li>
+                        <li id="nav_package" class="r_nav">
+                            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_pickup.aspx">PACKAGES</asp:HyperLink>
+                        </li>
+                        <li id="nav_import" class="r_nav">
+                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="import.aspx">IMPORT</asp:HyperLink>
+                        </li>
+                    </ul>
                 </div>
-                <div id="result" style="height: 600px; overflow: auto;">
-                <br>
-                    <asp:GridView ID="SearchResult" AutoGenerateColumns="FALSE" runat="server" AllowSorting="True" OnRowCommand ="Button_click_event" DataKeyNames="KeyID">
-                        <Columns>
-                            <asp:BoundField DataField="KeyNumber" HeaderText="KeyNumber" />
-                            <asp:BoundField DataField="Name" HeaderText="Name" />
-                            <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />
-                            <asp:BoundField DataField="Time_Out" HeaderText="Time_Out" />
-                            <asp:ButtonField ButtonType="Button" Text="Return" CommandName="ReturnKey" />
-                        </Columns>
-                    </asp:GridView>
-                    
+            </nav>
+            <!-- /#navbar -->
+        </header>
+        <!-- /header -->
+
+        <!-- banner -->
+        <div id="banner">
+            <h1>KEY OVERVIEW</h1>
+        </div>
+        <!-- /banner -->
+
+        <!-- content -->
+        <section id="content">
+            <!-- #sidemenu -->
+            <aside id="menu">
+                <ul>
+                    <li><a href="key_overview.aspx">Key Overview</a></li>
+                    <li><a href="key_signout.aspx">Key Sign Out</a></li>
+                    <li><a href="key_report.aspx">Key Report</a></li>
+                </ul>
+            </aside>
+            <!-- /#sidemenu -->
+            <!-- #primary -->
+            <div id="primary">
+                <div id="main">
+                    <div id="search_bar">
+                        <input type="text" runat="server" id="searchbar" />
+                        <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" />
+                    </div>
+                    <div id="result" style="height: 600px; overflow: auto;">
+                        <br>
+                        <asp:GridView ID="SearchResult" AutoGenerateColumns="FALSE" runat="server" AllowSorting="True" OnRowCommand="Button_click_event" DataKeyNames="KeyID">
+                            <Columns>
+                                <asp:BoundField DataField="KeyNumber" HeaderText="KeyNumber" />
+                                <asp:BoundField DataField="Name" HeaderText="Name" />
+                                <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />
+                                <asp:BoundField DataField="Time_Out" HeaderText="Time_Out" />
+                                <asp:ButtonField ButtonType="Button" Text="Return" CommandName="ReturnKey" />
+                            </Columns>
+                        </asp:GridView>
+
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- /#primary -->
-    </section>
-    <!-- /content --> 
+            <!-- /#primary -->
+        </section>
+        <!-- /content -->
 
     </form>
     <!-- footer -->
