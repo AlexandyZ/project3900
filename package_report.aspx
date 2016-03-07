@@ -90,7 +90,10 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSourcePackage" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="select s.student_fname as firstname, s.student_lname as lastname, h.house_name as house, r.room_name as room, p.descript, p.delivery_date, p.pickup_date from student s inner join house h on s.house_id = h.house_id inner join room r on s.room_id = r.room_id inner join package p on s.std_id = p.std_id"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSourcePackage" 
+                    runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:RMSConnection %>" 
+                    SelectCommand="select s.student_fname as firstname, s.student_lname as lastname, h.house_name as house, r.room_name as room, p.descript, p.delivery_date, p.pickup_date from student s inner join house h on s.house_id = h.house_id inner join room r on s.room_id = r.room_id inner join package p on s.std_id = p.std_id"></asp:SqlDataSource>
             </div>
         </div>
         <!-- /#primary -->

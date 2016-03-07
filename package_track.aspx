@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="package_track.aspx.cs" Inherits="key_addnew" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="package_track.aspx.cs" Inherits="package_track" %>
 
 <!DOCTYPE html>
 
