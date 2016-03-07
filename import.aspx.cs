@@ -63,7 +63,7 @@ public partial class key_addnew : System.Web.UI.Page
         List<SqlDataRecord> records = new List<SqlDataRecord>();
 
         foreach (DataRow row in dt.Rows)
-        {
+        {   if (row["student_id"] == DBNull.Value) { continue; }
             SqlDataRecord record = new SqlDataRecord(metaData.ToArray());
             record.SetSqlString(0, Convert.ToString(row["student_id"]));
             record.SetSqlString(1, Convert.ToString(row["student_fname"]));

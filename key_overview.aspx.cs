@@ -23,7 +23,7 @@ public partial class key_overview : System.Web.UI.Page
 
     {
         
-        Return.Command += new CommandEventHandler(this.Button_click_event);
+        //Return.Command += new CommandEventHandler(this.Button_click_event);
 
         List<SqlParameter> spParams = new List<SqlParameter>();
         spParams.Add(new SqlParameter("@KeyName", searchbar.Value));
@@ -50,7 +50,7 @@ public partial class key_overview : System.Web.UI.Page
 
     
 
-     public void Button_click_event(Object sender, CommandEventArgs e)
+     public void Button_click_event(object sender, GridViewCommandEventArgs e)
          {
         DialogResult result = MessageBox.Show("Are you sure to return a key?", "Confirmation", MessageBoxButtons.YesNo);
         if ( e.CommandName == "ReturnKey")
@@ -61,9 +61,15 @@ public partial class key_overview : System.Web.UI.Page
             int rowIndex = Int32.Parse((e.CommandArgument).ToString());
             int keys_id = Int32.Parse(SearchResult.DataKeys[rowIndex].Value.ToString());
             SqlCommand cmd = new SqlCommand("update lend_key set keyreturn_date = @return_date where keys_id = '" + keys_id + "'", conn);
-            cmd.Parameters.AddWithValue("@return_date", DateTime.Today.ToShortDateString());
+            // start testing
+            //SqlCommand cmd = new SqlCommand("select * from lend_key");
+            //end testing
+            string test = DateTime.Now.ToString();
+
+            cmd.Parameters.AddWithValue("@return_date", DateTime.Now.ToString());
             cmd.ExecuteNonQuery();
             conn.Close();
+            Response.Redirect(Request.RawUrl);
         }
         else if (result == DialogResult.No)
         {
