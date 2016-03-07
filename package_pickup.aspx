@@ -81,7 +81,8 @@
             <div id="main" style="height: 500px; overflow: scroll">
                 <asp:GridView ID="SearchResult"
                     AutoGenerateColumns="FALSE" OnRowCommand="GridView1_RowCommand"
-                    runat="server">
+                    runat="server"
+                    DataKeyNames="package_id">
                     <Columns>
                         <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
                         <asp:BoundField DataField="lastname" HeaderText="lastname" SortExpression="lastname" />
