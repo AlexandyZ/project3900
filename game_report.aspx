@@ -15,8 +15,12 @@
     <header>
         <!-- #shortcut -->
         <div id="show_username">
-            <p>SIGNOUT</p>
-        </div>
+                <ul>
+                    <li>
+                        <asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
+                    <li>SIGNOUT</li>
+                </ul>
+            </div>
         <!-- /#shortcut -->
 
         <!-- #bcitlogo -->
