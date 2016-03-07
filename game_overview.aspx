@@ -82,7 +82,13 @@
                 <!-- /#search bar -->
                 <!-- #overview table -->
                 <div id="view_game">
-                    <asp:GridView ID="GameView" runat="server" AllowSorting="True" AutoGenerateColumns="False" OnRowDataBound="GameGridView_RowDataBound" OnSelectedIndexChanged="GameGridView_SelectedIndexChanged" OnRowCommand="Signout_RowCommand" DataKeyNames="game_id">
+                    <asp:GridView ID="GameView" runat="server" 
+                        AllowSorting="True" 
+                        AutoGenerateColumns="False" 
+                        OnRowDataBound="GameGridView_RowDataBound" 
+                        OnSelectedIndexChanged="GameGridView_SelectedIndexChanged" 
+                        OnRowCommand="Signout_RowCommand" 
+                        DataKeyNames="game_id">
                         <Columns>
                             <asp:BoundField DataField="game_name" HeaderText="Games" SortExpression="game_name" />
                             <asp:BoundField DataField="game_invent" HeaderText="Inventory" SortExpression="game_invent" />
