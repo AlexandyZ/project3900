@@ -51,6 +51,4 @@ public partial class package_pickup : System.Web.UI.Page
             Response.Redirect(Request.RawUrl);
         }
     }
-
-
 }

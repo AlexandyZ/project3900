@@ -1,17 +1,8 @@
 ﻿using project3900.App_Code;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
-using System.Threading.Tasks;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 public partial class key_report : System.Web.UI.Page

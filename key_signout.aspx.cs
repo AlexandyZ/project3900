@@ -1,16 +1,7 @@
 ﻿using project3900.App_Code;
 using System;
 using System.Collections.Generic;
-using System.Web.UI.WebControls;
 using System.Data.SqlClient;
-using System.Windows.Forms;
-using System.Data;
-using System.Threading.Tasks;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
 
 public partial class key_lend : System.Web.UI.Page
     {

@@ -12,91 +12,92 @@
 <body>
     <form id="form1" runat="server">
 
-    <!-- header -->
-    <header>
-        <!-- #shortcut -->
-        <div id="show_username"> 
-            <ul>
-                <li><asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
-                <li>SIGNOUT</li>
-           </ul>
-        </div>
-        <!-- /#shortcut -->
-
-        <!-- #bcitlogo -->
-        <div id="bcitlogo">
-            <img src="/Images/BCITlogo.svg" alt="BCIT logo" />
-            <h1 id="sys_name">BCIT HRM DATABASE SYSTEM</h1>
-        </div>
-        <!-- /#bcitlogo -->
-
-        <!-- #navbar -->
-        <nav id="rshift_navbar">            
-            <div id="navbar">
+        <!-- header -->
+        <header>
+            <!-- #shortcut -->
+            <div id="show_username">
                 <ul>
-                    <li id="nav_key" class="r_nav">
-                        <a href="key_overview.aspx">KEYS</a>
-                    </li>
-                    <li id="nav_game" class="r_nav">
-                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_overview.aspx">GAMES</asp:HyperLink>
-                    </li>
-                    <li id="nav_package" class="r_nav">
-                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_pickup.aspx">PACKAGES</asp:HyperLink>
-                    </li>
-                    <li id="nav_import" class="r_nav">
-                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="import.aspx">IMPORT</asp:HyperLink>
-                    </li>
+                    <li>
+                        <asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
+                    <li>SIGNOUT</li>
                 </ul>
             </div>
-        </nav>
-        <!-- /#navbar -->
-    </header>
-    <!-- /header -->
+            <!-- /#shortcut -->
 
-    <!-- banner -->
-    <div id="banner">
-        <h1>GAME MANAGEMENT</h1>
-    </div>
-    <!-- /banner -->
-
-    <!-- content -->   
-    <section id="content">
-        <!-- #sidemenu -->
-        <aside id="menu">
-            <ul>
-                <li><a href="game_overview.aspx">Game Overview</a></li>
-                <li><a href="game_return.aspx">Game Return</a></li>
-                <li><a href="game_manage.aspx">Game Management</a></li>
-                <li><a href="game_report.aspx">Game Report</a></li>
-            </ul>
-        </aside>
-        <!-- /#sidemenu -->
-        <!-- #primary -->
-        <div id="primary">
-            <div id="main">
-                <table id="addform">
-                    <tr>
-                        <td>
-                            <asp:Label ID="game" class="info" runat="server" Text="Game Name"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="gameText" class="infoBox" runat="server"></asp:TextBox>
-                        </td>
-                        <td>
-                            <asp:Label ID="game_qty" class="info" runat="server" Text="Amount"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="qtyText" class="infoBox" runat="server"></asp:TextBox>
-                        </td>
-                    </tr>
-                </table>
-                <asp:Button ID="addSubmit" class="submit" runat="server" Text="Add New Game" OnClick="addSubmit_Click" />
-                <asp:Button ID="deleteSubmit" class="submit" runat="server" Text="Delete Game" OnClick="deleteSubmit_Click" />
+            <!-- #bcitlogo -->
+            <div id="bcitlogo">
+                <img src="/Images/BCITlogo.svg" alt="BCIT logo" />
+                <h1 id="sys_name">BCIT HRM DATABASE SYSTEM</h1>
             </div>
+            <!-- /#bcitlogo -->
+
+            <!-- #navbar -->
+            <nav id="rshift_navbar">
+                <div id="navbar">
+                    <ul>
+                        <li id="nav_key" class="r_nav">
+                            <a href="key_overview.aspx">KEYS</a>
+                        </li>
+                        <li id="nav_game" class="r_nav">
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_overview.aspx">GAMES</asp:HyperLink>
+                        </li>
+                        <li id="nav_package" class="r_nav">
+                            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_pickup.aspx">PACKAGES</asp:HyperLink>
+                        </li>
+                        <li id="nav_import" class="r_nav">
+                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="import.aspx">IMPORT</asp:HyperLink>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- /#navbar -->
+        </header>
+        <!-- /header -->
+
+        <!-- banner -->
+        <div id="banner">
+            <h1>GAME MANAGEMENT</h1>
         </div>
-        <!-- /#primary -->
-    </section>
-    <!-- /content --> 
+        <!-- /banner -->
+
+        <!-- content -->
+        <section id="content">
+            <!-- #sidemenu -->
+            <aside id="menu">
+                <ul>
+                    <li><a href="game_overview.aspx">Game Overview</a></li>
+                    <li><a href="game_return.aspx">Game Return</a></li>
+                    <li><a href="game_manage.aspx">Game Management</a></li>
+                    <li><a href="game_report.aspx">Game Report</a></li>
+                </ul>
+            </aside>
+            <!-- /#sidemenu -->
+            <!-- #primary -->
+            <div id="primary">
+                <div id="main">
+                    <table id="addform">
+                        <tr>
+                            <td>
+                                <asp:Label ID="game" class="info" runat="server" Text="Game Name"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="gameText" class="infoBox" runat="server"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:Label ID="game_qty" class="info" runat="server" Text="Amount"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="qtyText" class="infoBox" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                    </table>
+                    <asp:Button ID="addSubmit" class="submit" runat="server" Text="Add New Game" OnClick="addSubmit_Click" />
+                    <asp:Button ID="deleteSubmit" class="submit" runat="server" Text="Delete Game" OnClick="deleteSubmit_Click" />
+                </div>
+            </div>
+            <!-- /#primary -->
+        </section>
+        <!-- /content -->
 
     </form>
     <!-- footer -->
