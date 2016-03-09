@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class login : System.Web.UI.Page
 {
@@ -31,22 +26,16 @@ public partial class login : System.Web.UI.Page
             string password = passComm.ExecuteScalar().ToString().Replace(" ","");
             if(password == TextBoxPassword.Text)
             {
-                Session["New"] = TextBoxUsername.Text;
-                //Response.Redirect("package_pickup.aspx");
-                Label1.Text = "Password is correct!";
+                Response.Redirect("key_overview.aspx");
             }
             else
             {
                 Label1.Text = "Password is not correct!";
-                //Response.Write("Password is not correct!");
             }
         }
         else
         {
             Label1.Text = "Username is not correct!";
-            //Response.Write("Username is not correct!");
         }
-
-
     }
 }
