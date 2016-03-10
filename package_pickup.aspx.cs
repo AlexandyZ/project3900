@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 
-public partial class package_pickup : System.Web.UI.Page
+public partial class key_addnew : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -51,4 +51,6 @@ public partial class package_pickup : System.Web.UI.Page
             Response.Redirect(Request.RawUrl);
         }
     }
+
+
 }

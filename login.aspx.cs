@@ -26,6 +26,7 @@ public partial class login : System.Web.UI.Page
             string password = passComm.ExecuteScalar().ToString().Replace(" ","");
             if(password == TextBoxPassword.Text)
             {
+                Session["username"] = TextBoxUsername.Text;
                 Response.Redirect("key_overview.aspx");
             }
             else

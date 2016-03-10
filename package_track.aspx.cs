@@ -1,8 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using System.Configuration;
 
-public partial class package_track : System.Web.UI.Page
+public partial class key_addnew : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -71,9 +78,7 @@ public partial class package_track : System.Web.UI.Page
                     cmd.Parameters.AddWithValue("@delivery_date", DelDate.Text);
                     cmd.Parameters.AddWithValue("@description", Des.Text);
                     cmd.ExecuteNonQuery();
-                    //MessageBox.Show("Data Inserted");
                     Response.Redirect(Request.RawUrl);
-                    //reader.Close();
                 }
             }
             myCommand.ExecuteNonQuery();
@@ -105,4 +110,16 @@ public partial class package_track : System.Web.UI.Page
         }
     }
 
+    protected void Cancel_Click(object sender, EventArgs e)
+    {
+        firstname.Text = String.Empty;
+        lastname.Text = String.Empty;
+        HouseD.Text = String.Empty;
+        RoomID.Text = String.Empty;
+        Phone.Text = String.Empty;
+        Email.Text = String.Empty;
+        DelDate.Text = String.Empty;
+        Des.Text = String.Empty;
+        Response.Redirect(Request.RawUrl);
+    }
 }

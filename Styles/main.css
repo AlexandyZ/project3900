@@ -41,11 +41,12 @@ a{
 
 img{
     position:absolute;
-    top:15px;
-    left:30px;
-    width:110px;
-    height:110px;
+    top:257px;
+    left:445px;
+    width:228px;
+    height:58px;
     z-index:199;
+    right: 307px;
 }
 
 #show_username{
