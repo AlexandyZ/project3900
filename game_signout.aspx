@@ -37,7 +37,7 @@
                                 <asp:Label ID="fname" CLASS="info" runat="server" Text="First name"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="fnameText" Class="infoBox" placeholder="John" runat="server" AutoCompleteType="FirstName"></asp:TextBox><span class="required"> *</span>
+                                <asp:TextBox ID="fnameText" Class="infoBox" runat="server" AutoCompleteType="FirstName"></asp:TextBox><span class="required"> *</span>
                             </td>
                             <td>
                                 <asp:RequiredFieldValidator ControlToValidate="fnameText" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
@@ -46,7 +46,7 @@
                                 <asp:Label ID="lname" CLASS="info" runat="server" Text="Last name"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="lnameText" Class="infoBox" placeholder="Smith" runat="server" AutoCompleteType="LastName"></asp:TextBox><span class="required"> *</span>
+                                <asp:TextBox ID="lnameText" Class="infoBox" runat="server" AutoCompleteType="LastName"></asp:TextBox><span class="required"> *</span>
                             </td>
                             <td>
                                 <asp:RequiredFieldValidator ControlToValidate="lnameText" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
@@ -57,7 +57,7 @@
                                 <asp:Label ID="stdid" CLASS="info" runat="server" Text="Student ID"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="stdidText" Class="infoBox" placeholder="A00123456" runat="server"></asp:TextBox><span class="required"> *</span>
+                                <asp:TextBox ID="stdidText" Class="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
                             </td>
                             <td>
                                 <asp:RequiredFieldValidator ControlToValidate="stdidText" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
@@ -68,7 +68,7 @@
                                 <asp:Label ID="amount" CLASS="info" runat="server" Text="QTY"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox type="number" ID="amountNum" CLASS="infoBox" placeholder="0" runat="server"></asp:TextBox><span class="required"> *</span>
+                                <asp:TextBox type="number" ID="amountNum" CLASS="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
                             </td>
                             <td>
                                 <asp:RequiredFieldValidator ControlToValidate="amountNum" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
