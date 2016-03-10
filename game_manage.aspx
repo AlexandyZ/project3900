@@ -81,13 +81,21 @@
                                 <asp:Label ID="game" class="info" runat="server" Text="Game Name"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="gameText" class="infoBox" runat="server" AutoCompleteType="Enabled"></asp:TextBox>
+                                <asp:TextBox ID="gameText" class="infoBox" runat="server" AutoCompleteType="Enabled"></asp:TextBox><span class="required"> *</span>
                             </td>
+                            <td>
+                                <asp:RequiredFieldValidator ControlToValidate="gameText" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>
                                 <asp:Label ID="game_qty" class="info" runat="server" Text="QTY"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox type="number" ID="qtyText" class="infoBox" runat="server"></asp:TextBox>
+                                <asp:TextBox type="number" ID="qtyText" class="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
+                            </td>
+                            <td>
+                                <asp:RequiredFieldValidator ControlToValidate="qtyText" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                     </table>

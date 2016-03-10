@@ -16,15 +16,13 @@ public partial class game_manage : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(con))
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO game VALUES (@game_name,@game_invent)");
-            cmd.Connection = conn;
-
-
             cmd.Parameters.AddWithValue("@game_name", gameText.Text);
             cmd.Parameters.AddWithValue("@game_invent", qtyText.Text);
 
+            cmd.Connection = conn;
             conn.Open();
-
             cmd.ExecuteNonQuery();
+
             string msg = qtyText.Text + " " + gameText.Text + " added!";
             MessageBox.Show(msg);
             Response.Redirect("game_overview.aspx");
