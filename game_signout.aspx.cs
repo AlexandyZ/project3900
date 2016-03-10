@@ -70,10 +70,4 @@ public partial class game_signout : System.Web.UI.Page
         MessageBox.Show("Sign out the game...");
         Response.Redirect("game_overview.aspx");
     }
-
-    protected void stdidText_TextChanged(object sender, EventArgs e)
-    {
-        
-    }
-
 }

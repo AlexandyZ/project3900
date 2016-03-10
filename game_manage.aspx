@@ -1,10 +1,10 @@
 ﻿<%@ Page Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="game_manage.aspx.cs" Inherits="game_manage" %>
 
-<asp:Content ContentPlaceHolderId="head" runat="server">
-    <link rel="stylesheet" href="/Styles/game.css" /> 
+<asp:Content ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="/Styles/game.css" />
 </asp:Content>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder2" runat="server">
+<asp:Content ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <!-- banner -->
     <div id="banner">
         <h1>GAME MANAGEMENT</h1>
@@ -12,7 +12,7 @@
     <!-- /banner -->
 </asp:Content>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
+<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <!-- content -->
     <section id="content">
@@ -35,18 +35,25 @@
                             <asp:Label ID="game" class="info" runat="server" Text="Game Name"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="gameText" class="infoBox" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="gameText" class="infoBox" placeholder="Chess" runat="server"></asp:TextBox><span class="required"> *</span>
                         </td>
+                        <td>
+                            <asp:RequiredFieldValidator ControlToValidate="gameText" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>
                             <asp:Label ID="game_qty" class="info" runat="server" Text="Amount"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="qtyText" class="infoBox" runat="server"></asp:TextBox>
+                            <asp:TextBox type="number" ID="qtyText" placeholder="0" class="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ControlToValidate="qtyText" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>
                 <asp:Button ID="addSubmit" class="submit" runat="server" Text="Add New Game" OnClick="addSubmit_Click" />
-                <asp:Button ID="deleteSubmit" class="submit" runat="server" Text="Delete Game" OnClick="deleteSubmit_Click" />
             </div>
         </div>
         <!-- /#primary -->
