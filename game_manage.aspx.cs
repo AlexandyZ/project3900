@@ -25,12 +25,13 @@ public partial class game_manage : System.Web.UI.Page
             conn.Open();
 
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Game added...");
+            string msg = qtyText.Text + " " + gameText.Text + " added!";
+            MessageBox.Show(msg);
             Response.Redirect("game_overview.aspx");
         }
     }
 
-    protected void deleteSubmit_Click(object sender, EventArgs e)
+    /*protected void deleteSubmit_Click(object sender, EventArgs e)
     {
         string con = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(con))
@@ -48,5 +49,5 @@ public partial class game_manage : System.Web.UI.Page
             MessageBox.Show("Game deleted..."); //show more information here : game name and qty.
             Response.Redirect("game_overview.aspx");
         }
-    }
+    }*/
 }

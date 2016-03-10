@@ -81,18 +81,17 @@
                                 <asp:Label ID="game" class="info" runat="server" Text="Game Name"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="gameText" class="infoBox" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="gameText" class="infoBox" runat="server" AutoCompleteType="Enabled"></asp:TextBox>
                             </td>
                             <td>
-                                <asp:Label ID="game_qty" class="info" runat="server" Text="Amount"></asp:Label>
+                                <asp:Label ID="game_qty" class="info" runat="server" Text="QTY"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="qtyText" class="infoBox" runat="server"></asp:TextBox>
+                                <asp:TextBox type="number" ID="qtyText" class="infoBox" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                     </table>
                     <asp:Button ID="addSubmit" class="submit" runat="server" Text="Add New Game" OnClick="addSubmit_Click" />
-                    <asp:Button ID="deleteSubmit" class="submit" runat="server" Text="Delete Game" OnClick="deleteSubmit_Click" />
                 </div>
             </div>
             <!-- /#primary -->
