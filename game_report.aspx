@@ -32,15 +32,17 @@
                     <div id="view_game">
                         <asp:GridView ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSourceGame">
                             <Columns>
-                                <asp:BoundField DataField="game_record" HeaderText="game_record" SortExpression="game_record" InsertVisible="False" ReadOnly="True" />
-                                <asp:BoundField DataField="std_id" HeaderText="std_id" SortExpression="std_id" />
-                                <asp:BoundField DataField="game_id" HeaderText="game_id" SortExpression="game_id" />
-                                <asp:BoundField DataField="glend_date" HeaderText="glend_date" SortExpression="glend_date" />
-                                <asp:BoundField DataField="greturn_date" HeaderText="greturn_date" SortExpression="greturn_date" />
-                                <asp:BoundField DataField="game_qty" HeaderText="game_qty" SortExpression="game_qty" />
+                                <asp:BoundField DataField="student_id" HeaderText="Student ID" SortExpression="student_id" />
+                                <asp:BoundField DataField="std_name" HeaderText="Student Name" SortExpression="std_name" ReadOnly="True" />
+                                <asp:BoundField DataField="game_name" HeaderText="Game Name" SortExpression="game_name" />
+                                <asp:BoundField DataField="glend_date" HeaderText="SignOut Date" SortExpression="glend_date" DataFormatString="{0:MM-dd-yyyy}" />
+                                <asp:BoundField DataField="greturn_date" HeaderText="Return Date" SortExpression="greturn_date" DataFormatString="{0:MM-dd-yyyy}" />
+                                <asp:BoundField DataField="game_qty" HeaderText="QTY" SortExpression="game_qty" />
                             </Columns>
                         </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSourceGame" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT * FROM [lend_game]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSourceGame" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT student_id, student_fname + ' ' + student_lname AS std_name, game_name, glend_date, greturn_date, game_qty
+FROM lend_game lg INNER JOIN game g ON g.game_id = lg.game_id
+INNER JOIN studenthistory sh ON sh.std_id = lg.std_id"></asp:SqlDataSource>
                     </div>
                 </div>
         </div>

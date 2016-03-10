@@ -226,7 +226,10 @@ footer{
     font-size:12px;
     background-color:#808080;
 }
-
+.required{
+    color:red;
+    font-weight:bold;
+}
 #copyright{
     padding:10px;
 }
