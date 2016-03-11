@@ -26,7 +26,7 @@
             <div id="search_bar">
                 <br />
 
-                <input type="text" runat="server" id="searchbar" />
+                <input type="text" runat="server" id="searchbar" placeholder="search by student name"/>
                 <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" /><br />
 
             </div>
@@ -40,7 +40,7 @@
                         <asp:BoundField DataField="house" HeaderText="house" SortExpression="house" />
                         <asp:BoundField DataField="room" HeaderText="room" SortExpression="room" />
                         <asp:BoundField DataField="descript" HeaderText="descript" SortExpression="descript" />
-                        <asp:BoundField DataField="delivery_date" HeaderText="delivery_date" SortExpression="delivery_date" />
+                        <asp:BoundField DataField="delivery_date" HeaderText="delivery_date" SortExpression="delivery_date" DataFormatString="{0:MM-dd-yyyy}"/>
                         <asp:ButtonField ButtonType="Button" CommandName="select" ShowHeader="True" Text="Pick Up" />
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />

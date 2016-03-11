@@ -37,6 +37,11 @@
             height: 19px;
             width: 405px;
         }
+        .auto-style8 {
+            left: -101px;
+            right: 853px;
+            top: 42px;
+        }
     </style>
 </head>
 
@@ -52,9 +57,8 @@
 
             <!-- #bcitlogo -->
             <div id="bcitlogo">
-                <img src="/Images/BCITlogo.svg" alt="BCIT logo" />
-                <h1 id="sys_name">BCIT HRM DATABASE SYSTEM</h1>
-            </div>
+                &nbsp;<h1 id="sys_name">BCIT HRM DATABASE SYSTEM</h1>
+                <img src="/Images/BCITlogo.svg" alt="BCIT logo" class="auto-style8" /></div>
             <!-- /#bcitlogo -->
 
             <!-- #navbar -->

@@ -9,6 +9,13 @@
     <asp:ContentPlaceHolder id="head" runat="server">
         
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            left: -90px;
+            right: 842px;
+            top: 51px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,9 +33,8 @@
 
             <!-- #bcitlogo -->
             <div id="bcitlogo">
-                <img src="/Images/BCITlogo.svg" alt="BCIT logo" />
-                <h1 id="sys_name">BCIT HRM DATABASE SYSTEM</h1>
-            </div>
+                &nbsp;<h1 id="sys_name">BCIT HRM DATABASE SYSTEM</h1>
+                <img src="/Images/BCITlogo.svg" alt="BCIT logo" class="auto-style1" /></div>
             <!-- /#bcitlogo -->
 
             <!-- #navbar -->
