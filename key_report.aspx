@@ -32,7 +32,7 @@
                 </div>
                 <div id="result">
                     <asp:GridView ID="SearchResult"
-                        AutoGenerateColumns="FALSE"
+                        AutoGenerateColumns="False"
                         runat="server">
                         <Columns>
                             <%--allowpaging ="TRUE"--%>
@@ -42,7 +42,6 @@
                             <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />
                             <asp:BoundField DataField="Time_Out" HeaderText="Time_Out" />
                             <asp:BoundField DataField="Time_in" HeaderText="Time_In" />
-                            <asp:BoundField DataField="Keyoutstanding" HeaderText="Status" />
                         </Columns>
                     </asp:GridView>
                     <%--<asp:SqlDataSource ID="overviewkey" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="select k.keys_name, w.worker_fname ,w.worker_lname, c.comp_phone, lk.keylend_date, lk.keyreturn_date, k.keyoutstanding as Status FROM lend_key as lk INNER JOIN keys as k ON lk.keys_id = k.keys_id INNER JOIN worker as w ON w.worker_id = lk.worker_id INNER JOIN company as c ON c.comp_id = w.comp_id "></asp:SqlDataSource>--%>
