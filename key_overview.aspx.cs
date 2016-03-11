@@ -18,7 +18,7 @@ public partial class key_overview : System.Web.UI.Page
         //Return.Command += new CommandEventHandler(this.Button_click_event);
 
         List<SqlParameter> spParams = new List<SqlParameter>();
-        spParams.Add(new SqlParameter("@KeyName", searchbar.Value));
+        spParams.Add(new SqlParameter("@KeyName", searchbar.Text));
 
         DataSet ds = new DataSet();
         ds = DBHelper.ExecuteBySPName("KeysOverview_GetByName", spParams.ToArray());
@@ -31,7 +31,7 @@ public partial class key_overview : System.Web.UI.Page
     protected void SearchBtn_Click(object sender, EventArgs e)
     {
         List<SqlParameter> spParams = new List<SqlParameter>();
-        spParams.Add(new SqlParameter("@KeyName", searchbar.Value));
+        spParams.Add(new SqlParameter("@KeyName", searchbar.Text));
 
         DataSet ds = new DataSet();
         ds = DBHelper.ExecuteBySPName("KeysOverview_GetByName", spParams.ToArray());
@@ -53,9 +53,6 @@ public partial class key_overview : System.Web.UI.Page
             int rowIndex = Int32.Parse((e.CommandArgument).ToString());
             int keys_id = Int32.Parse(SearchResult.DataKeys[rowIndex].Value.ToString());
             SqlCommand cmd = new SqlCommand("update lend_key set keyreturn_date = @return_date where keys_id = '" + keys_id + "'", conn);
-            // start testing
-            //SqlCommand cmd = new SqlCommand("select * from lend_key");
-            //end testing
             string test = DateTime.Now.ToString();
 
             cmd.Parameters.AddWithValue("@return_date", DateTime.Now.ToString());

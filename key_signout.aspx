@@ -23,35 +23,43 @@
             <!-- /#sidemenu -->
             <!-- #primary -->
             <div id="primary">
-                <div id="main">
-                    <div id="form">
-                        <br>
-                        <label for="fname">Fisrt Name:</label>
-                        <input type="text" runat="server" id="txtFname" /><br />
-                        <br>
-                        <label for="lname">Last Name:</label>
-                        <input type="text" runat="server" id="txtLname" /><br />
-                        <br>
-                        <label for="phone">Phone:</label>
-                        <input type="text" runat="server" id="txtPhone" /><br />
-                        <br>
-                        <label for="company">Company Name:</label>
-                        <input type="text" runat="server" id="txtCompany" />
-                        <%--            <option value="1">A</option>
-            <option value="2">B</option>--%>
-                        <br />
-                        <br>
-                        <label for="kname">Key Name:</label>
-                        <input type="text" runat="server" id="txtKeyName" /><br />
-                        <br>
-                        <%--    <input type="datetime" runat="server" id="txtTimeOut" />--%>
+            <div id="main">
+            <div id="form">
+            <br/>
+            
+             <asp:Label id="fname" runat="server" Text="First name: "></asp:Label>
+        <asp:TextBox type="text" runat="server" id="txtFname" required="true" placeholder="John" pattern="[A-Za-z]{1,32}"></asp:TextBox><br/>
+        
+                <br/>
+                <asp:Label id="lname" runat="server" Text="Last name: "></asp:Label>
+      
+        <asp:TextBox type="text" runat="server" id="txtLname" required="true" placeholder="Smith" pattern="[A-Za-z]{1,32}" ></asp:TextBox><br />
+         
+                <br/>
+                  <asp:Label id="phone" runat="server" Text="Phone: "></asp:Label>
+      
+        <asp:TextBox type="text" runat="server" id="txtPhone" required="true" placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></asp:TextBox><br />
+       
+                <br/>
+                <asp:Label id="company" runat="server" Text="Company Name: "></asp:Label>
+      
+        <asp:TextBox type="text" runat="server" id="txtCompany" required="true" placeholder="BCIT" pattern="[A-Za-z]{1,32}" ></asp:TextBox>
 
-                        <input type="submit" runat="server" id="btnSUbmit" value="Submit" onserverclick="btnSubmit_Click" />
+       <br />
+                <br/>
+                <asp:Label id="kname" runat="server" Text="Key Name: "></asp:Label>
+      
+        <asp:TextBox type="text" runat="server" id="txtKeyName" required="true" placeholder="a109"></asp:TextBox><br />
+       
+                <br/>
+  
+
+        <input type="submit" runat="server" id="btnSUbmit" value="Submit" onserverclick="btnSubmit_Click"/>
 
 
-                    </div>
-                </div>
             </div>
+            </div>
+        </div>
             <!-- /#primary -->
         </section>
         <!-- /content -->

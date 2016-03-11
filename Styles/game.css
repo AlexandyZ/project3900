@@ -1,26 +1,28 @@
-﻿#searchbar {
+﻿.searchbar {
     position:relative;
     width:500px;
-    margin:30px 0;
+    margin:20px 10px;
 }
 
-#searchText{
+.searchbox{
     position:relative;
-    width:300px;
+    width:80%;
 }
-#searchBtn{
+.searchbtn{
     position:relative;
-    width:100px;
-    margin:0 10px;
-}
-
-#view_game{
-    position:relative;
+    width:15%;
+    margin-left:5px;
 }
 
-#GameGridView{
+.view_game{
     position:relative;
-    width:500px;
+    width:90%;
+}
+
+.gridview{
+    position:relative;
+    margin-left:10px;
+    width:80%;
 }
 #gamename{
     position:relative;

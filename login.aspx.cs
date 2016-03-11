@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Web.Security;
 
 public partial class login : System.Web.UI.Page
 {
@@ -27,6 +28,7 @@ public partial class login : System.Web.UI.Page
             if(password == TextBoxPassword.Text)
             {
                 Session["username"] = TextBoxUsername.Text;
+                FormsAuthentication.RedirectFromLoginPage(TextBoxPassword.Text, false);
                 Response.Redirect("key_overview.aspx");
             }
             else

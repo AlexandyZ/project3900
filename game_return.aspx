@@ -31,7 +31,7 @@
                 <div id="main">
                     <!-- #search bar -->
                     <div id="searchbar">
-                        <input type="text" runat="server" id="searchText" />
+                        <input type="text" runat="server" id="searchText" placeholder="Search by Game Name or Student Name" />
                         <input type="submit" runat="server" id="searchBtn" value="Search" onserverclick="SearchBtn_Click" />
                     </div>
                     <!-- /#search bar -->

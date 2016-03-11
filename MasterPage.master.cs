@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         display_username.Text = "Welcome! " + Session["username"];
+    }
+    protected void SignOut(object sender, EventArgs e)
+    {
+        System.Web.Security.FormsAuthentication.SignOut();
+        Response.Redirect("login.aspx");
     }
 }

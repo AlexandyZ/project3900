@@ -6,35 +6,31 @@
 <head runat="server">
     <title>HRM system</title>
     <link rel="stylesheet" href="/Styles/main.css" />
-    <asp:ContentPlaceHolder id="head" runat="server">
-        
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <style type="text/css">
-        .auto-style1 {
-            left: -90px;
-            right: 842px;
-            top: 51px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <!-- header -->
         <header>
             <!-- #shortcut -->
-            <div id="show_username">
+            <div class="show_username">
                 <ul>
-                    <li><asp:Label ID="display_username" runat="server" Text="username"></asp:Label></li>
-                    <li></li>
-                    <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="login.aspx">SIGNOUT</asp:HyperLink></li>
+                    <li>
+                        <asp:Label ID="display_username" runat="server" Text="username"></asp:Label>
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="HyperLink1" runat="server" OnClick="SignOut">SignOut</asp:LinkButton>
+                    </li>
                 </ul>
             </div>
             <!-- /#shortcut -->
 
             <!-- #bcitlogo -->
-            <div id="bcitlogo">
-                &nbsp;<h1 id="sys_name">BCIT HRM DATABASE SYSTEM</h1>
-                <img src="/Images/BCITlogo.svg" alt="BCIT logo" class="auto-style1" /></div>
+            <div class="bcitlogo">
+                <img src="/Images/BCITlogo.svg" alt="BCIT logo" />
+                <h1 class="sys_name">BCIT HRM DATABASE SYSTEM</h1>
+            </div>
             <!-- /#bcitlogo -->
 
             <!-- #navbar -->
@@ -59,18 +55,14 @@
             <!-- /#navbar -->
         </header>
         <!-- /header -->
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
     </form>
-        <!-- footer -->
+    <!-- footer -->
     <footer>
         <div id="copyright">
             <p>&copy;2016    BCIT Housing</p>

@@ -30,14 +30,14 @@
         <div id="primary">
                 <div id="main">
                     <!-- #search bar -->
-                    <div id="searchbar">
-                        <input type="text" runat="server" id="searchText" />
-                        <input type="submit" runat="server" id="searchBtn" value="Search" onserverclick="SearchBtn_Click" />
+                    <div class="searchbar">
+                        <input type="text" runat="server" class="searchbox" id="searchText" placeholder="Search by Game Name"/>
+                        <input type="submit" runat="server" class="searchbtn" id="searchBtn" value="Search" onserverclick="SearchBtn_Click" />
                     </div>
                     <!-- /#search bar -->
                     <!-- #overview table -->
-                    <div id="view_game">
-                        <asp:GridView ID="GameView" runat="server"
+                    <div class="view_game">
+                        <asp:GridView ID="GameView" CssClass="gridview" runat="server"
                             AllowSorting="True"
                             AutoGenerateColumns="False"
                             OnRowDataBound="GameGridView_RowDataBound"
@@ -50,7 +50,6 @@
                                 <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Sign Out" />
                             </Columns>
                         </asp:GridView>
-                        <!--<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>-->
                     </div>
                     <!-- /#overview table -->
                 </div>
