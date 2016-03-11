@@ -80,33 +80,4 @@ public partial class key_addnew : System.Web.UI.Page
         return records;
     }
 }
-       /* if (FileUpload1.HasFile)
-        {
-            string path = string.Concat((Server.MapPath("~/temp/" + FileUpload1.FileName)));
-            FileUpload1.PostedFile.SaveAs(path);
-            OleDbConnection OleDbcon = new OleDbConnection("Provider=Microsoft.Ace.OLEDB.12.0;Data Source=" + path + "; Extended Properties=Excel 12.0;");
-            //SqlConnection conn = new SqlConnection("Data Source = ant-comp3900.database.windows.net; Initial Catalog = RMS; User ID = ant; Password=Tna12345");
-
-
-            OleDbCommand cmd = new OleDbCommand("select * from [Sheet1$]", OleDbcon);
-            OleDbDataAdapter objAdapter1 = new OleDbDataAdapter(cmd);
-
-            OleDbcon.Open();
-            DbDataReader dr = cmd.ExecuteReader();
-            string con_str = @"Data Source=.;Initial Catalog = student; Integrated security = True";
-            //string con_str = @"Data Source = ant-comp3900.database.windows.net; Initial Catalog = RMS; User ID = ant; Password=Tna12345";
-            SqlBulkCopy bulkInsert = new SqlBulkCopy(con_str);
-            bulkInsert.DestinationTableName = "tbl_student";
-            bulkInsert.WriteToServer(dr);
-            OleDbcon.Close();
-            Array.ForEach(Directory.GetFiles((Server.MapPath("~/temp/"))), File.Delete);
-            Label1.ForeColor = Color.Green;
-            Label1.Text = "Successfully inserted";
-
-        }
-        else {
-            Label1.ForeColor = Color.Red;
-            Label1.Text = "Please select the file";
-        }
-        }*/
     

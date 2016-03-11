@@ -25,11 +25,11 @@
         <div id="primary">
             <div id="main">
                 <div id="search_bar">
-                    <input type="text" runat="server" id="searchbar" />
+                    <asp:TextBox type="text" runat="server" id="searchbar" placeholder="search by key number" /></asp:TextBox>
                     <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" />
                 </div>
                 <div id="result" style="height: 600px; overflow: auto;">
-                    <br>
+                    <br/>
                     <asp:GridView ID="SearchResult" AutoGenerateColumns="FALSE" runat="server" AllowSorting="True" OnRowCommand="Button_click_event" DataKeyNames="KeyID">
                         <Columns>
                             <asp:BoundField DataField="KeyNumber" HeaderText="KeyNumber" />

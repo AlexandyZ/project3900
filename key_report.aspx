@@ -25,11 +25,10 @@
         <div id="primary">
             <div id="main">
                 <div id="search_bar">
-                    <br />
-                    <br>
-                    <input type="text" runat="server" id="searchbar" />
+                    <br/>
+                    <asp:TextBox type="text" runat="server" id="searchbar" placeholder="search by key number"></asp:TextBox>
                     <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" /><br />
-                    <br>
+                    <br/>
                 </div>
                 <div id="result">
                     <asp:GridView ID="SearchResult"
