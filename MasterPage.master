@@ -28,25 +28,25 @@
 
             <!-- #bcitlogo -->
             <div class="bcitlogo">
-                <img src="/Images/BCITlogo.svg" alt="BCIT logo" />
+                <img class="toplogo" src="/Images/BCITlogo.svg" alt="BCIT logo" />
                 <h1 class="sys_name">BCIT HRM DATABASE SYSTEM</h1>
             </div>
             <!-- /#bcitlogo -->
 
             <!-- #navbar -->
-            <nav id="rshift_navbar">
-                <div id="navbar">
+            <nav class="rshift_navbar">
+                <div class="navbar">
                     <ul>
-                        <li id="nav_key" class="r_nav">
+                        <li id="nav_key">
                             <a href="key_overview.aspx">KEYS</a>
                         </li>
-                        <li id="nav_game" class="r_nav">
+                        <li id="nav_game">
                             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_overview.aspx">GAMES</asp:HyperLink>
                         </li>
-                        <li id="nav_package" class="r_nav">
+                        <li id="nav_package">
                             <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_pickup.aspx">PACKAGES</asp:HyperLink>
                         </li>
-                        <li id="nav_import" class="r_nav">
+                        <li id="nav_import">
                             <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="import.aspx">IMPORT</asp:HyperLink>
                         </li>
                     </ul>
@@ -55,16 +55,12 @@
             <!-- /#navbar -->
         </header>
         <!-- /header -->
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
-        </div>
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-        </div>
+        <asp:ContentPlaceHolder ID="banner" runat="server"></asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="content" runat="server"></asp:ContentPlaceHolder>
     </form>
     <!-- footer -->
     <footer>
-        <div id="copyright">
+        <div class="copyright">
             <p>&copy;2016    BCIT Housing</p>
         </div>
     </footer>

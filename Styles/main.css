@@ -10,6 +10,7 @@ body {
     font-family:Arial, Arial, Helvetica, sans-serif;
     margin:0;
     text-align:center;
+    min-width:750px;
 }
 
 header{    
@@ -17,12 +18,8 @@ header{
     display:block;
     height:155px;
     width:100%;
-    min-width:85%;
     background:#3f3f3f;
     text-align:left;  
-}
-div{
-    display:block;
 }
 li{
     display:list-item;
@@ -39,15 +36,6 @@ a{
     text-decoration:none;
 }
 
-img{
-    position:absolute;
-    top:15px;
-    left:30px;
-    width:110px;
-    height:110px;
-    z-index:199;
-}
-
 .show_username{
     position:relative;
     width:100%;
@@ -56,7 +44,7 @@ img{
     background-color:#2d2d2d;
 }
 .show_username ul{
-    width:980px;
+    width:75%;
     margin:0 auto;
     padding:0;
     color:#fff;
@@ -73,14 +61,23 @@ img{
 .bcitlogo {
     position:relative;
     padding:0;
-    width:980px;
+    width:75%;
     height:100px;
     margin:0 auto;
 }
+.toplogo {
+    position:absolute;
+    top:15px;
+    left:5%;
+    width:110px;
+    height:110px;
+    z-index:199;
+}
 .sys_name{
     position:relative;
+    float:left;
     top:60px;
-    left:140px;
+    left:15%;
     font-family:'Oswald','HelveticaNeue-CondensedBold','Helvetica Neue',Helvetica,sans-serif;
     font-size:36px;
     color:#fff;
@@ -89,49 +86,57 @@ img{
     text-shadow:0 -2px 0 rgba(0, 0, 0, 0.03);
 }
 
-#rshift_navbar{
+.rshift_navbar{
     position:relative;
     padding:0;
     margin:0 auto;
     height:35px;
+    width:100%;
     background-color:#000;
-    top: 0;
-    left: 0;
 }
 
-#navbar{
+.navbar{
     position:relative;
     width:75%;
-    padding:0;
-    margin:0 auto;
-    height:35px;
-}
-#navbar ul{
-    padding:0;
     margin:0 auto;
     height:35px;
     text-align:right;
+
 }
-#navbar li {
-    display:inline;
+.navbar ul{
+    height:35px;
     margin:0;
-    padding:10px 35px;
-    text-align:center;
-    text-decoration:none;
-    list-style-type:none;
-    color:#fff;
+    padding:0;
 }
-.r_nav a{
-    color:#ccc;
-    font-family:'Microsoft YaHei', 'Arial Narrow Bold', sans-serif;
-    font-size:medium;
-    line-height:2;
-    text-shadow:0 -1px 0 rgba(0,0,0,0.3);
+.navbar li{
+    display:inline;
+    text-align:center;
+    margin:0;
+    height:35px;
 }
 
-#banner{
+.navbar a{
+    color:#ccc;
+    padding:7px 3.5%;
+    font-family:'Microsoft YaHei', 'Arial Narrow Bold', sans-serif;
+    font-size:medium;
+    line-height:2.2;
+    text-shadow:0 -1px 0 rgba(0,0,0,0.3);
+}
+.navbar a:hover {
+    display:inline;
+    padding:7px 3.5%;
+    font-family:'Microsoft YaHei', 'Arial Narrow Bold', sans-serif;
+    font-size:medium;
+    font-style:italic;
+    line-height:2.2;
+    text-shadow:0 -1px 0 rgba(0,0,0,0.3);
+    color:#fff;
+    background-color:#918e87;
+}
+
+.banner{
     position:relative;
-    padding:0;
     margin:0 auto;
     width:75%;
     background-color:#918e87;
@@ -143,19 +148,17 @@ img{
     text-shadow:0 -1px 0 rgba(0,0,0,0.3);
 }
 
-#banner h1{
+.banner h1{
     font-size:28px;
     line-height:1.5;
-    padding:10px 50px 0 300px;
+    margin:0 0 0 35%;
 }
 
-#content{
+.content{
     position:relative;
-    display:block;
     width:75%;
-    min-height: 600px;
-    margin:0 auto;
-    padding:0;
+    height:100%;
+    margin:auto;
     text-align:left;
     background-color:#fff;
 }
@@ -164,61 +167,80 @@ aside{
     position:relative;
     float:left;
     overflow:visible;
-    width:250px;
-    min-height:600px;
+    width:30%;
+    min-height:700px;
+    height:100%;
     padding:0;
     background-color:#aaa;
     text-align:center;
 }
 
-#menu{
-    display:block;
-    height:100%;
+.menu{
     position:relative;
     float:left;
     background-color:#dcdcdc;
 }
 
-#menu ul{
+.menu ul{
     list-style-type:none;
     margin:0;
     padding:0;
 }
 
-#menu li{
+.menu li{
     height:40px;
     padding:5px 0;
     border-bottom:1px solid #fff;
 }
 
-#menu a{
+.menu a{
     color:#025ea1;
     font-weight:bold;
     font-size: 20px;
     padding: 8px 0;
     line-height:2.1;
 }
+.menu li:hover{
+    background-color:#fff;
+    height:40px;
+    padding:5px 0;
+    border-bottom:1px solid #fff;
+}
 
-#primary{
+.primary{
     position:relative;
     float:right;
-    width:720px;
+    width:70%;
     background-color:#fff;
     outline:0;
     padding:0;
     top: 0;
     left: 0;
 }
-#main{
+.main{
     position:relative;
-    padding:20px 30px;
+    padding:30px 30px;
+}
+.searchbar {
+    position:relative;
+    width:75%;
+}
+
+.searchbox{
+    position:relative;
+    width:80%;
+}
+.searchbtn{
+    position:relative;
+    width:15%;
+    margin-left:5px;
 }
 
 footer{
-    width:980px;
+    width:100%;
     height:80px;
     margin:0 auto;
-    position:relative;
+    position:fixed;
     bottom:0;
     color:#2d2d2d;
     font-size:12px;
@@ -228,6 +250,7 @@ footer{
     color:red;
     font-weight:bold;
 }
-#copyright{
+.copyright{
     padding:10px;
+    font-weight:bold;
 }

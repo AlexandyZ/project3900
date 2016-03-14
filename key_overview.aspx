@@ -1,19 +1,19 @@
 ﻿<%@ Page EnableEventValidation="false" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="key_overview.aspx.cs" Inherits="key_overview" %>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder2" runat="server">
+<asp:Content ContentPlaceHolderId="banner" runat="server">
     <!-- banner -->
-    <div id="banner">
+    <div class="banner">
         <h1>KEY OVERVIEW</h1>
     </div>
     <!-- /banner -->
 </asp:Content>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
+<asp:Content ContentPlaceHolderId="content" runat="server">
 
     <!-- content -->
-    <section id="content">
+    <section class="content">
         <!-- #sidemenu -->
-        <aside id="menu">
+        <aside class="menu">
             <ul>
                 <li><a href="key_overview.aspx">Key Overview</a></li>
                 <li><a href="key_signout.aspx">Key Sign Out</a></li>
@@ -22,10 +22,10 @@
         </aside>
         <!-- /#sidemenu -->
         <!-- #primary -->
-        <div id="primary">
-            <div id="main">
-                <div id="search_bar">
-                    <asp:TextBox type="text" runat="server" id="searchbar" placeholder="search by key number" /></asp:TextBox>
+        <div class="primary">
+            <div class="main">
+                <div class="searchbar">
+                    <input type="text" runat="server" id="searchbar" class="searchbar" placeholder="search by key number" />
                     <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" />
                 </div>
                 <div id="result" style="height: 600px; overflow: auto;">
