@@ -19,7 +19,7 @@ public partial class key_report : System.Web.UI.Page
         spParams.Add(new SqlParameter("@KeyName", searchbar.Text));
 
         DataSet ds = new DataSet();
-        ds = DBHelper.ExecuteBySPName("Keys_GetByName", spParams.ToArray());
+        ds = DBHelper.ExecuteBySPName("KeysReport_GetByName", spParams.ToArray());
 
         SearchResult.DataSource = ds.Tables[0];
         SearchResult.DataBind();
@@ -32,7 +32,7 @@ public partial class key_report : System.Web.UI.Page
         spParams.Add(new SqlParameter("@KeyName", searchbar.Text));
 
         DataSet ds = new DataSet();
-        ds = DBHelper.ExecuteBySPName("Keys_GetByName", spParams.ToArray());
+        ds = DBHelper.ExecuteBySPName("KeysReport_GetByName", spParams.ToArray());
 
         SearchResult.DataSource = ds.Tables[0];
         SearchResult.DataBind();

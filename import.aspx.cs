@@ -13,6 +13,8 @@ using System.IO;
 using System.Drawing;
 using System.Net;
 using Microsoft.SqlServer.Server;
+using System.Windows.Forms;
+using System.Windows;
 
 public partial class key_addnew : System.Web.UI.Page
 {
@@ -23,7 +25,15 @@ public partial class key_addnew : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string filename = "Book1.xlsx"; //need to get xlsx as dynamic
+        string filename = "Book1.xlsx"; //need to set filename xlsx as dynamic
+        //FileStream fExcel = new FileStream("\\" + filename, FileMode.Append, FileAccess.Read);
+      
+        // var filename =
+       //Path.Combine(
+       //    Environment.GetFolderPath(
+       //        Environment.SpecialFolder.CommonApplicationData),
+       //        "Book1.xlsx");
+
         string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
         //@"C:\Users\Kwanchanok\Desktop\project3900\temp\Book1.xlsx";
         /* string hostName = "ftp://142.232.204.152";
