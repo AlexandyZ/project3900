@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="import.aspx.cs" Inherits="key_addnew" %>
+﻿<%@ Page Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="import.aspx.cs" Inherits="import" %>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder2" runat="server">
+<asp:Content ContentPlaceHolderId="banner" runat="server">
     <!-- banner -->
     <div id="banner">
         <h1>IMPORT</h1>
@@ -8,7 +8,7 @@
     <!-- /banner -->
 </asp:Content>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
+<asp:Content ContentPlaceHolderId="content" runat="server">
 
         <!-- content -->
         <section id="content">
@@ -22,10 +22,10 @@
             <!-- #primary -->
             <div id="primary">
                 <div id="main">
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
-                    &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Upload" />
+                    <asp:FileUpload ID="FileUploadControl" runat="server" />
+                    <asp:Button ID="UploadButton" runat="server" OnClick="Button1_Click" Text="Upload" />
                     <br />
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="StatusLabel" runat="server" Text="Upload status:"></asp:Label>
                 </div>
             </div>
             <!-- /#primary -->
