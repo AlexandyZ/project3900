@@ -37,11 +37,6 @@
             height: 19px;
             width: 405px;
         }
-        .auto-style8 {
-            left: -101px;
-            right: 853px;
-            top: 42px;
-        }
     </style>
 </head>
 
@@ -51,33 +46,32 @@
         <!-- header -->
         <header>
             <!-- #shortcut -->
-            <div id="show_username">
+            <div class="show_username">
             </div>
             <!-- /#shortcut -->
-
             <!-- #bcitlogo -->
-            <div id="bcitlogo">
-                &nbsp;<h1 id="sys_name">BCIT HRM DATABASE SYSTEM</h1>
-                <img src="/Images/BCITlogo.svg" alt="BCIT logo" class="auto-style8" /></div>
-            <!-- /#bcitlogo -->
-
-            <!-- #navbar -->
-            <nav id="rshift_navbar">
-                <div id="navbar">
+            <div class="bcitlogo">
+                <img class="toplogo" src="/Images/BCITlogo.svg" alt="BCIT logo" />
+                <div class="sysname">
+                    <h1 class="sysfont">BCIT HRS DATABASE SYSTEM</h1>
                 </div>
+            </div>
+            <!-- /#bcitlogo -->
+            <!-- #navbar -->
+            <nav class="rshift_navbar">
             </nav>
             <!-- /#navbar -->
         </header>
         <!-- /header -->
 
         <!-- banner -->
-        <div id="banner">
+        <div class="banner">
             <h1>SIGN IN</h1>
         </div>
         <!-- /banner -->
 
         <!-- content -->
-        <section id="content">
+        <section class="content">
             <div id="login">
                 <div id="group_form">
 
@@ -125,7 +119,7 @@
     </form>
     <!-- footer -->
     <footer>
-        <div id="copyright">
+        <div class="copyright">
             <p>&copy;2016    BCIT Housing</p>
         </div>
     </footer>

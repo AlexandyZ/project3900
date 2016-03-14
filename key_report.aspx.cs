@@ -16,7 +16,7 @@ public partial class key_report : System.Web.UI.Page
 
 
         List<SqlParameter> spParams = new List<SqlParameter>();
-        spParams.Add(new SqlParameter("@KeyName", searchbar.Text));
+        spParams.Add(new SqlParameter("@KeyName", searchbar.Value));
 
         DataSet ds = new DataSet();
         ds = DBHelper.ExecuteBySPName("KeysReport_GetByName", spParams.ToArray());
@@ -29,7 +29,7 @@ public partial class key_report : System.Web.UI.Page
     protected void SearchBtn_Click(object sender, EventArgs e)
     {
         List<SqlParameter> spParams = new List<SqlParameter>();
-        spParams.Add(new SqlParameter("@KeyName", searchbar.Text));
+        spParams.Add(new SqlParameter("@KeyName", searchbar.Value));
 
         DataSet ds = new DataSet();
         ds = DBHelper.ExecuteBySPName("KeysReport_GetByName", spParams.ToArray());

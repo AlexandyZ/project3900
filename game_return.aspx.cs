@@ -43,7 +43,7 @@ public partial class game_return : System.Web.UI.Page
             cmd2.ExecuteNonQuery();
 
             conn.Close();
-            Response.Redirect("game_overview.aspx");
+            Response.Redirect("game_list.aspx");
 
         }
     }

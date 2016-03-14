@@ -25,7 +25,7 @@ public partial class game_manage : System.Web.UI.Page
 
             string msg = qtyText.Text + " " + gameText.Text + " added!";
             MessageBox.Show(msg);
-            Response.Redirect("game_overview.aspx");
+            Response.Redirect("game_list.aspx");
         }
     }
 
@@ -45,7 +45,7 @@ public partial class game_manage : System.Web.UI.Page
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Game deleted..."); //show more information here : game name and qty.
-            Response.Redirect("game_overview.aspx");
+            Response.Redirect("game_list.aspx");
         }
     }
 }

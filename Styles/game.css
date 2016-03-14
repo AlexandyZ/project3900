@@ -1,28 +1,10 @@
-﻿.searchbar {
-    position:relative;
-    width:500px;
-    margin:20px 10px;
-}
-
-.searchbox{
-    position:relative;
-    width:80%;
-}
-.searchbtn{
-    position:relative;
-    width:15%;
-    margin-left:5px;
-}
-
-.view_game{
+﻿.view_game{
     position:relative;
     width:90%;
 }
 
 .gridview{
     position:relative;
-    margin-left:10px;
-    width:80%;
 }
 #gamename{
     position:relative;
@@ -32,10 +14,10 @@
     padding:20px 0;
 }
 .info{
-    margin:10px;
+    margin:5px;
 }
 .infoBox{
-    margin:10px 0;
+    margin:5px 0;
 }
 
 .submit{

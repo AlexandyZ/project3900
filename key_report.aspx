@@ -1,19 +1,19 @@
 ﻿<%@ Page EnableEventValidation="false" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="key_report.aspx.cs" Inherits="key_report" %>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder2" runat="server">
+<asp:Content ContentPlaceHolderId="banner" runat="server">
     <!-- banner -->
-    <div id="banner">
+    <div class="banner">
         <h1>KEY REPORT</h1>
     </div>
     <!-- /banner -->
 </asp:Content>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
+<asp:Content ContentPlaceHolderId="content" runat="server">
 
     <!-- content -->
-    <section id="content">
+    <section class="content">
         <!-- #sidemenu -->
-        <aside id="menu">
+        <aside class="menu">
             <ul>
                 <li><a href="key_overview.aspx">Key Overview</a></li>
                 <li><a href="key_signout.aspx">Key Sign Out</a></li>
@@ -22,21 +22,17 @@
         </aside>
         <!-- /#sidemenu -->
         <!-- #primary -->
-        <div id="primary">
-            <div id="main">
-                <div id="search_bar">
-                    <br/>
-                    <asp:TextBox type="text" runat="server" id="searchbar" placeholder="search by key number"></asp:TextBox>
-                    <input type="submit" runat="server" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" /><br />
-                    <br/>
+        <div class="primary">
+            <div class="main">
+                <div class="searchbar">
+                    <input type="text" runat="server" class="searchbox" id="searchbar" placeholder="search by key number" />
+                    <input type="submit" runat="server" class="searchbtn" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" />
                 </div>
-                <div id="result">
+                <div class="result">
                     <asp:GridView ID="SearchResult"
                         AutoGenerateColumns="False"
                         runat="server">
                         <Columns>
-                            <%--allowpaging ="TRUE"--%>
-
                             <asp:BoundField DataField="KeyNumber" HeaderText="KeyNumber" />
                             <asp:BoundField DataField="Name" HeaderText="Name" />
                             <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />

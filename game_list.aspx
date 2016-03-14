@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="game_report.aspx.cs" Inherits="game_report" %>
+﻿<%@ Page Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="game_list.aspx.cs" Inherits="game_list" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="/Styles/game.css" />
@@ -7,7 +7,7 @@
 <asp:Content ContentPlaceHolderID="banner" runat="server">
     <!-- banner -->
     <div class="banner">
-        <h1>GAME REPORT</h1>
+        <h1>GAME OVERVIEW</h1>
     </div>
     <!-- /banner -->
 </asp:Content>
@@ -35,23 +35,26 @@
                     <input type="submit" runat="server" class="searchbtn" id="searchBtn" value="Search" onserverclick="SearchBtn_Click" />
                 </div>
                 <!-- /#search bar -->
-
+                <!-- #overview table -->
                 <div class="result">
-                    <asp:GridView class="gridview" ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False">
+                    <asp:GridView ID="GameView" CssClass="gridview" runat="server"
+                        AllowSorting="True"
+                        AutoGenerateColumns="False"
+                        OnRowDataBound="GameGridView_RowDataBound"
+                        OnSelectedIndexChanged="GameGridView_SelectedIndexChanged"
+                        OnRowCommand="Signout_RowCommand"
+                        DataKeyNames="game_id">
                         <Columns>
-                            <asp:BoundField DataField="student_id" HeaderText="Student ID" SortExpression="student_id" />
-                            <asp:BoundField DataField="std_name" HeaderText="Student Name" SortExpression="std_name" ReadOnly="True" />
-                            <asp:BoundField DataField="game_name" HeaderText="Game Name" SortExpression="game_name" />
-                            <asp:BoundField DataField="glend_date" HeaderText="SignOut Date" SortExpression="glend_date" DataFormatString="{0:MM-dd-yyyy}" />
-                            <asp:BoundField DataField="greturn_date" HeaderText="Return Date" SortExpression="greturn_date" DataFormatString="{0:MM-dd-yyyy}" />
-                            <asp:BoundField DataField="game_qty" HeaderText="QTY" SortExpression="game_qty" />
+                            <asp:BoundField DataField="game_name" HeaderText="Games" SortExpression="game_name" />
+                            <asp:BoundField DataField="game_invent" HeaderText="Inventory" SortExpression="game_invent" />
+                            <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Sign Out" />
                         </Columns>
                     </asp:GridView>
                 </div>
+                <!-- /#overview table -->
             </div>
         </div>
         <!-- /#primary -->
     </section>
     <!-- /content -->
-
 </asp:Content>

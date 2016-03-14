@@ -1,19 +1,19 @@
 ﻿<%@ Page Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="package_track.aspx.cs" Inherits="key_addnew" %>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder2" runat="server">
+<asp:Content ContentPlaceHolderId="banner" runat="server">
     <!-- banner -->
-    <div id="banner">
+    <div class="banner">
         <h1>PACKAGE TRACKING</h1>
     </div>
     <!-- /banner -->
 </asp:Content>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
+<asp:Content ContentPlaceHolderId="content" runat="server">
 
     <!-- content -->   
-    <section id="content">
+    <section class="content">
         <!-- #sidemenu -->
-        <aside id="menu">
+        <aside class="menu">
             <ul>
                 <li><a href="package_pickup.aspx">Package Pickup</a></li>
                 <li><a href="package_track.aspx">Package Tracking</a></li>
@@ -22,12 +22,12 @@
         </aside>
         <!-- /#sidemenu -->
         <!-- #primary -->
-        <div id="primary">
-            <div id="main">
+        <div class="primary">
+            <div class="main">
                 <br />
                 <br />
-                <asp:Label ID="First" runat="server" Text="First name "></asp:Label><asp:TextBox ID="firstname" runat="server"></asp:TextBox>
-                <asp:Label ID="Last" runat="server" Text="Last name "></asp:Label><asp:TextBox ID="lastname" runat="server"></asp:TextBox>
+                <asp:Label ID="First" runat="server" Text="First name "></asp:Label><asp:TextBox ID="firstname" runat="server" Width="100px"></asp:TextBox>
+                <asp:Label ID="Last" runat="server" Text="Last name "></asp:Label><asp:TextBox ID="lastname" runat="server" Width="100px"></asp:TextBox>
                 <br />
                 <br />
                 <asp:Label ID="HouseL" runat="server" Text="House "></asp:Label><asp:DropDownList ID="HouseD" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourcehouse" DataTextField="house_name" DataValueField="house_id" AppendDataBoundItems="True"><asp:ListItem Text="" Value="" /></asp:DropDownList>

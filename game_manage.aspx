@@ -4,44 +4,44 @@
     <link rel="stylesheet" href="/Styles/game.css" /> 
 </asp:Content>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder2" runat="server">
+<asp:Content ContentPlaceHolderId="banner" runat="server">
     <!-- banner -->
-    <div id="banner">
+    <div class="banner">
         <h1>GAME MANAGEMENT</h1>
     </div>
     <!-- /banner -->
 </asp:Content>
 
-<asp:Content ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
+<asp:Content ContentPlaceHolderID="content" runat="server">
 
     <!-- content -->
-    <section id="content">
+    <section class="content">
         <!-- #sidemenu -->
-        <aside id="menu">
+        <aside class="menu">
             <ul>
-                <li><a href="game_overview.aspx">Game Overview</a></li>
+                <li><a href="game_list.aspx">Game List</a></li>
                 <li><a href="game_return.aspx">Game Return</a></li>
-                <li><a href="game_manage.aspx">Game Management</a></li>
                 <li><a href="game_report.aspx">Game Report</a></li>
+                <li><a href="game_manage.aspx">Game Management</a></li>
             </ul>
         </aside>
         <!-- /#sidemenu -->
         <!-- #primary -->
-        <div id="primary">
-            <div id="main">
-                <table id="addform">
+        <div class="primary">
+            <div class="main">
+                <table class="result">
                     <tr>
                         <td>
-                            <asp:Label ID="game" class="info" runat="server" Text="Game Name"></asp:Label>
+                            <asp:Label ID="game" CssClass="info" runat="server" Text="Game Name"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="gameText" class="infoBox" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="gameText" CssClass="infoBox" runat="server"></asp:TextBox>
                         </td>
                         <td>
-                            <asp:Label ID="game_qty" class="info" runat="server" Text="Amount"></asp:Label>
+                            <asp:Label ID="game_qty" CssClass="info" runat="server" Text="Game QTY"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="qtyText" class="infoBox" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="qtyText" CssClass="infoBox" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                 </table>

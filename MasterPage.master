@@ -29,7 +29,9 @@
             <!-- #bcitlogo -->
             <div class="bcitlogo">
                 <img class="toplogo" src="/Images/BCITlogo.svg" alt="BCIT logo" />
-                <h1 class="sys_name">BCIT HRM DATABASE SYSTEM</h1>
+                <div class="sysname">
+                    <h1 class="sysfont">BCIT HRS DATABASE SYSTEM</h1>
+                </div>
             </div>
             <!-- /#bcitlogo -->
 
@@ -41,7 +43,7 @@
                             <a href="key_overview.aspx">KEYS</a>
                         </li>
                         <li id="nav_game">
-                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_overview.aspx">GAMES</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_list.aspx">GAMES</asp:HyperLink>
                         </li>
                         <li id="nav_package">
                             <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_pickup.aspx">PACKAGES</asp:HyperLink>
