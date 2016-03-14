@@ -31,7 +31,7 @@
             <div class="main">
                 <h1>
                     <asp:Label ID="gamename" runat="server" Text="game name"></asp:Label></h1>
-                <table class="signout_table">
+                <table class="game_table">
                     <tr>
                         <td>
                             <label class="info">First Name</label>
@@ -40,7 +40,7 @@
                             <asp:TextBox ID="fnameText" CssClass="infoBox" runat="server" AutoCompleteType="FirstName"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ControlToValidate="fnameText" CssClass="validation" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ControlToValidate="fnameText" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator>
                         </td>
                         <td>
                             <label class="info">Last Name</label>
@@ -49,7 +49,7 @@
                             <asp:TextBox ID="lnameText" CssClass="infoBox" runat="server" AutoCompleteType="LastName"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ControlToValidate="lnameText" CssClass="validation" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ControlToValidate="lnameText" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -60,7 +60,7 @@
                             <asp:TextBox ID="stdidText" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ControlToValidate="stdidText" CssClass="validation" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ControlToValidate="stdidText" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -68,10 +68,10 @@
                             <label class="info">Game Qty</label>
                         </td>
                         <td>
-                            <asp:TextBox type="number" ID="amountNum" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
+                            <asp:TextBox Type="number" ID="amountNum" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ControlToValidate="amountNum" CssClass="validation" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ControlToValidate="amountNum" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>

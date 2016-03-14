@@ -29,19 +29,27 @@
         <!-- #primary -->
         <div class="primary">
             <div class="main">
-                <table class="result">
+                <table class="game_table">
                     <tr>
                         <td>
                             <asp:Label ID="game" CssClass="info" runat="server" Text="Game Name"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="gameText" CssClass="infoBox" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="gameText" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
                         </td>
+                        <td>
+                            <asp:RequiredFieldValidator ControlToValidate="gameText" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>
                             <asp:Label ID="game_qty" CssClass="info" runat="server" Text="Game QTY"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="qtyText" CssClass="infoBox" runat="server"></asp:TextBox>
+                            <asp:TextBox Type="number" ID="qtyText" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
+                        </td>
+                        <td>
+                            <asp:CompareValidator ControlToValidate="qtyText" runat="server" ErrorMessage="@errormsg" Display="Dynamic"></asp:CompareValidator>
                         </td>
                     </tr>
                 </table>
