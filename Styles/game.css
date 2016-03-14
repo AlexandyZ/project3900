@@ -13,13 +13,20 @@
     position:relative;
     padding:20px 0;
 }
+.signout_table{
+    margin:10px 0;
+    width:100%;
+}
 .info{
-    margin:5px;
+    margin:0;
 }
 .infoBox{
     margin:5px 0;
+    width:100px;
 }
-
+.validation{
+    color:red;
+}
 .submit{
     position:relative;
     margin:10px;

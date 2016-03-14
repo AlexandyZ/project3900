@@ -31,47 +31,47 @@
             <div class="main">
                 <h1>
                     <asp:Label ID="gamename" runat="server" Text="game name"></asp:Label></h1>
-                <table class="result">
+                <table class="signout_table">
                     <tr>
                         <td>
-                            <asp:Label ID="fname" CssClass="info" runat="server" Text="First name"></asp:Label>
+                            <label class="info">First Name</label>
                         </td>
                         <td>
                             <asp:TextBox ID="fnameText" CssClass="infoBox" runat="server" AutoCompleteType="FirstName"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ControlToValidate="fnameText" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ControlToValidate="fnameText" CssClass="validation" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
                         </td>
                         <td>
-                            <asp:Label ID="lname" CssClass="info" runat="server" Text="Last name"></asp:Label>
+                            <label class="info">Last Name</label>
                         </td>
                         <td>
                             <asp:TextBox ID="lnameText" CssClass="infoBox" runat="server" AutoCompleteType="LastName"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ControlToValidate="lnameText" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ControlToValidate="lnameText" CssClass="validation" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="stdid" CssClass="info" runat="server" Text="Student ID"></asp:Label>
+                            <label class="info">Student ID</label>
                         </td>
                         <td>
                             <asp:TextBox ID="stdidText" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ControlToValidate="stdidText" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ControlToValidate="stdidText" CssClass="validation" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="amount" CssClass="info" runat="server" Text="QTY"></asp:Label>
+                            <label class="info">Game Qty</label>
                         </td>
                         <td>
                             <asp:TextBox type="number" ID="amountNum" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ControlToValidate="amountNum" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ControlToValidate="amountNum" CssClass="validation" runat="server" ErrorMessage="Required"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>

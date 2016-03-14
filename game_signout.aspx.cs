@@ -71,9 +71,4 @@ public partial class game_signout : System.Web.UI.Page
         Response.Redirect("game_list.aspx");
     }
 
-    protected void stdidText_TextChanged(object sender, EventArgs e)
-    {
-        
-    }
-
 }
