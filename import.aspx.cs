@@ -23,10 +23,10 @@ public partial class key_addnew : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string filename = "Book1.xlsx";
-        string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;  
+        string filename = "Book1.xlsx"; //need to get xlsx as dynamic
+        string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
         //@"C:\Users\Kwanchanok\Desktop\project3900\temp\Book1.xlsx";
-        /* string hostName = "ftp://xxxxxxxx";
+        /* string hostName = "ftp://142.232.204.152";
          NetworkCredential nwct = new NetworkCredential("username", "password");
          bool isPassiveMode=false;
          FTP ftp = new FTP();

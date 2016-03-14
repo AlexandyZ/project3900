@@ -1,8 +1,11 @@
 ﻿using project3900.App_Code;
 using System;
+using System.Windows;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+
 
 public partial class key_lend : System.Web.UI.Page
     {
@@ -21,8 +24,9 @@ public partial class key_lend : System.Web.UI.Page
 
         if (ds.Tables[0].Rows.Count == 0)
         {
-            //popup
-            string test = "test";
+            MessageBox.Show("This key has not returned yet!! \n Please insert a new key");
+            Response.Redirect(Request.RawUrl);
+            //string test = "test";
         }
         else {
             List<SqlParameter> spParams = new List<SqlParameter>();

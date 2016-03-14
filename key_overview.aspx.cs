@@ -14,8 +14,6 @@ public partial class key_overview : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
 
     {
-        
-        //Return.Command += new CommandEventHandler(this.Button_click_event);
 
         List<SqlParameter> spParams = new List<SqlParameter>();
         spParams.Add(new SqlParameter("@KeyName", searchbar.Text));

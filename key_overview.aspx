@@ -36,7 +36,7 @@
                             <asp:BoundField DataField="Name" HeaderText="Name" />
                             <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />
                             <asp:BoundField DataField="Time_Out" HeaderText="Time_Out" />
-                            <asp:ButtonField ButtonType="Button" Text="Return" CommandName="ReturnKey" />
+                            <asp:ButtonField ButtonType="Button" HeaderText="Status" Text="Return" CommandName="ReturnKey" />
                         </Columns>
                     </asp:GridView>
                 </div>
