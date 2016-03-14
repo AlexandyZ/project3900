@@ -23,7 +23,9 @@ public partial class key_addnew : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string filePath = @"C:\Users\Kwanchanok\Desktop\project3900\temp\Book1.xlsx";
+        string filename = "Book1.xlsx";
+        string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;  
+        //@"C:\Users\Kwanchanok\Desktop\project3900\temp\Book1.xlsx";
         /* string hostName = "ftp://xxxxxxxx";
          NetworkCredential nwct = new NetworkCredential("username", "password");
          bool isPassiveMode=false;
@@ -51,12 +53,12 @@ public partial class key_addnew : System.Web.UI.Page
     {
         List<SqlMetaData> metaData = new List<SqlMetaData> {
                new SqlMetaData("student_id", SqlDbType.VarChar,9),
-               new SqlMetaData("student_fname", SqlDbType.VarChar,20),
-               new SqlMetaData("student_lname", SqlDbType.VarChar,20),
-                new SqlMetaData("student_phone", SqlDbType.VarChar,20),
-               new SqlMetaData("student_email", SqlDbType.VarChar,30),
-               new SqlMetaData("house_id", SqlDbType.Int),
-                new SqlMetaData("room_id", SqlDbType.Int)
+               new SqlMetaData("firstname", SqlDbType.VarChar,20),
+               new SqlMetaData("lastname", SqlDbType.VarChar,20),
+                new SqlMetaData("phone", SqlDbType.VarChar,20),
+               new SqlMetaData("email", SqlDbType.VarChar,30),
+               new SqlMetaData("house",SqlDbType.VarChar,10),
+                new SqlMetaData("room", SqlDbType.VarChar,4)
            };
 
         //SqlDataRecord record = new SqlDataRecord(metaData.ToArray());
@@ -66,12 +68,12 @@ public partial class key_addnew : System.Web.UI.Page
         {   if (row["student_id"] == DBNull.Value) { continue; }
             SqlDataRecord record = new SqlDataRecord(metaData.ToArray());
             record.SetSqlString(0, Convert.ToString(row["student_id"]));
-            record.SetSqlString(1, Convert.ToString(row["student_fname"]));
-            record.SetSqlString(2, Convert.ToString(row["student_lname"]));
-            record.SetSqlString(3, Convert.ToString(row["student_phone"]));
-            record.SetSqlString(4, Convert.ToString(row["student_email"]));
-            record.SetInt32(5, Convert.ToInt32(row["house_id"]));
-            record.SetInt32(6, Convert.ToInt32(row["room_id"]));
+            record.SetSqlString(1, Convert.ToString(row["firstname"]));
+            record.SetSqlString(2, Convert.ToString(row["lastname"]));
+            record.SetSqlString(3, Convert.ToString(row["phone"]));
+            record.SetSqlString(4, Convert.ToString(row["email"]));
+            record.SetSqlString(5, Convert.ToString(row["house"]));
+            record.SetSqlString(6, Convert.ToString(row["room"]));
             //yield return record;
             string testID = row["student_id"].ToString();
             records.Add(record);
