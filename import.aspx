@@ -2,7 +2,7 @@
 
 <asp:Content ContentPlaceHolderId="banner" runat="server">
     <!-- banner -->
-    <div id="banner">
+    <div class="banner">
         <h1>IMPORT</h1>
     </div>
     <!-- /banner -->
@@ -11,17 +11,17 @@
 <asp:Content ContentPlaceHolderId="content" runat="server">
 
         <!-- content -->
-        <section id="content">
+        <section class="content">
             <!-- #sidemenu -->
-            <aside id="menu">
+            <aside class="menu">
                 <ul>
                     <li><a href="import.aspx">Import File</a></li>
                 </ul>
             </aside>
             <!-- /#sidemenu -->
             <!-- #primary -->
-            <div id="primary">
-                <div id="main">
+            <div class="primary">
+                <div class="main">
                     <asp:FileUpload ID="FileUploadControl" runat="server" />
                     <asp:Button ID="UploadButton" runat="server" OnClick="Button1_Click" Text="Upload" />
                     <br />

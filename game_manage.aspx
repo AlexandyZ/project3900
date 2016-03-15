@@ -1,10 +1,10 @@
 ﻿<%@ Page Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="game_manage.aspx.cs" Inherits="game_manage" %>
 
-<asp:Content ContentPlaceHolderId="head" runat="server">
-    <link rel="stylesheet" href="/Styles/game.css" /> 
+<asp:Content ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="/Styles/game.css" />
 </asp:Content>
 
-<asp:Content ContentPlaceHolderId="banner" runat="server">
+<asp:Content ContentPlaceHolderID="banner" runat="server">
     <!-- banner -->
     <div class="banner">
         <h1>GAME MANAGEMENT</h1>
@@ -32,29 +32,31 @@
                 <table class="game_table">
                     <tr>
                         <td>
-                            <asp:Label ID="game" CssClass="info" runat="server" Text="Game Name"></asp:Label>
+                            <label class="info">Game Name</label>
                         </td>
                         <td>
-                            <asp:TextBox ID="gameText" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
+                            <asp:textbox id="gameText" cssclass="infoBox" runat="server"></asp:textbox>
+                            <span class="required">*</span>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ControlToValidate="gameText" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:requiredfieldvalidator controltovalidate="gameText" cssclass="required" runat="server" errormessage="Required" display="Dynamic"></asp:requiredfieldvalidator>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="game_qty" CssClass="info" runat="server" Text="Game QTY"></asp:Label>
+                            <label class="info">Game QTY</label>
                         </td>
                         <td>
-                            <asp:TextBox Type="number" ID="qtyText" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
+                            <asp:textbox type="number" id="qtyText" cssclass="infoBox" runat="server"></asp:textbox>
+                            <span class="required">*</span>
                         </td>
                         <td>
-                            <asp:CompareValidator ControlToValidate="qtyText" runat="server" ErrorMessage="@errormsg" Display="Dynamic"></asp:CompareValidator>
+                            <asp:comparevalidator controltovalidate="qtyText" cssclass="required" runat="server" errormessage="@errormsg" display="Dynamic"></asp:comparevalidator>
                         </td>
                     </tr>
                 </table>
-                <asp:Button ID="addSubmit" class="submit" runat="server" Text="Add New Game" OnClick="addSubmit_Click" />
-                <asp:Button ID="deleteSubmit" class="submit" runat="server" Text="Delete Game" OnClick="deleteSubmit_Click" />
+                <asp:button id="addSubmit" class="submit" runat="server" text="Add New Game" onclick="addSubmit_Click" />
+                <asp:button id="deleteSubmit" class="submit" runat="server" text="Delete Game" onclick="deleteSubmit_Click" />
             </div>
         </div>
         <!-- /#primary -->

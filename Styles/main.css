@@ -159,7 +159,7 @@ a{
 .banner h1{
     font-size:28px;
     line-height:1.5;
-    margin:0 0 0 35%;
+    margin:0 0 0 30%;
 }
 
 .content{
@@ -175,7 +175,7 @@ aside{
     position:relative;
     float:left;
     overflow:visible;
-    width:30%;
+    width:25%;
     height:100%;
     padding:0;
     background-color:#aaa;
@@ -217,7 +217,7 @@ aside{
 .primary{
     position:relative;
     float:right;
-    width:70%;
+    width:75%;
     background-color:#fff;
     outline:0;
     padding:0;
@@ -226,13 +226,12 @@ aside{
 }
 .main{
     position:relative;
-    margin:20px;
+    margin:30px 0 0 5%;
 }
 .searchbar {
     position:relative;
     width:80%;
 }
-
 .searchbox{
     position:relative;
     width:75%;
