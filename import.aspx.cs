@@ -30,32 +30,28 @@ public partial class import : System.Web.UI.Page
         {
             try
             {
-                //if (FileUploadControl.PostedFile.ContentType == "xlsx")
+               // if (FileUploadControl.PostedFile.ContentType == "xlsx")
                 //{
 
-                    //string filename = "Book1.xlsx"; //need to set filename xlsx as dynamic
-                    //FileStream fExcel = new FileStream("\\" + filename, FileMode.Append, FileAccess.Read);
-
-                    // var filename =
-                    //Path.Combine(
-                    //    Environment.GetFolderPath(
-                    //        Environment.SpecialFolder.CommonApplicationData),
-                    //        "Book1.xlsx");
-                    //string filename = "Book1.xlsx"; //need to set filename xlsx as dynamic
-                    string filename = Path.GetFileName(FileUploadControl.FileName);
-                    FileUploadControl.SaveAs(Server.MapPath("~/") + filename);
-                    string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
-                    //@"C:\Users\Kwanchanok\Desktop\project3900\temp\Book1.xlsx";
-                    /* string hostName = "ftp://142.232.204.152";
-                     NetworkCredential nwct = new NetworkCredential("username", "password");
-                     bool isPassiveMode=false;
-                     FTP ftp = new FTP();
-                     ftp.Upload(filePath, hostName, nwct, isPassiveMode);*/
-
-                    Boolean hasHeader = true;
+                //string filename = "Book1.xlsx"; //need to set filename xlsx as dynamic
+                string filename = Path.GetFileName(FileUploadControl.FileName);
+                //FileUploadControl.SaveAs(Server.MapPath("~/") + filename);
+                    
+                //@"C:\Users\Kwanchanok\Desktop\project3900\temp\Book1.xlsx";
+                //string hostName = "ftp://142.232.204.152";
+                // string hostName = "ftp://ImportStudent";
+                string hostName = "ftp://142.232.204.152";
+                NetworkCredential nwct = new NetworkCredential("ftpmanager", "P@ssw0rd");
+                 bool isPassiveMode=false;
+                 FTP ftp = new FTP();
+                //ftp.Upload(filePath, hostName, nwct, isPassiveMode);
+                ftp.Upload(filename, hostName, nwct, isPassiveMode);
+                string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
+                //string filePath = DBHelper.GetConfiguration("FTPDirectory");
+                Boolean hasHeader = true;
                     FTPHelper fhp = new FTPHelper();
                     DataSet ds = fhp.ReadExcelFile(filePath, hasHeader);
-
+       
 
                     string sheetName = "Sheet1";
                     List<SqlParameter> spParams = new List<SqlParameter>();
@@ -69,9 +65,9 @@ public partial class import : System.Web.UI.Page
                     //}
 
                     StatusLabel.Text = "Upload status: File uploaded!";
-                //}
-                //else
-                    //StatusLabel.Text = "Upload status: Only .xlsx files are accepted!";
+               // }
+               // else
+                  //  StatusLabel.Text = "Upload status: Only .xlsx files are accepted!";
             }
             catch (Exception ex)
             {
