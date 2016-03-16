@@ -24,11 +24,6 @@ public partial class key_lend : System.Web.UI.Page
 
         if (ds.Tables[0].Rows.Count == 0)
         {
-            MessageBox.Show("This key has not returned yet!! \n Please insert a new key");
-            Response.Redirect(Request.RawUrl);
-            //string test = "test";
-        }
-        else {
             List<SqlParameter> spParams = new List<SqlParameter>();
             spParams.Add(new SqlParameter("@WorkerFirstName", txtFname.Text));
             spParams.Add(new SqlParameter("@WorkerLastName", txtLname.Text));
@@ -39,6 +34,12 @@ public partial class key_lend : System.Web.UI.Page
             DBHelper.ExecuteNonQueryBySPName("Key_Insert", spParams.ToArray());
 
             Response.Redirect("key_overview.aspx");
+        }
+        else {
+            
+            MessageBox.Show("This key has not returned yet!! \n Please insert a new key");
+            Response.Redirect(Request.RawUrl);
+            //string test = "test";
         }
     }
 
