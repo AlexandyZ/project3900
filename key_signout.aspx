@@ -27,19 +27,34 @@
                 <div class="form">
                     <br />
                     <asp:Label ID="fname" runat="server" Text="First name: "></asp:Label>
-                    <asp:TextBox type="text" runat="server" ID="txtFname" placeholder="John" pattern="[A-Za-z]{1,32}"></asp:TextBox>
-                    <asp:RequiredFieldValidator ControlToValidate="txtFname" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator><br />
+                    <asp:TextBox type="text" runat="server" ID="txtFname" placeholder="John"></asp:TextBox>
+                    <asp:RequiredFieldValidator ControlToValidate="txtFname" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator  runat="server"     
+                                    ErrorMessage="This expression does not validate." 
+                                    ControlToValidate="txtFname"    
+                                    ValidationGroup="fieldrequired" 
+                                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" /><br />
                     <br />
                     <asp:Label ID="lname" runat="server" Text="Last name: "></asp:Label>
                     <asp:TextBox type="text" runat="server" ID="txtLname"  placeholder="Smith" pattern="[A-Za-z]{1,32}"></asp:TextBox>
-                     <asp:RequiredFieldValidator ControlToValidate="txtLname" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator><br />
+                     <asp:RequiredFieldValidator ControlToValidate="txtLname" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator>
+                      <asp:RegularExpressionValidator  runat="server"     
+                                    ErrorMessage="This expression does not validate." 
+                                    ControlToValidate="txtLname"     
+                                    ValidationGroup="fieldrequired"
+                                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" /><br />
                     <br />
                     <asp:Label ID="phone" runat="server" Text="Phone: "></asp:Label>
                     <asp:TextBox type="text" runat="server" ID="txtPhone" placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></asp:TextBox>
-                     <asp:RequiredFieldValidator ControlToValidate="txtPhone" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator><br />
+                     <asp:RequiredFieldValidator ControlToValidate="txtPhone" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator>
+                   <asp:RegularExpressionValidator  runat="server"     
+                                    ErrorMessage="This expression does not validate." color="red"
+                                    ControlToValidate="txtPhone"     
+                                    ValidationGroup="fieldrequired"
+                                    ValidationExpression="\d{3}(-\d{3})(-\d{4})" /><br />
                     <br />
                     <asp:Label ID="company" runat="server" Text="Company Name: "></asp:Label>
-                    <asp:TextBox type="text" runat="server" ID="txtCompany" placeholder="BCIT" pattern="[A-Za-z]{1,32}"></asp:TextBox>
+                    <asp:TextBox type="text" runat="server" ID="txtCompany" placeholder="BCIT"></asp:TextBox>
                      <asp:RequiredFieldValidator ControlToValidate="txtCompany" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator><br />
                     <br />
                     <asp:Label ID="kname" runat="server" Text="Key Name: "></asp:Label>
