@@ -51,7 +51,7 @@
                             <span class="required">*</span>
                         </td>
                         <td>
-                            <asp:comparevalidator controltovalidate="qtyText" cssclass="required" runat="server" errormessage="@errormsg" display="Dynamic"></asp:comparevalidator>
+                            <asp:Label ID="validateQTY" class="required" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
                 </table>
