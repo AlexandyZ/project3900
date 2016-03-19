@@ -47,7 +47,7 @@
                             <label class="info">Game QTY</label>
                         </td>
                         <td>
-                            <asp:textbox type="number" id="qtyText" cssclass="infoBox" runat="server"></asp:textbox>
+                            <asp:textbox Type="number" id="qtyText" cssclass="infoBox" runat="server"></asp:textbox>
                             <span class="required">*</span>
                         </td>
                         <td>

@@ -34,26 +34,6 @@
                 <table class="game_table">
                     <tr>
                         <td>
-                            <label class="info">First Name</label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="fnameText" CssClass="infoBox" runat="server" AutoCompleteType="FirstName"></asp:TextBox><span class="required"> *</span>
-                        </td>
-                        <td>
-                            <asp:RequiredFieldValidator ControlToValidate="fnameText" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator>
-                        </td>
-                        <td>
-                            <label class="info">Last Name</label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="lnameText" CssClass="infoBox" runat="server" AutoCompleteType="LastName"></asp:TextBox><span class="required"> *</span>
-                        </td>
-                        <td>
-                            <asp:RequiredFieldValidator ControlToValidate="lnameText" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
                             <label class="info">Student ID</label>
                         </td>
                         <td>

@@ -21,26 +21,34 @@ public partial class game_manage : System.Web.UI.Page
             cmd.Parameters.AddWithValue("@gameName", gameText.Text);
             conn.Open();
             SqlDataReader rd = cmd.ExecuteReader();
-            if (rd.Read())
+            if (string.IsNullOrWhiteSpace(qtyText.Text))
             {
-                SqlCommand cmd1 = new SqlCommand("UPDATE game SET game_invent = game_invent + @gameInvent WHERE game_name = @gameName", conn);
-                cmd1.Parameters.AddWithValue("@gameName", gameText.Text);
-                cmd1.Parameters.AddWithValue("@gameInvent", qtyText.Text);
-                cmd1.ExecuteNonQuery();
+                string msg1 = "Required";
+                validateQTY.Text = msg1;
             }
             else
             {
-                SqlCommand cmd1 = new SqlCommand("INSERT INTO game VALUES (@game_name,@game_invent)", conn);
-                cmd1.Parameters.AddWithValue("@game_name", gameText.Text);
-                cmd1.Parameters.AddWithValue("@game_invent", qtyText.Text);
-                cmd1.ExecuteNonQuery();
-            }
-            rd.Close();
-            conn.Close();
-            
-            string msg = qtyText.Text + " " + gameText.Text + " added!";
-            MessageBox.Show(msg);
-            Response.Redirect("game_list.aspx");
+                if (rd.Read())
+                {
+                    SqlCommand cmd1 = new SqlCommand("UPDATE game SET game_invent = game_invent + @gameInvent,game_status = 1 WHERE game_name = @gameName", conn);
+                    cmd1.Parameters.AddWithValue("@gameName", gameText.Text);
+                    cmd1.Parameters.AddWithValue("@gameInvent", qtyText.Text);
+                    cmd1.ExecuteNonQuery();
+                }
+                else
+                {
+                    SqlCommand cmd1 = new SqlCommand("INSERT INTO game VALUES (@game_name,@game_invent,1)", conn);
+                    cmd1.Parameters.AddWithValue("@game_name", gameText.Text);
+                    cmd1.Parameters.AddWithValue("@game_invent", qtyText.Text);
+                    cmd1.ExecuteNonQuery();
+                }
+                rd.Close();
+                conn.Close();
+
+                string msg = qtyText.Text + " of " + gameText.Text + " added!";
+                MessageBox.Show(msg);
+                Response.Redirect("game_list.aspx");
+            }         
         }
     }
 
@@ -52,27 +60,37 @@ public partial class game_manage : System.Web.UI.Page
             SqlCommand cmd = new SqlCommand("SELECT game_invent FROM game WHERE game_name = @gameName", conn);
             cmd.Parameters.AddWithValue("@gameName", gameText.Text);
             conn.Open();
-            string inv = Convert.ToString(cmd.ExecuteScalar());
-            if (inv == qtyText.Text || qtyText.Text == null)
+            int inv = int.Parse(Convert.ToString(cmd.ExecuteScalar()));
+            if (string.IsNullOrWhiteSpace(qtyText.Text))
             {
-                SqlCommand cmd1 = new SqlCommand("DELETE FROM game WHERE game_name = @gameName", conn);
+                SqlCommand cmd1 = new SqlCommand("UPDATE game SET game_invent = 0, game_status = 0 WHERE game_name = @gameName", conn);
                 cmd1.Parameters.AddWithValue("@gameName", gameText.Text);
                 cmd1.ExecuteNonQuery();
 
-                //string msg = qtyText.Text + " " + gameText.Text + " added!";
-                //MessageBox.Show(msg);
-                //Response.Redirect("game_list.aspx");
+                string msg = gameText.Text + " deleted!";
+                MessageBox.Show(msg);
+                Response.Redirect("game_list.aspx");
             }
-            else if(int.Parse(inv) > int.Parse(qtyText.Text))
+            else if (inv == int.Parse(qtyText.Text))
             {
-                SqlCommand cmd1 = new SqlCommand("UPDATE game SET game_invent = game_invent - @gameInvent WHERE game_name = @gameName", conn);
-                cmd1.Parameters.AddWithValue("@game_name", gameText.Text);
-                cmd1.Parameters.AddWithValue("@game_invent", qtyText.Text);
+                SqlCommand cmd1 = new SqlCommand("UPDATE game SET game_invent = 0, game_status = 0 WHERE game_name = @gameName", conn);
+                cmd1.Parameters.AddWithValue("@gameName", gameText.Text);
                 cmd1.ExecuteNonQuery();
 
-                //string msg = qtyText.Text + " " + gameText.Text + " added!";
-                //MessageBox.Show(msg);
-                //Response.Redirect("game_list.aspx");
+                string msg = gameText.Text + " deleted!";
+                MessageBox.Show(msg);
+                Response.Redirect("game_list.aspx");
+            }
+            else if (inv > int.Parse(qtyText.Text))
+            {
+                SqlCommand cmd1 = new SqlCommand("UPDATE game SET game_invent = game_invent - @gameInvent WHERE game_name = @gameName", conn);
+                cmd1.Parameters.AddWithValue("@gameName", gameText.Text);
+                cmd1.Parameters.AddWithValue("@gameInvent", qtyText.Text);
+                cmd1.ExecuteNonQuery();
+
+                string msg = qtyText.Text + " of " + gameText.Text + " deleted!";
+                MessageBox.Show(msg);
+                Response.Redirect("game_list.aspx");
             }
             else
             {
