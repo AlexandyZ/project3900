@@ -36,11 +36,12 @@ public partial class game_signout : System.Web.UI.Page
         cmd.ExecuteNonQuery();
 
         SqlCommand sc = new SqlCommand("UPDATE game SET game_invent = (SELECT game_invent from game WHERE game_id = '" +gameID+ "') - @gameQTY WHERE game_id = '"+gameID+"'", conn);
+        sc.Parameters.AddWithValue("@gameQTY", amountNum.Text);
         sc.ExecuteNonQuery();
 
         conn.Close();
 
-        MessageBox.Show("Sign out the game...");
+        MessageBox.Show("Game signed out!");
         Response.Redirect("game_list.aspx");
     }
 

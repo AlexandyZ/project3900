@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 public partial class game_return : System.Web.UI.Page
 {
@@ -27,25 +28,34 @@ public partial class game_return : System.Web.UI.Page
     }
     protected void Return_RowCommand(object sender, GridViewCommandEventArgs e)
     {
+        DialogResult result = MessageBox.Show("Are you sure to return the game?", "Confirmation", MessageBoxButtons.YesNo);
+
         if (e.CommandName == "Select")
         {
+            if(result == DialogResult.Yes)
+            {
+                int rowIndex = Int32.Parse((e.CommandArgument).ToString());
+                int gameID = Int32.Parse(GameReturn.DataKeys[rowIndex].Value.ToString());
+                string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
 
-            int rowIndex = Int32.Parse((e.CommandArgument).ToString());
-            int gameID = Int32.Parse(GameReturn.DataKeys[rowIndex].Value.ToString());
-            string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
+                SqlConnection conn = new SqlConnection(constring);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE game SET game_invent = game_invent + 1 WHERE game_id = '" + gameID + "'", conn);
+                cmd.ExecuteNonQuery();
 
-            SqlConnection conn = new SqlConnection(constring);
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE game SET game_invent = game_invent + 1 WHERE game_id = '" + gameID + "'", conn);
-            cmd.ExecuteNonQuery();
+                SqlCommand cmd2 = new SqlCommand("UPDATE lend_game SET game_qty = game_qty - 1, greturn_date = '" + DateTime.Now.ToShortDateString() + "' WHERE game_id = '" + gameID + "'", conn);
+                cmd2.ExecuteNonQuery();
 
-            SqlCommand cmd2 = new SqlCommand("UPDATE lend_game SET game_qty = game_qty - 1, greturn_date = '" + DateTime.Now.ToShortDateString() + "' WHERE game_id = '" + gameID + "'", conn);
-            cmd2.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("1 game returned!");
+                Response.Redirect(Request.RawUrl);
+            }
+            else
+            {
 
-            conn.Close();
-            Response.Redirect("game_list.aspx");
-
+            }          
         }
+
     }
     private void getSignedOutGame()
     {
