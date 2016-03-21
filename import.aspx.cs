@@ -33,21 +33,30 @@ public partial class import : System.Web.UI.Page
                //if (FileUploadControl.PostedFile.ContentType == ".xlsx")
                // {
 
-                string filename = "Book1.xlsx"; //need to set filename xlsx as dynamic
-                string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
+               // string filename = "Book1.xlsx"; //need to set filename xlsx as dynamic
+               
                 //string filename = Path.GetFileName(FileUploadControl.FileName);
+                string filename = FileUploadControl.FileName;
+                //string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
                 //FileUploadControl.SaveAs(Server.MapPath("~/") + filename);
 
                 //@"C:\Users\Kwanchanok\Desktop\project3900\temp\Book1.xlsx";
                 //string hostName = "ftp://142.232.204.152";
                 // string hostName = "ftp://ImportStudent";
+
                 //string hostName = "ftp://142.232.204.152";
+                //string localPath = @"C:\temp\";
                 //NetworkCredential nwct = new NetworkCredential("ftpmanager", "P@ssw0rd");
-                // bool isPassiveMode=false;
-                 //FTP ftp = new FTP();
-                //ftp.Upload(filePath, hostName, nwct, isPassiveMode);
-                //ftp.Upload(filename, hostName, nwct, isPassiveMode);
-                //string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
+                //bool isPassiveMode=false;
+                // FTP ftp = new FTP();
+                //ftp.Upload(localPath + filename, hostName, nwct, isPassiveMode);
+
+                //========================
+                FileUploadControl.SaveAs(Server.MapPath("~/Upload/") + filename);
+                //FileUploadControl.SaveAs(Server.MapPath("~/Upload/") + filename);
+                //Update FTPDirectory in web.config to "C:\inetpub\wwwroot\Project\Upload\"
+                //========================
+                string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
                 //string filePath = DBHelper.GetConfiguration("FTPDirectory");
                 Boolean hasHeader = true;
                     FTPHelper fhp = new FTPHelper();
@@ -104,7 +113,6 @@ public partial class import : System.Web.UI.Page
             record.SetSqlString(5, Convert.ToString(row["house"]));
             record.SetSqlString(6, Convert.ToString(row["room"]));
             //yield return record;
-            string testID = row["student_id"].ToString();
             records.Add(record);
         }
 
