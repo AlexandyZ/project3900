@@ -35,39 +35,13 @@ public partial class game_signout : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@gameQTY", amountNum.Text);
         cmd.ExecuteNonQuery();
 
-        SqlCommand sc = new SqlCommand("UPDATE game SET game_invent = (SELECT game_invent from game WHERE game_id = '" + gameID + "') - @gameQTY WHERE game_id = '"+gameID+"'", conn);
+        SqlCommand sc = new SqlCommand("UPDATE game SET game_invent = (SELECT game_invent from game WHERE game_id = '" +gameID+ "') - @gameQTY WHERE game_id = '"+gameID+"'", conn);
+        sc.Parameters.AddWithValue("@gameQTY", amountNum.Text);
         sc.ExecuteNonQuery();
 
         conn.Close();
 
-        /*using (SqlConnection conn = new SqlConnection(constring))
-        {
-            conn.Open();
-            SqlCommand myCommand = new SqlCommand("select std_id from student where student_id  = '" + stdidText.Text + "'; ", conn);
-
-            using (SqlDataReader reader = myCommand.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    SqlCommand cmd = new SqlCommand(@"INSERT INTO lend_game VALUES (@std_id, '"+gameID+"', @glend_date)", conn);
-
-                    cmd.Parameters.AddWithValue("@std_id", reader["std_id"]);
-                    cmd.Parameters.AddWithValue("@game_id", gameID);
-                    cmd.Parameters.AddWithValue("@glend_date", DateTime.Now.ToShortDateString());
-
-                    cmd.ExecuteNonQuery();  
-                }
-            }
-            myCommand.ExecuteNonQuery();
-
-            SqlCommand sc = new SqlCommand("UPDATE game SET game_invent = (SELECT game_amount from game WHERE game_id = '"+gameID+"') - '" + amountNum.Text + "' WHERE game_id = @game_id", conn);
-            sc.Parameters.AddWithValue("@game_id", 1);
-            sc.ExecuteNonQuery();
-            
-            conn.Close();
-        }
-        */
-        MessageBox.Show("Sign out the game...");
+        MessageBox.Show("Game signed out!");
         Response.Redirect("game_list.aspx");
     }
 
