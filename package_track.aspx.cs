@@ -30,23 +30,7 @@ public partial class key_addnew : System.Web.UI.Page
         {
             Calendar1.Visible = true;
         }
-
-        /*if (TextDate.Text != string.Empty)
-            Calendar1.SelectedDate = Convert.ToDateTime(TextDate.Text);
-
-        Calendar1.Visible = true;
-        */
     }
-
-
-    /*protected void TextDate_TextChanged(object sender, EventArgs e)
-    {
-        DateTime curDate = DateTime.Now;
-        if (DateTime.TryParse(TextDate.Text, out curDate))
-        {
-            Calendar1.SelectedDate = Convert.ToDateTime(TextDate.Text);
-        }
-    }*/
 
     // show selected date in the devlivery date textbox.
     protected void Calendar1_SelectionChanged(object sender, EventArgs e)
@@ -91,12 +75,12 @@ public partial class key_addnew : System.Web.UI.Page
     // show phone and email based on inputting the firstname and lastname
     protected void RoomID_SelectedIndexChanged(object sender, EventArgs e)
     {
-        string constring = "Data Source = comp3900.database.windows.net; Initial Catalog = RMS; User ID = ant; Password = Tna12345";
+        string connection = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
 
-        using (SqlConnection conn = new SqlConnection(constring))
+        using (SqlConnection conn = new SqlConnection(connection))
         {
             conn.Open();
-            SqlCommand cmd2 = new SqlCommand("select std_id, student_phone, student_email from student where student_fname  = '" + firstname.Text + "' and student_lname = '" + lastname.Text + "' ", conn);
+            SqlCommand cmd2 = new SqlCommand("select std_id, student_phone, student_email from student where student_fname  = '" + firstname.Text + "' and student_lname = '" + lastname.Text + "'and house_id = '" + HouseID.Text + "'and room_id='" + RoomID.Text +"';", conn);
 
             using (SqlDataReader reader = cmd2.ExecuteReader())
             {
@@ -114,7 +98,7 @@ public partial class key_addnew : System.Web.UI.Page
     {
         firstname.Text = String.Empty;
         lastname.Text = String.Empty;
-        HouseD.Text = String.Empty;
+        HouseID.Text = String.Empty;
         RoomID.Text = String.Empty;
         Phone.Text = String.Empty;
         Email.Text = String.Empty;
