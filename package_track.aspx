@@ -31,13 +31,9 @@
                 <br />
                 <br />
                 <asp:Label ID="HouseL" runat="server" Text="House "></asp:Label><asp:DropDownList ID="HouseID" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourcehouse" DataTextField="house_name" DataValueField="house_id" AppendDataBoundItems="True"><asp:ListItem Text="" Value="0">--Choose house--</asp:ListItem></asp:DropDownList>
-                <asp:Label ID="RoomL" runat="server" Text="Room No. "></asp:Label><asp:DropDownList ID="RoomID" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourceroom" DataTextField="room_name" DataValueField="room_id" OnSelectedIndexChanged="RoomID_SelectedIndexChanged"><asp:ListItem Text="" Value="0">--Choose room--</asp:ListItem></asp:DropDownList>
+                <asp:Label ID="RoomL" runat="server" Text="Room "></asp:Label><asp:DropDownList ID="RoomID" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourceroom" DataTextField="room_name" DataValueField="room_id" AppendDataBoundItems="True" OnSelectedIndexChanged="RoomID_SelectedIndexChanged"><asp:ListItem Text="" Value="0">--Choose room--</asp:ListItem></asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSourcehouse" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT [house_name], [house_id] FROM [house]"></asp:SqlDataSource>
-                <asp:SqlDataSource ID="SqlDataSourceroom" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT [room_name], [room_id] FROM [room] WHERE ([house_id] = @house_id)">
-                    <SelectParameters>
-                        <asp:ControlParameter ControlID="HouseID" Name="house_id" PropertyName="SelectedValue" Type="Int32" />
-                    </SelectParameters>
-                </asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSourceroom" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT * FROM [room]"></asp:SqlDataSource>
                 <br />
                 <br />
                 <asp:Label ID="PhoneL" runat="server" Text="Phone "></asp:Label><asp:TextBox ID="Phone" runat="server"></asp:TextBox>
