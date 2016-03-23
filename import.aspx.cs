@@ -53,11 +53,12 @@ public partial class import : System.Web.UI.Page
 
                 //========================
                 FileUploadControl.SaveAs(Server.MapPath("~/Upload/") + filename);
-                //FileUploadControl.SaveAs(Server.MapPath("~/Upload/") + filename);
+               //FileUploadControl.SaveAs("C:/Users/Kwanchanok/Desktop/Upload/" + filename);
                 //Update FTPDirectory in web.config to "C:\inetpub\wwwroot\Project\Upload\"
                 //========================
+                //string filePath = "C:/Users/Kwanchanok/Desktop/Upload/" + filename;
                 string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
-                //string filePath = DBHelper.GetConfiguration("FTPDirectory");
+                
                 Boolean hasHeader = true;
                     FTPHelper fhp = new FTPHelper();
                     DataSet ds = fhp.ReadExcelFile(filePath, hasHeader);

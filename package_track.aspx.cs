@@ -106,4 +106,9 @@ public partial class key_addnew : System.Web.UI.Page
         Des.Text = String.Empty;
         Response.Redirect(Request.RawUrl);
     }
+
+    protected void HouseID_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }
