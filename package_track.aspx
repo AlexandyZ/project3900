@@ -27,13 +27,27 @@
                 <br />
                 <br />
                 <asp:Label ID="First" runat="server" Text="First name "></asp:Label><asp:TextBox ID="firstname" runat="server" Width="100px"></asp:TextBox>
+                <asp:RequiredFieldValidator ControlToValidate="First" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator  runat="server" 
+                                    CssClass="required"    
+                                    ErrorMessage="The name ." 
+                                    ControlToValidate="First"    
+                                    ValidationGroup="fieldrequired" 
+                                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" /><br />
+
+
+
                 <asp:Label ID="Last" runat="server" Text="Last name "></asp:Label><asp:TextBox ID="lastname" runat="server" Width="100px"></asp:TextBox>
                 <br />
                 <br />
                 <asp:Label ID="HouseL" runat="server" Text="House "></asp:Label><asp:DropDownList ID="HouseID" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourcehouse" DataTextField="house_name" DataValueField="house_id" AppendDataBoundItems="True"><asp:ListItem Text="" Value="0">--Choose house--</asp:ListItem></asp:DropDownList>
                 <asp:Label ID="RoomL" runat="server" Text="Room "></asp:Label><asp:DropDownList ID="RoomID" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourceroom" DataTextField="room_name" DataValueField="room_id" AppendDataBoundItems="True" OnSelectedIndexChanged="RoomID_SelectedIndexChanged"><asp:ListItem Text="" Value="0">--Choose room--</asp:ListItem></asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSourcehouse" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT [house_name], [house_id] FROM [house]"></asp:SqlDataSource>
-                <asp:SqlDataSource ID="SqlDataSourceroom" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT * FROM [room]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSourceroom" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="SELECT [room_name], [room_id] FROM [room] WHERE ([house_id] = @house_id)">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="HouseID" Name="house_id" PropertyName="SelectedValue" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
                 <br />
                 <br />
                 <asp:Label ID="PhoneL" runat="server" Text="Phone "></asp:Label><asp:TextBox ID="Phone" runat="server"></asp:TextBox>
