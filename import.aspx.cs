@@ -28,41 +28,47 @@ public partial class import : System.Web.UI.Page
 
         if (FileUploadControl.HasFile)
         {
-            try
+            string filename = FileUploadControl.FileName;
+            string I_Docx_type = filename.Substring(filename.LastIndexOf(".") + 1);
+
+            if (I_Docx_type == "xlsx" || I_Docx_type == "xls")
             {
-               //if (FileUploadControl.PostedFile.ContentType == ".xlsx")
-               // {
+                try
+                {
+                    //if (FileUploadControl.PostedFile.ContentType == ".xlsx")
+                    // {
 
-               // string filename = "Book1.xlsx"; //need to set filename xlsx as dynamic
-               
-                //string filename = Path.GetFileName(FileUploadControl.FileName);
-                string filename = FileUploadControl.FileName;
-                //string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
-                //FileUploadControl.SaveAs(Server.MapPath("~/") + filename);
+                    // string filename = "Book1.xlsx"; //need to set filename xlsx as dynamic
 
-                //@"C:\Users\Kwanchanok\Desktop\project3900\temp\Book1.xlsx";
-                //string hostName = "ftp://142.232.204.152";
-                // string hostName = "ftp://ImportStudent";
+                    //string filename = Path.GetFileName(FileUploadControl.FileName);
 
-                //string hostName = "ftp://142.232.204.152";
-                //string localPath = @"C:\temp\";
-                //NetworkCredential nwct = new NetworkCredential("ftpmanager", "P@ssw0rd");
-                //bool isPassiveMode=false;
-                // FTP ftp = new FTP();
-                //ftp.Upload(localPath + filename, hostName, nwct, isPassiveMode);
+                    //string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
+                    //FileUploadControl.SaveAs(Server.MapPath("~/") + filename);
 
-                //========================
-                FileUploadControl.SaveAs(Server.MapPath("~/Upload/") + filename);
-               //FileUploadControl.SaveAs("C:/Users/Kwanchanok/Desktop/Upload/" + filename);
-                //Update FTPDirectory in web.config to "C:\inetpub\wwwroot\Project\Upload\"
-                //========================
-                //string filePath = "C:/Users/Kwanchanok/Desktop/Upload/" + filename;
-                string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
-                
-                Boolean hasHeader = true;
+                    //@"C:\Users\Kwanchanok\Desktop\project3900\temp\Book1.xlsx";
+                    //string hostName = "ftp://142.232.204.152";
+                    // string hostName = "ftp://ImportStudent";
+
+                    //string hostName = "ftp://142.232.204.152";
+                    //string localPath = @"C:\temp\";
+                    //NetworkCredential nwct = new NetworkCredential("ftpmanager", "P@ssw0rd");
+                    //bool isPassiveMode=false;
+                    // FTP ftp = new FTP();
+                    //ftp.Upload(localPath + filename, hostName, nwct, isPassiveMode);
+
+                    //========================
+                    //FileUploadControl.SaveAs(Server.MapPath("~/Upload/") + filename);
+                    FileUploadControl.SaveAs("C:/Users/Kwanchanok/Desktop/Upload/" + filename);
+
+                    //Update FTPDirectory in web.config to "C:\inetpub\wwwroot\Project\Upload\"
+                    //========================
+                    string filePath = "C:/Users/Kwanchanok/Desktop/Upload/" + filename;
+                    //string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
+
+                    Boolean hasHeader = true;
                     FTPHelper fhp = new FTPHelper();
                     DataSet ds = fhp.ReadExcelFile(filePath, hasHeader);
-       
+
 
                     string sheetName = "Sheet1";
                     List<SqlParameter> spParams = new List<SqlParameter>();
@@ -76,16 +82,21 @@ public partial class import : System.Web.UI.Page
                     //}
 
                     StatusLabel.Text = "Upload status: File uploaded!";
-             //  }
-               // else
-                   // StatusLabel.Text = "Upload status: Only .xlsx files are accepted!";
+                    //  }
+                    // else
+                    // StatusLabel.Text = "Upload status: Only .xlsx files are accepted!";
+
+                }
+                catch (Exception ex)
+                {
+                    StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+
+                }
             }
-            catch (Exception ex)
-            {
-                StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+            else {
+                StatusLabel.Text = "Upload status: Only .xlsx  and .xls files are accepted!";
             }
         }
-       
     }
 
     private static List<SqlDataRecord> CreateSqlDataRecords(DataTable dt)
@@ -104,7 +115,8 @@ public partial class import : System.Web.UI.Page
         List<SqlDataRecord> records = new List<SqlDataRecord>();
 
         foreach (DataRow row in dt.Rows)
-        {   if (row["student_id"] == DBNull.Value) { continue; }
+        {
+            if (row["student_id"] == DBNull.Value) { continue; }
             SqlDataRecord record = new SqlDataRecord(metaData.ToArray());
             record.SetSqlString(0, Convert.ToString(row["student_id"]));
             record.SetSqlString(1, Convert.ToString(row["firstname"]));
@@ -120,4 +132,4 @@ public partial class import : System.Web.UI.Page
         return records;
     }
 }
-    
+
