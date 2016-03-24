@@ -44,11 +44,11 @@ public partial class game_manage : System.Web.UI.Page
                 }
                 rd.Close();
                 conn.Close();
+            }
 
-                string msg = qtyText.Text + " of " + gameText.Text + " added!";
-                MessageBox.Show(msg);
-                Response.Redirect("game_list.aspx");
-            }         
+            string msg = qtyText.Text + " of " + gameText.Text + " added!";
+            MessageBox.Show(msg);
+            Response.Redirect("game_list.aspx");
         }
     }
 

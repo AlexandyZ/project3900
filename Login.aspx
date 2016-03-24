@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>HRM system</title>
+    <title>BCIT HRS</title>
     <link rel="stylesheet" href="/Styles/main.css" />
     <style type="text/css">
         .auto-style1 {
@@ -53,7 +53,7 @@
             <div class="bcitlogo">
                 <img class="toplogo" src="/Images/BCITlogo.svg" alt="BCIT logo" />
                 <div class="sysname">
-                    <h1 class="sysfont">BCIT HRS DATABASE SYSTEM</h1>
+                    <h1 class="sysfont">HOUSING RESOURCE SYSTEM</h1>
                 </div>
             </div>
             <!-- /#bcitlogo -->
