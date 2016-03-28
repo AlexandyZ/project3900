@@ -29,15 +29,14 @@
                     <input type="submit" runat="server" class="searchbtn" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" />
                 </div>
                 <div class="result">
-                    <asp:GridView ID="SearchResult" runat="server" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
-                        <AlternatingRowStyle BackColor="White" />
+                    <asp:GridView ID="SearchResult" AutoGenerateColumns="False" runat="server">
                         <Columns>
-                            <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
-                            <asp:BoundField DataField="lastname" HeaderText="lastname" SortExpression="lastname" />
-                            <asp:BoundField DataField="house" HeaderText="house" SortExpression="house" />
-                            <asp:BoundField DataField="room" HeaderText="room" SortExpression="room" />
+                            <asp:BoundField DataField="firstname" HeaderText="Firstname" SortExpression="firstname" />
+                            <asp:BoundField DataField="lastname" HeaderText="Lastname" SortExpression="lastname" />
+                            <asp:BoundField DataField="house" HeaderText="House" SortExpression="house" />
+                            <asp:BoundField DataField="room" HeaderText="Room" SortExpression="room" />
                             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="descript" />
-                            <asp:BoundField DataField="delivery_date" HeaderText="delivery_date" SortExpression="delivery_date" DataFormatString="{0:MM-dd-yyyy}" />
+                            <asp:BoundField DataField="delivery_date" HeaderText="Delivery_Date" SortExpression="delivery_date" DataFormatString="{0:MM-dd-yyyy}" />
                             <asp:BoundField DataField="pickup_date" HeaderText="pickup_date" SortExpression="pickup_date" DataFormatString="{0:MM-dd-yyyy}" />
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />

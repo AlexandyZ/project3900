@@ -29,9 +29,7 @@
                     <input type="submit" runat="server" class="searchbtn" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" />
                 </div>
                 <div class="result">
-                    <asp:GridView ID="SearchResult"
-                        AutoGenerateColumns="False"
-                        runat="server">
+                    <asp:GridView ID="SearchResult" AutoGenerateColumns="False" runat="server">
                         <Columns>
                             <asp:BoundField DataField="KeyNumber" HeaderText="KeyNumber" />
                             <asp:BoundField DataField="Name" HeaderText="Name" />

@@ -40,39 +40,16 @@ public partial class key_addnew : System.Web.UI.Page
         Calendar1.Visible = false;
     }
 
-    // insert package record into tables: package(delivery_date, description) & student(std_id).
-    protected void Add_Click(object sender, EventArgs e)
+    // can not choose future day from calendar
+    protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
     {
-        string connection = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
-
-        using (SqlConnection conn = new SqlConnection(connection))
+        if (e.Day.Date > DateTime.Today)
         {
-            conn.Open();
-            SqlCommand myCommand = new SqlCommand("select [std_id] from student where student_fname  = '" + firstname.Text + "' and student_lname = '" + lastname.Text + "'; ", conn);
-
-            using (SqlDataReader reader = myCommand.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    //int @std_id = Convert.ToInt32(reader["std_id"]);
-
-                    SqlCommand cmd = new SqlCommand(@"INSERT INTO package(std_id, delivery_date, descript) VALUES (@std_id, @delivery_date, @description)", conn);
-
-                    cmd.Parameters.AddWithValue("@std_id", reader["std_id"]);
-                    cmd.Parameters.AddWithValue("@delivery_date", DelDate.Text);
-                    cmd.Parameters.AddWithValue("@description", Des.Text);
-                    cmd.ExecuteNonQuery();
-                    Response.Redirect(Request.RawUrl);
-                }
-            }
-            myCommand.ExecuteNonQuery();
-            conn.Close();
+            e.Day.IsSelectable = false;
         }
     }
 
-
-
-    // show phone and email based on inputting the firstname and lastname
+    // show phone and email based on information input
     protected void RoomID_SelectedIndexChanged(object sender, EventArgs e)
     {
         string connection = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
@@ -80,7 +57,7 @@ public partial class key_addnew : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connection))
         {
             conn.Open();
-            SqlCommand cmd2 = new SqlCommand("select std_id, student_phone, student_email from student where student_fname  = '" + firstname.Text + "' and student_lname = '" + lastname.Text + "'and house_id = '" + HouseID.Text + "'and room_id='" + RoomID.Text +"';", conn);
+            SqlCommand cmd2 = new SqlCommand("select std_id, student_phone, student_email from student where student_fname  = '" + firstname.Text + "' and student_lname = '" + lastname.Text + "'and house_id = '" + HouseID.Text + "'and room_id='" + RoomID.Text + "';", conn);
 
             using (SqlDataReader reader = cmd2.ExecuteReader())
             {
@@ -94,6 +71,42 @@ public partial class key_addnew : System.Web.UI.Page
         }
     }
 
+    // insert package record into tables: package(delivery_date, description) & student(std_id).
+    protected void Add_Click(object sender, EventArgs e)
+    {
+        DialogResult result = MessageBox.Show("Are you sure to insert this package?", "Confirmation", MessageBoxButtons.YesNo);
+        if (result == DialogResult.Yes)
+        {
+            string connection = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                SqlCommand myCommand = new SqlCommand("select [std_id] from student where student_fname  = '" + firstname.Text + "' and student_lname = '" + lastname.Text + "'; ", conn);
+
+                using (SqlDataReader reader = myCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        SqlCommand cmd = new SqlCommand(@"INSERT INTO package(std_id, delivery_date, descript) VALUES (@std_id, @delivery_date, @description)", conn);
+
+                        cmd.Parameters.AddWithValue("@std_id", reader["std_id"]);
+                        cmd.Parameters.AddWithValue("@delivery_date", DelDate.Text);
+                        cmd.Parameters.AddWithValue("@description", Des.Text);
+                        cmd.ExecuteNonQuery();
+                        Response.Redirect("package_pickup.aspx");
+                    }
+                }
+                myCommand.ExecuteNonQuery();
+                conn.Close();
+            }
+        } else if (result == DialogResult.No)
+        {
+            //...
+        }
+
+    }
+
     protected void Cancel_Click(object sender, EventArgs e)
     {
         firstname.Text = String.Empty;
@@ -105,10 +118,5 @@ public partial class key_addnew : System.Web.UI.Page
         DelDate.Text = String.Empty;
         Des.Text = String.Empty;
         Response.Redirect(Request.RawUrl);
-    }
-
-    protected void HouseID_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
     }
 }

@@ -33,12 +33,12 @@
                         AutoGenerateColumns="FALSE" OnRowCommand="GridView1_RowCommand"
                         runat="server" DataKeyNames="package_id">
                         <Columns>
-                            <asp:BoundField DataField="firstname" HeaderText="firstname" SortExpression="firstname" />
-                            <asp:BoundField DataField="lastname" HeaderText="lastname" SortExpression="lastname" />
-                            <asp:BoundField DataField="house" HeaderText="house" SortExpression="house" />
-                            <asp:BoundField DataField="room" HeaderText="room" SortExpression="room" />
-                            <asp:BoundField DataField="descript" HeaderText="descript" SortExpression="descript" />
-                            <asp:BoundField DataField="delivery_date" HeaderText="delivery_date" SortExpression="delivery_date" DataFormatString="{0:MM-dd-yyyy}" />
+                            <asp:BoundField DataField="firstname" HeaderText="Firstname" SortExpression="firstname" />
+                            <asp:BoundField DataField="lastname" HeaderText="Lastname" SortExpression="lastname" />
+                            <asp:BoundField DataField="house" HeaderText="House" SortExpression="house" />
+                            <asp:BoundField DataField="room" HeaderText="Room" SortExpression="room" />
+                            <asp:BoundField DataField="descript" HeaderText="Description" SortExpression="descript" />
+                            <asp:BoundField DataField="delivery_date" HeaderText="Delivery_Date" SortExpression="delivery_date" DataFormatString="{0:MM-dd-yyyy}" />
                             <asp:ButtonField ButtonType="Button" CommandName="select" ShowHeader="True" Text="Pick Up" />
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />

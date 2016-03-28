@@ -25,19 +25,22 @@
         <div class="primary">
             <div class="main">
                 <br />
+                <asp:Label ID="First" runat="server" Text="First name "></asp:Label><asp:TextBox ID="firstname" runat="server" Width="150px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="firstname" ErrorMessage="Firstname is required." ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator  runat="server"     
+                    ErrorMessage="Name must be between 1 and 20 characters." 
+                    ControlToValidate="firstname"     
+                    ValidationGroup="fieldrequired"
+                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" /><br />
                 <br />
-                <asp:Label ID="First" runat="server" Text="First name "></asp:Label><asp:TextBox ID="firstname" runat="server" Width="100px"></asp:TextBox>
-                <asp:RequiredFieldValidator ControlToValidate="First" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator  runat="server" 
-                                    CssClass="required"    
-                                    ErrorMessage="The name ." 
-                                    ControlToValidate="First"    
-                                    ValidationGroup="fieldrequired" 
-                                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" /><br />
-
-
-
-                <asp:Label ID="Last" runat="server" Text="Last name "></asp:Label><asp:TextBox ID="lastname" runat="server" Width="100px"></asp:TextBox>
+                <asp:Label ID="Last" runat="server" Text="Last name "></asp:Label><asp:TextBox ID="lastname" runat="server" Width="150px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="lastname" ErrorMessage="Lastname is required." ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator  runat="server"     
+                    ErrorMessage="Name must be between 1 and 20 characters." 
+                    ControlToValidate="lastname"     
+                    ValidationGroup="fieldrequired"
+                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" /><br />
+                <br />
                 <br />
                 <br />
                 <asp:Label ID="HouseL" runat="server" Text="House "></asp:Label><asp:DropDownList ID="HouseID" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourcehouse" DataTextField="house_name" DataValueField="house_id" AppendDataBoundItems="True"><asp:ListItem Text="" Value="0">--Choose house--</asp:ListItem></asp:DropDownList>
@@ -58,7 +61,7 @@
                 <br />
                 <asp:Label ID="DataL" runat="server" Text="Delivery Date "></asp:Label><asp:TextBox ID="DelDate" runat="server"></asp:TextBox>
                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="..." />
-                <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" OnSelectionChanged="Calendar1_SelectionChanged">
+                <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" OnSelectionChanged="Calendar1_SelectionChanged" OnDayRender="Calendar1_DayRender">
                     <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
                     <NextPrevStyle VerticalAlign="Bottom" />
                     <OtherMonthDayStyle ForeColor="#808080" />
