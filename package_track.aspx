@@ -53,10 +53,10 @@
                 </asp:SqlDataSource>
                 <br />
                 <br />
-                <asp:Label ID="PhoneL" runat="server" Text="Phone "></asp:Label><asp:TextBox ID="Phone" runat="server"></asp:TextBox>
+                <asp:Label ID="PhoneL" runat="server" Text="Phone " ></asp:Label><asp:TextBox ID="Phone" runat="server" disabled =" true"></asp:TextBox>
                 <br />
                 <br />
-                <asp:Label ID="EmailL" runat="server" Text="Email "></asp:Label><asp:TextBox ID="Email" runat="server"></asp:TextBox>
+                <asp:Label ID="EmailL" runat="server" Text="Email "></asp:Label><asp:TextBox ID="Email" runat="server" disabled =" true"></asp:TextBox>
                 <br />
                 <br />
                 <asp:Label ID="DataL" runat="server" Text="Delivery Date "></asp:Label><asp:TextBox ID="DelDate" runat="server"></asp:TextBox>
