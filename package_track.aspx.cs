@@ -74,7 +74,7 @@ public partial class key_addnew : System.Web.UI.Page
     // insert package record into tables: package(delivery_date, description) & student(std_id).
     protected void Add_Click(object sender, EventArgs e)
     {
-        DialogResult result = MessageBox.Show("Are you sure to insert this package?", "Confirmation", MessageBoxButtons.YesNo);
+        DialogResult result = MessageBox.Show(new Form { TopMost = true }, "Are you sure to insert this package?", "Confirmation", MessageBoxButtons.YesNo);
         if (result == DialogResult.Yes)
         {
             string connection = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
@@ -102,7 +102,8 @@ public partial class key_addnew : System.Web.UI.Page
             }
         } else if (result == DialogResult.No)
         {
-            //...
+
+            Response.Redirect(Request.RawUrl);
         }
 
     }

@@ -33,7 +33,7 @@ public partial class key_addnew : System.Web.UI.Page
     }
     protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        DialogResult result = MessageBox.Show("Are you sure to pick up this package?", "Confirmation", MessageBoxButtons.YesNo);
+        DialogResult result = MessageBox.Show(new Form { TopMost = true }, "Are you sure to pick up this package?", "Confirmation", MessageBoxButtons.YesNo);
         if (result == DialogResult.Yes && e.CommandName == "select")
         {
             int rowIndex = Int32.Parse((e.CommandArgument).ToString());

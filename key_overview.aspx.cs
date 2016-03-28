@@ -42,7 +42,7 @@ public partial class key_overview : System.Web.UI.Page
 
      public void Button_click_event(object sender, GridViewCommandEventArgs e)
          {
-        DialogResult result = MessageBox.Show("Are you sure to return a key?", "Confirmation", MessageBoxButtons.YesNo);
+        DialogResult result = MessageBox.Show(new Form { TopMost = true }, "Are you sure to return a key?", "Confirmation", MessageBoxButtons.YesNo);
         if (result == DialogResult.Yes && e.CommandName == "ReturnKey")
         {
             string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;

@@ -26,7 +26,7 @@
             <div class="main">
                 <br />
                 <asp:Label ID="First" runat="server" Text="First name "></asp:Label><asp:TextBox ID="firstname" runat="server" Width="150px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="firstname" ErrorMessage="Firstname is required." ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="firstname" ValidationGroup="fieldrequired" ErrorMessage="Firstname is required." ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator  runat="server"     
                     ErrorMessage="Name must be between 1 and 20 characters." 
                     ControlToValidate="firstname"     
@@ -34,7 +34,7 @@
                     ValidationExpression="^[a-zA-Z'.\s]{1,20}$" /><br />
                 <br />
                 <asp:Label ID="Last" runat="server" Text="Last name "></asp:Label><asp:TextBox ID="lastname" runat="server" Width="150px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="lastname" ErrorMessage="Lastname is required." ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="lastname" ValidationGroup="fieldrequired" ErrorMessage="Lastname is required." ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator  runat="server"     
                     ErrorMessage="Name must be between 1 and 20 characters." 
                     ControlToValidate="lastname"     
@@ -78,7 +78,7 @@
                 <asp:TextBox ID="Des" runat="server" Font-Strikeout="False" TextMode="MultiLine" Height="223px" Width="324px"></asp:TextBox>
                 <br />
                 <br />
-                <asp:Button ID="Add" runat="server" Text="Add" OnClick="Add_Click" /><asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="Cancel_Click" />
+                <asp:Button ID="Add" runat="server" Text="Add" OnClick="Add_Click" ValidationGroup="fieldrequired" onClientClick="if(Page_ClientValidate('fieldrequired')){this.disabled=true; this.value='Please wait..';}" UseSubmitBehavior="false" /><asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="Cancel_Click" />
              </div>
         </div>
         <!-- /#primary -->
