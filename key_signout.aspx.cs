@@ -36,8 +36,9 @@ public partial class key_lend : System.Web.UI.Page
             Response.Redirect("key_overview.aspx");
         }
         else {
-            
-            MessageBox.Show("This key has not returned yet!! \n Please insert a new key");
+
+            //MessageBox.Show(new Form { TopMost = true }, "Hello, I'm on top!");
+            MessageBox.Show(new Form { TopMost = true }, "This key has not returned yet!! \n Please insert a new key");
             Response.Redirect(Request.RawUrl);
             //string test = "test";
         }
