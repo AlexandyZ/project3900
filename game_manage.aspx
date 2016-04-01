@@ -49,6 +49,11 @@
                         <td>
                             <asp:textbox Type="number" id="qtyText" cssclass="infoBox" runat="server"></asp:textbox>
                             <span class="required">*</span>
+                            <asp:RegularExpressionValidator  runat="server"     
+                                    ErrorMessage="Game QTY cannot be negative number"
+                                    ControlToValidate="qtyText"     
+                                    ValidationGroup="fieldrequired"
+                                    ValidationExpression="^\d+$" ForeColor="Red"/>
                         </td>
                         <td>
                             <asp:Label ID="validateQTY" class="required" runat="server" Text=""></asp:Label>

@@ -37,10 +37,10 @@
                         <td>
                     <asp:RequiredFieldValidator ControlToValidate="txtFname" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator  runat="server"     
-                                    ErrorMessage="This expression does not validate." 
+                                    ErrorMessage="Name doesnt include a number" 
                                     ControlToValidate="txtFname"    
                                     ValidationGroup="fieldrequired" 
-                                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" />
+                                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" ForeColor="Red"/>
                       </td>
                     </tr>
                     <tr>
@@ -53,10 +53,10 @@
                         <td>
                      <asp:RequiredFieldValidator ControlToValidate="txtLname" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator>
                       <asp:RegularExpressionValidator  runat="server"     
-                                    ErrorMessage="This expression does not validate." 
+                                    ErrorMessage="Name doesnt include a number" 
                                     ControlToValidate="txtLname"     
                                     ValidationGroup="fieldrequired"
-                                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" />
+                                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" ForeColor="Red"/>
 
                      </td>
                     </tr>
@@ -68,12 +68,12 @@
                     <asp:TextBox cssclass="infoBox" type="text" runat="server" ID="txtPhone" placeholder="999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></asp:TextBox>
                     
                     </td>
-                        <td> <%--<asp:RequiredFieldValidator ControlToValidate="txtPhone" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic" Visible="True"></asp:RequiredFieldValidator>
-                  --%> <asp:RegularExpressionValidator  runat="server"     
-                                    ErrorMessage="This expression does not validate." color="red"
+                        <td>
+                         <asp:RegularExpressionValidator  runat="server"     
+                                    ErrorMessage="Phone is incorrect format"
                                     ControlToValidate="txtPhone"     
                                     ValidationGroup="fieldrequired"
-                                    ValidationExpression="\d{3}(-\d{3})(-\d{4})" />
+                                    ValidationExpression="\d{3}(-\d{3})(-\d{4})" ForeColor="Red"/>
                                     
                      </td>
                     </tr>

@@ -31,17 +31,16 @@
                 <asp:Label ID="First" runat="server" Text="First name "></asp:Label>
                 </td>
                         <td>
-                <asp:TextBox ID="firstname" runat="server" Width="150px"></asp:TextBox>
+                <asp:TextBox ID="firstname" runat="server" ></asp:TextBox>
                 <span class="required">*</span>
-                </td>
-                        <td>
+                
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="firstname" ValidationGroup="fieldrequired" ErrorMessage="Firstname is required." ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator  runat="server"     
                     ErrorMessage="Name must be between 1 and 20 characters." 
                     ControlToValidate="firstname"     
                     ValidationGroup="fieldrequired"
-                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" />    
-
+                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" ForeColor="Red" />    
+                     
                         </td>
                     </tr>
                     <tr>
@@ -49,16 +48,15 @@
                 <asp:Label ID="Last" runat="server" Text="Last name "></asp:Label>
                 </td>
                         <td>
-                <asp:TextBox ID="lastname" runat="server" Width="150px"></asp:TextBox>
+                <asp:TextBox ID="lastname" runat="server" ></asp:TextBox>
                 <span class="required">*</span>
-                </td>
-                        <td>
+               
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="lastname" ValidationGroup="fieldrequired" ErrorMessage="Lastname is required." ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator  runat="server"     
                     ErrorMessage="Name must be between 1 and 20 characters." 
                     ControlToValidate="lastname"     
                     ValidationGroup="fieldrequired"
-                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" />
+                    ValidationExpression="^[a-zA-Z'.\s]{1,20}$" ForeColor="Red" />
                     
                         </td>
                     </tr>
@@ -69,11 +67,10 @@
                  </td>
                         <td>
                 <asp:DropDownList ID="HouseID" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourcehouse" DataTextField="house_name" DataValueField="house_id" AppendDataBoundItems="True"><asp:ListItem Text="" Value="0">--Choose house--</asp:ListItem></asp:DropDownList>
-                 </td>
-                        <td>
+                
+                   
                 <asp:Label ID="RoomL" runat="server" Text="Room "></asp:Label>
-                 </td>
-                        <td>
+                
                 <asp:DropDownList ID="RoomID" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourceroom" DataTextField="room_name" DataValueField="room_id" AppendDataBoundItems="True" OnSelectedIndexChanged="RoomID_SelectedIndexChanged"><asp:ListItem Text="" Value="0">--Choose room--</asp:ListItem></asp:DropDownList>
                  </td>
                         <td>
