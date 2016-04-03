@@ -39,7 +39,7 @@
                             <span class="required">*</span>
                         </td>
                         <td>
-                            <asp:requiredfieldvalidator controltovalidate="gameText" CssClass="required" runat="server" errormessage="Required" display="Dynamic"></asp:requiredfieldvalidator>
+                            <asp:requiredfieldvalidator controltovalidate="gameText" ValidationGroup="fieldrequired" CssClass="required" runat="server" errormessage="Required" display="Dynamic"></asp:requiredfieldvalidator>
                         </td>
                     </tr>
                     <tr>
@@ -51,17 +51,18 @@
                             <span class="required">*</span>
                         </td>
                         <td>
+                        <asp:requiredfieldvalidator controltovalidate="qtyText" ValidationGroup="fieldrequired" CssClass="required" runat="server" errormessage="Required" display="Dynamic"></asp:requiredfieldvalidator>
                             <asp:RegularExpressionValidator  runat="server"     
-                                    ErrorMessage="This cannot be a negative number"
+                                    ErrorMessage="This cannot be a negative or zero number"
                                     ControlToValidate="qtyText"     
                                     ValidationGroup="fieldrequired"
-                                    ValidationExpression="^\d+$" CssClass="required" Display="Dynamic" />
+                                    ValidationExpression="^\d?[1-9]\d{0,2}$" CssClass="required" Display="Dynamic" />
                             <asp:Label ID="validateQTY" CssClass="required" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
                 </table>
-                <asp:button id="addSubmit" CssClass="submit" runat="server" text="Add New Game" onclick="addSubmit_Click" />
-                <asp:button id="deleteSubmit" CssClass="submit" runat="server" text="Delete Game" onclick="deleteSubmit_Click" />
+                <asp:button id="addSubmit" CssClass="submit" runat="server" text="Add New Game" onclick="addSubmit_Click" ValidationGroup="fieldrequired" onClientClick="if(Page_ClientValidate('fieldrequired')){this.disabled=true; this.value='Please wait..';}" UseSubmitBehavior="false"/>
+                <asp:button id="deleteSubmit" CssClass="submit" runat="server" text="Delete Game" onclick="deleteSubmit_Click" ValidationGroup="fieldrequired" onClientClick="if(Page_ClientValidate('fieldrequired')){this.disabled=true; this.value='Please wait..';}" UseSubmitBehavior="false" />
             </div>
         </div>
         <!-- /#primary -->
