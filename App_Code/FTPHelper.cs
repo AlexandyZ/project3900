@@ -1,4 +1,5 @@
-﻿using System;
+﻿using project3900.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
@@ -6,16 +7,16 @@ using System.IO;
 using System.Linq;
 using System.Web;
 
-/// <summary>
-/// Summary description for FTPHelper
-/// </summary>
+
 public class FTPHelper
 {
 
     private static string excelConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=\"Excel {1};HDR={2};IMEX=1\";";
 
-    public DataSet ReadExcelFile(string filePath, Boolean hasHeader)
+    public DataSet ReadExcelFile(string filename, Boolean hasHeader)
     {
+        string filePath = DBHelper.GetConfiguration("FTPDirectory") + filename;
+
         string version = Path.GetExtension(filePath) == ".xlsx" ? "12.0 Xml" : "8.0";
         string sheetName = "Sheet1";
         string cellRange = "";
@@ -38,9 +39,7 @@ public class FTPHelper
 
             da.Fill(ds.Tables[sheetName]);
 
-            //foreach (DataColumn dc in ds.Tables[sheetName].Columns) {
-            //    dc.ColumnName = dc.ColumnName.Trim();
-            //}
+         
         }
 
         return ds;

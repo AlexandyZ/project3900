@@ -43,7 +43,7 @@ public partial class import : System.Web.UI.Page
 
                     Boolean hasHeader = true;
                     FTPHelper fhp = new FTPHelper();
-                    DataSet ds = fhp.ReadExcelFile(filePath, hasHeader);
+                    DataSet ds = fhp.ReadExcelFile(filename, hasHeader);
 
 
                     string sheetName = "Sheet1";
@@ -95,7 +95,7 @@ public partial class import : System.Web.UI.Page
             record.SetSqlString(4, Convert.ToString(row["email"]));
             record.SetSqlString(5, Convert.ToString(row["house"]));
             record.SetSqlString(6, Convert.ToString(row["room"]));
-            //yield return record;
+           
             records.Add(record);
         }
 
