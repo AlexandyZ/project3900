@@ -41,6 +41,13 @@
                             <asp:TextBox ID="stdidText" placeholder="A00123456" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
+                        <asp:RegularExpressionValidator runat="server"
+                                CssClass="required"
+                                ErrorMessage="this is in wrong format"
+                                    ControlToValidate="stdidText"     
+                                    ValidationGroup="fieldrequired"
+                                    ValidationExpression="^[aA'.\s]{1}(\d{8})$"  Display="Dynamic" />
+                            <asp:RequiredFieldValidator ControlToValidate="stdidText" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
                             <asp:Label ID="validateStdID" CssClass="required" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
@@ -54,15 +61,15 @@
                         <td>
                             <asp:RegularExpressionValidator runat="server"
                                 CssClass="required"
-                                ErrorMessage="This cannot be a negative number"
-                                ControlToValidate="amountNum"
-                                ValidationGroup="fieldrequired"
-                                ValidationExpression="^\d+$" Display="Dynamic" />
-                            <asp:RequiredFieldValidator ControlToValidate="amountNum" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
+                                ErrorMessage="This cannot be a negative or zero number"
+                                    ControlToValidate="amountNum"     
+                                    ValidationGroup="fieldrequired"
+                                    ValidationExpression="^\d?[1-9]\d{0,2}$"  Display="Dynamic" />
+                            <asp:RequiredFieldValidator ControlToValidate="amountNum" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>
-                <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" />
+                <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" ValidationGroup="fieldrequired" onClientClick="if(Page_ClientValidate('fieldrequired')){this.disabled=true; this.value='Please wait..';}" UseSubmitBehavior="false" />
             </div>
         </div>
         <!-- /primary -->
