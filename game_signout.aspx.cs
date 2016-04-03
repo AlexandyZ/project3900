@@ -30,19 +30,41 @@ public partial class game_signout : System.Web.UI.Page
 
         SqlConnection conn = new SqlConnection(constring);
         conn.Open();
-        SqlCommand cmd = new SqlCommand("INSERT INTO lend_game VALUES((SELECT std_id FROM student WHERE student_id  = @stdId), '" +gameID+ "', '" +DateTime.Now.ToShortDateString()+ "', NULL, @gameQTY)", conn);
-        cmd.Parameters.AddWithValue("@stdId", stdidText.Text);
-        cmd.Parameters.AddWithValue("@gameQTY", amountNum.Text);
-        cmd.ExecuteNonQuery();
 
-        SqlCommand sc = new SqlCommand("UPDATE game SET game_invent = (SELECT game_invent from game WHERE game_id = '" +gameID+ "') - @gameQTY WHERE game_id = '"+gameID+"'", conn);
-        sc.Parameters.AddWithValue("@gameQTY", amountNum.Text);
-        sc.ExecuteNonQuery();
+        if (string.IsNullOrWhiteSpace(stdidText.Text))
+        {
+            string msg1 = "Required";
+            validateStdID.Text = msg1;
+        }
+        else
+        {
+            SqlCommand sqlcmd = new SqlCommand("SELECT 1 FROM student WHERE student_id = @studentID", conn);
+            sqlcmd.Parameters.AddWithValue("@studentID", stdidText.Text);
+            SqlDataReader rd = sqlcmd.ExecuteReader();
+            if(rd.Read())
+            {
+                SqlCommand cmd = new SqlCommand("INSERT INTO lend_game VALUES((SELECT std_id FROM student WHERE student_id  = @stdId), '" + gameID + "', '" + DateTime.Now.ToShortDateString() + "', NULL, @gameQTY)", conn);
+                cmd.Parameters.AddWithValue("@stdId", stdidText.Text);
+                cmd.Parameters.AddWithValue("@gameQTY", amountNum.Text);
+                cmd.ExecuteNonQuery();
 
-        conn.Close();
+                SqlCommand sc = new SqlCommand("UPDATE game SET game_invent = (SELECT game_invent from game WHERE game_id = '" + gameID + "') - @gameQTY WHERE game_id = '" + gameID + "'", conn);
+                sc.Parameters.AddWithValue("@gameQTY", amountNum.Text);
+                sc.ExecuteNonQuery();
 
-        MessageBox.Show("Game signed out!");
-        Response.Redirect("game_list.aspx");
+                conn.Close();
+
+                MessageBox.Show("Game signed out!");
+                Response.Redirect("game_list.aspx");
+            }
+            else
+            {
+                string msg = "This student ID doesn't exist, please check it.";
+                validateStdID.Text = msg;
+            }
+        }
+
+        
     }
 
 }

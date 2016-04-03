@@ -94,7 +94,7 @@ public partial class game_manage : System.Web.UI.Page
             }
             else
             {
-                string msg = "Invalid input! The number should less or equal than inventory.";
+                string msg = "Only have " + inv + " game(s) left...";
                 validateQTY.Text = msg;
             }
             conn.Close();

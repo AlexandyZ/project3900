@@ -35,11 +35,11 @@
                             <label class="info">Game Name</label>
                         </td>
                         <td>
-                            <asp:textbox id="gameText" cssclass="infoBox" runat="server"></asp:textbox>
+                            <asp:textbox id="gameText" placeholder="Chess" CssClass="infoBox" runat="server"></asp:textbox>
                             <span class="required">*</span>
                         </td>
                         <td>
-                            <asp:requiredfieldvalidator controltovalidate="gameText" cssclass="required" runat="server" errormessage="Required" display="Dynamic"></asp:requiredfieldvalidator>
+                            <asp:requiredfieldvalidator controltovalidate="gameText" CssClass="required" runat="server" errormessage="Required" display="Dynamic"></asp:requiredfieldvalidator>
                         </td>
                     </tr>
                     <tr>
@@ -47,21 +47,21 @@
                             <label class="info">Game QTY</label>
                         </td>
                         <td>
-                            <asp:textbox Type="number" id="qtyText" cssclass="infoBox" runat="server"></asp:textbox>
+                            <asp:textbox Type="number" id="qtyText" CssClass="infoBox" runat="server"></asp:textbox>
                             <span class="required">*</span>
-                            <asp:RegularExpressionValidator  runat="server"     
-                                    ErrorMessage="Game QTY cannot be negative number"
-                                    ControlToValidate="qtyText"     
-                                    ValidationGroup="fieldrequired"
-                                    ValidationExpression="^\d+$" ForeColor="Red"/>
                         </td>
                         <td>
-                            <asp:Label ID="validateQTY" class="required" runat="server" Text=""></asp:Label>
+                            <asp:RegularExpressionValidator  runat="server"     
+                                    ErrorMessage="This cannot be a negative number"
+                                    ControlToValidate="qtyText"     
+                                    ValidationGroup="fieldrequired"
+                                    ValidationExpression="^\d+$" CssClass="required" Display="Dynamic" />
+                            <asp:Label ID="validateQTY" CssClass="required" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
                 </table>
-                <asp:button id="addSubmit" class="submit" runat="server" text="Add New Game" onclick="addSubmit_Click" />
-                <asp:button id="deleteSubmit" class="submit" runat="server" text="Delete Game" onclick="deleteSubmit_Click" />
+                <asp:button id="addSubmit" CssClass="submit" runat="server" text="Add New Game" onclick="addSubmit_Click" />
+                <asp:button id="deleteSubmit" CssClass="submit" runat="server" text="Delete Game" onclick="deleteSubmit_Click" />
             </div>
         </div>
         <!-- /#primary -->

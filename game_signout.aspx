@@ -16,7 +16,7 @@
 
     <!-- content -->
     <section class="content">
-        <!-- #sidemenu -->
+        <!-- sidemenu -->
         <aside class="menu">
             <ul>
                 <li><a href="game_list.aspx">Game List</a></li>
@@ -25,22 +25,23 @@
                 <li><a href="game_manage.aspx">Game Management</a></li>
             </ul>
         </aside>
-        <!-- /#sidemenu -->
-        <!-- #primary -->
+        <!-- /sidemenu -->
+        <!-- primary -->
         <div class="primary">
             <div class="main">
                 <h1>
-                    <asp:Label ID="gamename" runat="server" Text="game name"></asp:Label></h1>
+                    <asp:Label ID="gamename" runat="server" Text="game name"></asp:Label>
+                </h1>
                 <table class="game_table">
                     <tr>
                         <td>
                             <label class="info">Student ID</label>
                         </td>
                         <td>
-                            <asp:TextBox ID="stdidText" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
+                            <asp:TextBox ID="stdidText" placeholder="A00123456" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ControlToValidate="stdidText" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:Label ID="validateStdID" CssClass="required" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -51,6 +52,12 @@
                             <asp:TextBox Type="number" ID="amountNum" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
+                            <asp:RegularExpressionValidator runat="server"
+                                CssClass="required"
+                                ErrorMessage="This cannot be a negative number"
+                                ControlToValidate="amountNum"
+                                ValidationGroup="fieldrequired"
+                                ValidationExpression="^\d+$" Display="Dynamic" />
                             <asp:RequiredFieldValidator ControlToValidate="amountNum" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
@@ -58,7 +65,7 @@
                 <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" />
             </div>
         </div>
-        <!-- /#primary -->
+        <!-- /primary -->
     </section>
     <!-- /content -->
 </asp:Content>
