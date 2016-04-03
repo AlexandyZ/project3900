@@ -47,7 +47,7 @@ public partial class game_manage : System.Web.UI.Page
             }
 
             string msg = qtyText.Text + " of " + gameText.Text + " added!";
-            MessageBox.Show(msg);
+            MessageBox.Show(new Form { TopMost = true }, msg);
             Response.Redirect("game_list.aspx");
         }
     }
@@ -68,7 +68,7 @@ public partial class game_manage : System.Web.UI.Page
                 cmd1.ExecuteNonQuery();
 
                 string msg = gameText.Text + " deleted!";
-                MessageBox.Show(msg);
+                MessageBox.Show(new Form { TopMost = true }, msg);
                 Response.Redirect("game_list.aspx");
             }
             else if (inv == int.Parse(qtyText.Text))
@@ -78,7 +78,7 @@ public partial class game_manage : System.Web.UI.Page
                 cmd1.ExecuteNonQuery();
 
                 string msg = gameText.Text + " deleted!";
-                MessageBox.Show(msg);
+                MessageBox.Show(new Form { TopMost = true }, msg);
                 Response.Redirect("game_list.aspx");
             }
             else if (inv > int.Parse(qtyText.Text))
@@ -89,7 +89,7 @@ public partial class game_manage : System.Web.UI.Page
                 cmd1.ExecuteNonQuery();
 
                 string msg = qtyText.Text + " of " + gameText.Text + " deleted!";
-                MessageBox.Show(msg);
+                MessageBox.Show(new Form { TopMost = true }, msg);
                 Response.Redirect("game_list.aspx");
             }
             else

@@ -54,7 +54,7 @@ public partial class game_signout : System.Web.UI.Page
 
                 conn.Close();
 
-                MessageBox.Show("Game signed out!");
+                MessageBox.Show(new Form { TopMost = true }, "Game signed out!");
                 Response.Redirect("game_list.aspx");
             }
             else

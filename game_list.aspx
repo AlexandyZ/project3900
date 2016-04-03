@@ -49,6 +49,15 @@
                             <asp:BoundField DataField="game_invent" HeaderText="Inventory" SortExpression="game_invent" />
                             <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Sign Out" />
                         </Columns>
+                         <EditRowStyle BackColor="#2461BF" />
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
                     </asp:GridView>
                 </div>
                 <!-- /#overview table -->

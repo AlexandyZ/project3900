@@ -28,7 +28,7 @@ public partial class game_return : System.Web.UI.Page
     }
     protected void Return_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        DialogResult result = MessageBox.Show("Are you sure to return the game?", "Confirmation", MessageBoxButtons.YesNo);
+        DialogResult result = MessageBox.Show(new Form { TopMost = true }, "Are you sure to return the game?", "Confirmation", MessageBoxButtons.YesNo);
 
         if (e.CommandName == "Select")
         {
@@ -47,7 +47,7 @@ public partial class game_return : System.Web.UI.Page
                 cmd2.ExecuteNonQuery();
 
                 conn.Close();
-                MessageBox.Show("1 game returned!");
+                MessageBox.Show(new Form { TopMost = true }, "1 game returned!");
                 Response.Redirect(Request.RawUrl);
             }
             else
