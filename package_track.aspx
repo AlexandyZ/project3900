@@ -108,8 +108,7 @@
                             <asp:Label ID="PhoneL" runat="server" Text="Phone "></asp:Label>
                         </td>
                         <td colspan="2">
-                            <asp:TextBox ID="Phone" runat="server" disabled=" true" CssClass="infoBox"></asp:TextBox>
-
+                            <asp:TextBox ID="Phone" runat="server" CssClass="infoBox"></asp:TextBox>
                         </td>
                         <td colspan="2"></td>
                     </tr>
@@ -118,17 +117,12 @@
                             <asp:Label ID="EmailL" runat="server" Text="Email "></asp:Label>
                         </td>
                         <td colspan="2">
-                            <asp:TextBox ID="Email" runat="server" disabled="true" CssClass="infoBox"></asp:TextBox>
+                            <asp:TextBox ID="Email" runat="server" CssClass="infoBox"></asp:TextBox>
                         </td>
                         <td colspan="2"></td>
                     </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="DataL" runat="server" Text="Delivery Date"></asp:Label>
-                        </td>
-                        <td colspan="2">
-                            <asp:TextBox ID="DelDate" runat="server" CssClass="infoBox"></asp:TextBox>
-                      
+                     </table>
+                            <asp:Label ID="DataL" runat="server" Text="Delivery Date" CssClass="infoBox"></asp:Label><asp:TextBox ID="DelDate" runat="server" CssClass="auto-style1" Width="136px"></asp:TextBox>
                             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="..." />
                             <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest"
                                 Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" OnSelectionChanged="Calendar1_SelectionChanged"
@@ -142,19 +136,12 @@
                                 <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
                                 <WeekendDayStyle BackColor="#FFFFCC" />
                             </asp:Calendar>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="DesL" runat="server" Text="Description "></asp:Label>
-                        </td>
-                        <td colspan="3">
+                            <br/>
+                            <br/>
+                            <asp:Label ID="DesL" runat="server" Text="Description "></asp:Label><br/>
                             <asp:TextBox ID="Des" runat="server" Font-Strikeout="False" TextMode="MultiLine" Height="223px" Width="324px"></asp:TextBox>
-                        </td>
-                        <td></td>
-                    </tr>
-                </table>
-                <asp:Button ID="Add" runat="server" Text="Add" OnClick="Add_Click" ValidationGroup="fieldrequired" OnClientClick="if(Page_ClientValidate('fieldrequired')){this.disabled=true; this.value='Please wait..';}" UseSubmitBehavior="false" />
+                            <br/>
+                <asp:Button ID="Add" runat="server" Text="Add" OnClick="Add_Click" ValidationGroup="fieldrequired" UseSubmitBehavior="false" />
                 <asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="Cancel_Click" />
             </div>
         </div>
@@ -162,3 +149,11 @@
     </section>
     <!-- /content -->
 </asp:Content>
+<asp:Content ID="Content1" runat="server" contentplaceholderid="head">
+    <style type="text/css">
+        .auto-style1 {
+            margin: 5px 0;
+        }
+    </style>
+</asp:Content>
+
