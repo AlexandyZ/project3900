@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="package_track.aspx.cs" Inherits="key_addnew" %>
+﻿<%@ Page Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="package_track.aspx.cs" Inherits="package_track" %>
 
 <asp:Content ContentPlaceHolderID="banner" runat="server">
     <link rel="stylesheet" href="/Styles/game.css" />
@@ -141,7 +141,7 @@
                             <asp:Label ID="DesL" runat="server" Text="Description "></asp:Label><br/>
                             <asp:TextBox ID="Des" runat="server" Font-Strikeout="False" TextMode="MultiLine" Height="223px" Width="324px"></asp:TextBox>
                             <br/>
-                <asp:Button ID="Add" runat="server" Text="Add" OnClick="Add_Click" ValidationGroup="fieldrequired" UseSubmitBehavior="false" />
+                <asp:Button ID="Add" runat="server" Text="Add" OnClick="Add_Click" ValidationGroup="fieldrequired" UseSubmitBehavior="false" OnClientClick="if(Page_ClientValidate('fieldrequired')){this.disabled=true; this.value='Please wait..';}" />
                 <asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="Cancel_Click" />
             </div>
         </div>

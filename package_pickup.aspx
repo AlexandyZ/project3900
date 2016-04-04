@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="package_pickup.aspx.cs" Inherits="key_addnew" %>
+﻿<%@ Page Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="package_pickup.aspx.cs" Inherits="package_pickup" %>
 
 <asp:Content ContentPlaceHolderID="banner" runat="server">
     <!-- banner -->
