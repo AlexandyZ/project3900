@@ -124,10 +124,10 @@ a{
 }
 
 .navbar a{
-    color:#ccc;
     padding:7px 3.5%;
     font-family:'Microsoft YaHei', 'Arial Narrow Bold', sans-serif;
     font-size:medium;
+    color:#ccc;
     line-height:2.2;
     text-shadow:0 -1px 0 rgba(0,0,0,0.3);
 }
@@ -142,7 +142,20 @@ a{
     color:#fff;
     background-color:#918e87;
 }
-
+.active{
+    background-color:#fff;
+}
+.current{
+    display:inline;
+    padding:7px 3.5%;
+    font-family:'Microsoft YaHei', 'Arial Narrow Bold', sans-serif;
+    font-size:medium;
+    font-style:italic;
+    line-height:2.2;
+    text-shadow:0 -1px 0 rgba(0,0,0,0.3);
+    color:#fff !important;
+    background-color:#918e87;
+}
 .banner{
     position:relative;
     margin:0 auto;
