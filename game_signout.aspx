@@ -38,16 +38,19 @@
                             <label class="info">Student ID</label>
                         </td>
                         <td>
-                            <asp:TextBox ID="stdidText" placeholder="A00123456" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
+                            <asp:TextBox ID="stdidText" placeholder="A00123456"
+                                CssClass="infoBox" runat="server"
+                                OnTextChanged="StdId_onTextChanged"
+                                AutoPostBack="True"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                        <asp:RegularExpressionValidator runat="server"
+                            <!--<asp:RegularExpressionValidator runat="server"
                                 CssClass="required"
-                                ErrorMessage="this is in wrong format"
-                                    ControlToValidate="stdidText"     
-                                    ValidationGroup="fieldrequired"
-                                    ValidationExpression="^[aA'.\s]{1}(\d{8})$"  Display="Dynamic" />
-                            <asp:RequiredFieldValidator ControlToValidate="stdidText" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
+                                ErrorMessage="Invalid Student ID! hint: A00123456"
+                                ControlToValidate="stdidText"
+                                ValidationGroup="fieldrequired"
+                                ValidationExpression="^[aA'.\s]{1}(\d{8})$" Display="Dynamic" />
+                            <asp:RequiredFieldValidator ControlToValidate="stdidText" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>-->
                             <asp:Label ID="validateStdID" CssClass="required" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
@@ -59,17 +62,16 @@
                             <asp:TextBox Type="number" ID="amountNum" CssClass="infoBox" runat="server"></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                            <asp:RegularExpressionValidator runat="server"
-                                CssClass="required"
-                                ErrorMessage="This cannot be a negative or zero number"
+                            <!--<asp:RegularExpressionValidator  runat="server"     
+                                    ErrorMessage="This cannot be a negative number or zero"
                                     ControlToValidate="amountNum"     
                                     ValidationGroup="fieldrequired"
-                                    ValidationExpression="^\d?[1-9]\d{0,2}$"  Display="Dynamic" />
-                            <asp:RequiredFieldValidator ControlToValidate="amountNum" ValidationGroup="fieldrequired" CssClass="required" runat="server" ErrorMessage="Required" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    ValidationExpression="^\d?[1-9]\d{0,2}$" CssClass="required" Display="Dynamic" />-->
+                            <asp:Label ID="validateQTY" CssClass="required" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
                 </table>
-                <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" ValidationGroup="fieldrequired" onClientClick="if(Page_ClientValidate('fieldrequired')){this.disabled=true; this.value='Please wait..';}" UseSubmitBehavior="false" />
+                <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" ValidationGroup="fieldrequired" />
             </div>
         </div>
         <!-- /primary -->

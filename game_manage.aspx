@@ -53,7 +53,7 @@
                         <td>
                         <asp:requiredfieldvalidator controltovalidate="qtyText" ValidationGroup="fieldrequired" CssClass="required" runat="server" errormessage="Required" display="Dynamic"></asp:requiredfieldvalidator>
                             <asp:RegularExpressionValidator  runat="server"     
-                                    ErrorMessage="This cannot be a negative or zero number"
+                                    ErrorMessage="This cannot be a negative number or zero"
                                     ControlToValidate="qtyText"     
                                     ValidationGroup="fieldrequired"
                                     ValidationExpression="^\d?[1-9]\d{0,2}$" CssClass="required" Display="Dynamic" />
