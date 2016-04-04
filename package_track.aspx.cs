@@ -1,4 +1,5 @@
-﻿using System;
+﻿using project3900.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -74,33 +75,56 @@ public partial class key_addnew : System.Web.UI.Page
     // insert package record into tables: package(delivery_date, description) & student(std_id).
     protected void Add_Click(object sender, EventArgs e)
     {
+
         DialogResult result = MessageBox.Show(new Form { TopMost = true }, "Are you sure to insert this package?", "Confirmation", MessageBoxButtons.YesNo);
         if (result == DialogResult.Yes)
         {
             string connection = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
 
-            using (SqlConnection conn = new SqlConnection(connection))
-            {
-                conn.Open();
-                SqlCommand myCommand = new SqlCommand("select [std_id] from student where student_fname  = '" + firstname.Text + "' and student_lname = '" + lastname.Text + "'; ", conn);
-
-                using (SqlDataReader reader = myCommand.ExecuteReader())
+                using (SqlConnection conn = new SqlConnection(connection))
                 {
-                    while (reader.Read())
-                    {
-                        SqlCommand cmd = new SqlCommand(@"INSERT INTO package(std_id, delivery_date, descript) VALUES (@std_id, @delivery_date, @description)", conn);
+                    conn.Open();
+                    SqlCommand myCommand = new SqlCommand("select [std_id] from student where student_fname  = '" + firstname.Text + "' and student_lname = '" + lastname.Text + "'; ", conn);
 
-                        cmd.Parameters.AddWithValue("@std_id", reader["std_id"]);
-                        cmd.Parameters.AddWithValue("@delivery_date", DelDate.Text);
-                        cmd.Parameters.AddWithValue("@description", Des.Text);
-                        cmd.ExecuteNonQuery();
-                        Response.Redirect("package_pickup.aspx");
+                    using (SqlDataReader reader = myCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            SqlCommand cmd = new SqlCommand(@"INSERT INTO package(std_id, delivery_date, descript) VALUES (@std_id, @delivery_date, @description)", conn);
+
+                            cmd.Parameters.AddWithValue("@std_id", reader["std_id"]);
+                            cmd.Parameters.AddWithValue("@delivery_date", DelDate.Text);
+                            cmd.Parameters.AddWithValue("@description", Des.Text);
+                            cmd.ExecuteNonQuery();
+                            Response.Redirect("package_pickup.aspx");
+                        }
                     }
+                    myCommand.ExecuteNonQuery();
+                    conn.Close();
                 }
-                myCommand.ExecuteNonQuery();
-                conn.Close();
+        List<SqlParameter> spParams1 = new List<SqlParameter>();
+        spParams1.Add(new SqlParameter("@FirstName", firstname.Text));
+        spParams1.Add(new SqlParameter("@LastName", lastname.Text));
+
+        DataSet ds = new DataSet();
+        ds = DBHelper.ExecuteBySPName("Ckeck_StudentName2", spParams1.ToArray());
+        if (ds.Tables[0].Rows.Count == 0)
+        {
+            MessageBox.Show(new Form { TopMost = true }, "This student does not exist in the database system \n Please insert a student again");
+            Response.Redirect(Request.RawUrl);
+
+        } else {
+
+                
+                MessageBox.Show(new Form { TopMost = true }, "This student does not exist in the database system \n Please insert a student again");
+                Response.Redirect(Request.RawUrl);
+          
             }
-        } else if (result == DialogResult.No)
+        }
+
+
+
+        else if (result == DialogResult.No)
         {
 
             Response.Redirect(Request.RawUrl);

@@ -128,8 +128,7 @@
                         </td>
                         <td colspan="2">
                             <asp:TextBox ID="DelDate" runat="server" CssClass="infoBox"></asp:TextBox>
-                        </td>
-                        <td>
+                      
                             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="..." />
                             <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest"
                                 Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" OnSelectionChanged="Calendar1_SelectionChanged"
