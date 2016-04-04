@@ -21,7 +21,6 @@ public partial class key_addnew : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-
         if (Calendar1.Visible)
         {
             Calendar1.Visible = false;
