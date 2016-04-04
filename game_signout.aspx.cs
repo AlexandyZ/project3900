@@ -36,11 +36,10 @@ public partial class game_signout : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand("SELECT game_invent FROM game WHERE game_id = '" + gameID + "'", conn);       
         int inv = int.Parse(Convert.ToString(cmd.ExecuteScalar()));
 
-        if (string.IsNullOrWhiteSpace(amountNum.Text) || string.IsNullOrWhiteSpace(stdidText.Text))
+        if (string.IsNullOrWhiteSpace(amountNum.Text))
         {
             string msg = "Required";
             validateQTY.Text = msg;
-            validateStdID.Text = msg;
         }
         else if (!Regex.IsMatch(amountNum.Text, @"^\d?[1-9]\d{0,2}$"))
         {
