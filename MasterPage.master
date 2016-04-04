@@ -6,6 +6,7 @@
 <head runat="server">
     <title>BCIT HRS</title>
     <link rel="stylesheet" href="/Styles/main.css" />
+    <script type="text/javascript" src="/JS/main.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -38,18 +39,18 @@
             <!-- #navbar -->
             <nav class="rshift_navbar">
                 <div class="navbar">
-                    <ul>
-                        <li id="nav_key">
-                            <a href="key_overview.aspx">KEYS</a>
+                    <ul id="navlink">
+                        <li>
+                            <a id="key" href="key_overview.aspx" onclick="change_color()">KEYS</a>
                         </li>
-                        <li id="nav_game">
-                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="game_list.aspx">GAMES</asp:HyperLink>
+                        <li>
+                            <a id="game" href="game_list.aspx" onclick="change_color()">GAMES</a>
                         </li>
-                        <li id="nav_package">
-                            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="package_pickup.aspx">PACKAGES</asp:HyperLink>
+                        <li>
+                            <a id="package" href="package_pickup.aspx" onclick="change_color()">PACKAGES</a>
                         </li>
-                        <li id="nav_import">
-                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="import.aspx">IMPORT</asp:HyperLink>
+                        <li>
+                            <a id="import" href="import.aspx" onclick="change_color()">IMPORT</a>
                         </li>
                     </ul>
                 </div>

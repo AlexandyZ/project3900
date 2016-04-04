@@ -19,10 +19,10 @@
         <!-- #sidemenu -->
         <aside class="menu">
             <ul>
-                <li><a href="game_list.aspx">Game List</a></li>
-                <li><a href="game_return.aspx">Game Return</a></li>
-                <li><a href="game_report.aspx">Game Report</a></li>
-                <li><a href="game_manage.aspx">Game Management</a></li>
+                <li class="active"><a href="javascript:game_list.aspx" >Game List</a></li>
+                <li><a href="game_return.aspx" >Game Return</a></li>
+                <li><a href="game_report.aspx" >Game Report</a></li>
+                <li><a href="game_manage.aspx" >Game Management</a></li>
             </ul>
         </aside>
         <!-- /#sidemenu -->
