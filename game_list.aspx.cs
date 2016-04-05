@@ -35,7 +35,7 @@ public partial class game_list : System.Web.UI.Page
         {
 
             int rowIndex = Int32.Parse((e.CommandArgument).ToString());
-            int gameID = Int32.Parse(GameView.DataKeys[rowIndex].Value.ToString());
+            int gameID = Int32.Parse(GameListView.DataKeys[rowIndex].Value.ToString());
             Response.Redirect("game_signout.aspx?" + gameID);
             //string a = GameView.Rows[rowIndex].Cells[1].Text;
             //Label1.Text = a.ToString();
@@ -47,7 +47,7 @@ public partial class game_list : System.Web.UI.Page
         spParams.Add(new SqlParameter("@GameName", searchText.Value));
         DataSet ds = new DataSet();
         ds = DBHelper.ExecuteBySPName("GameOverviewByGameName", spParams.ToArray());
-        GameView.DataSource = ds.Tables[0];
-        GameView.DataBind();
+        GameListView.DataSource = ds.Tables[0];
+        GameListView.DataBind();
     }
 }

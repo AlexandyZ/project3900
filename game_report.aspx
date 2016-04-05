@@ -37,7 +37,10 @@
                 <!-- /#search bar -->
 
                 <div class="result">
-                    <asp:GridView class="gridview" ID="GameGridView" runat="server" AllowSorting="True" AutoGenerateColumns="False">
+                    <asp:GridView ID="GameGridView" runat="server"
+                        CssClass="mGrid" 
+                        AlternatingRowStyle-CssClass="alt"
+                        AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField DataField="student_id" HeaderText="Student ID" SortExpression="student_id" />
                             <asp:BoundField DataField="std_name" HeaderText="Student Name" SortExpression="std_name" ReadOnly="True" />

@@ -29,23 +29,19 @@
                     <input type="submit" runat="server" class="searchbtn" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" />
                 </div>
                 <div class="result">
-                    <asp:GridView ID="SearchResult" AutoGenerateColumns="FALSE" runat="server" AllowSorting="True" OnRowCommand="Button_click_event" DataKeyNames="KeyID">
+                    <asp:GridView ID="SearchResult" 
+                        CssClass="mGrid" 
+                        AlternatingRowStyle-CssClass="alt"
+                        AutoGenerateColumns="FALSE" runat="server" 
+                        OnRowCommand="Button_click_event" 
+                        DataKeyNames="KeyID">
                         <Columns>
                             <asp:BoundField DataField="KeyNumber" HeaderText="KeyNumber" />
                             <asp:BoundField DataField="Name" HeaderText="Name" />
                             <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />
                             <asp:BoundField DataField="Time_Out" HeaderText="Time_Out" />
-                            <asp:ButtonField ButtonType="Button" HeaderText="Status" Text="Return" CommandName="ReturnKey" />
+                            <asp:ButtonField ButtonType="Button" HeaderText="Status" Text="Return" CommandName="ReturnKey" ItemStyle-Width="55px" />
                         </Columns>
-                         <EditRowStyle BackColor="#2461BF" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#EFF3FB" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
                     </asp:GridView>
                 </div>
             </div>
