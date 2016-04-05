@@ -36,10 +36,10 @@
                         OnRowCommand="Button_click_event" 
                         DataKeyNames="KeyID">
                         <Columns>
-                            <asp:BoundField DataField="KeyNumber" HeaderText="KeyNumber" />
+                            <asp:BoundField DataField="KeyNumber" HeaderText="Key Number" />
                             <asp:BoundField DataField="Name" HeaderText="Name" />
-                            <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" />
-                            <asp:BoundField DataField="Time_Out" HeaderText="Time_Out" />
+                            <asp:BoundField DataField="PhoneNumber" HeaderText="Phone Number" />
+                            <asp:BoundField DataField="Time_Out" HeaderText="Time Out" />
                             <asp:ButtonField ButtonType="Button" HeaderText="Status" Text="Return" CommandName="ReturnKey" ItemStyle-Width="55px" />
                         </Columns>
                     </asp:GridView>
