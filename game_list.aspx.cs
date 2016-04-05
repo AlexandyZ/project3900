@@ -44,7 +44,7 @@ public partial class game_list : System.Web.UI.Page
     private void getGame()
     {
         List<SqlParameter> spParams = new List<SqlParameter>();
-        spParams.Add(new SqlParameter("@GameName", searchText.Value));
+        spParams.Add(new SqlParameter("@GameName", searchText.Text));
         DataSet ds = new DataSet();
         ds = DBHelper.ExecuteBySPName("GameOverviewByGameName", spParams.ToArray());
         GameListView.DataSource = ds.Tables[0];

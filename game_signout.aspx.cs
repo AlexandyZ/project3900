@@ -41,11 +41,11 @@ public partial class game_signout : System.Web.UI.Page
             string msg = "Required";
             validateQTY.Text = msg;
         }
-        else if (!Regex.IsMatch(amountNum.Text, @"^\d?[1-9]\d{0,2}$"))
+        /* else if (!Regex.IsMatch(amountNum.Text, @"^\d?[1-9]\d{0,2}$"))
         {
             string msg = "This cannot be a negative number or zero";
             validateQTY.Text = msg;
-        }
+        } */
         else if(inv >= int.Parse(amountNum.Text))
         {
             SqlCommand sqlcmd = new SqlCommand("SELECT 1 FROM student WHERE student_id = @studentID", conn);
@@ -81,6 +81,10 @@ public partial class game_signout : System.Web.UI.Page
         conn.Close();        
     }
 
+    protected void Qty_onTextChanged(object sender, EventArgs e)
+    {
+
+    }
 
     protected void StdId_onTextChanged(object sender, EventArgs e)
     {
@@ -105,6 +109,10 @@ public partial class game_signout : System.Web.UI.Page
         {
             string msg = "This student ID doesn't exist, please check it.";
             validateStdID.Text = msg;
+        }
+        else
+        {
+            validateStdID.Text = "";
         }
         conn.Close();
     }

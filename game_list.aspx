@@ -31,9 +31,10 @@
             <div class="main">
                 <!-- #search bar -->
                 <div class="searchbar">
-                    <input type="text" runat="server" class="searchbox" id="searchText" placeholder="Search by Game Name" />
-                    <input type="submit" runat="server" class="searchbtn" id="searchBtn" value="Search" onserverclick="SearchBtn_Click" />
+                    <asp:textbox runat="server" CssClass="searchbox" ID="searchText" placeholder="Search by Game Name"></asp:textbox>
+                    <asp:button runat="server" text="Search" CssClass="searchbtn" ID="searchBtn" onServerClick="SearchBtn_Click"/>
                 </div>
+                
                 <!-- /#search bar -->
                 <!-- #overview table -->
                 <div class="result">
