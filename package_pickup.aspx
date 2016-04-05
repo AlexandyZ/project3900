@@ -41,8 +41,8 @@
                             <asp:BoundField DataField="house" HeaderText="House" SortExpression="house" />
                             <asp:BoundField DataField="room" HeaderText="Room" SortExpression="room" />
                             <asp:BoundField DataField="descript" HeaderText="Description" SortExpression="descript" />
-                            <asp:BoundField DataField="delivery_date" HeaderText="Delivery_Date" SortExpression="delivery_date" DataFormatString="{0:MM-dd-yyyy}" />
-                            <asp:ButtonField ButtonType="Button" CommandName="select" ShowHeader="True" Text="Pick Up" />
+                            <asp:BoundField DataField="delivery_date" HeaderText="Delivery Date" SortExpression="delivery_date" DataFormatString="{0:yyyy-MM-dd}" />
+                            <asp:ButtonField ButtonType="Button" CommandName="select" ShowHeader="True" Text="Pick Up" ItemStyle-Width="55px"/>
                         </Columns>
                     </asp:GridView>
                 </div>

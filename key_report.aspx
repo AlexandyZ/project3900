@@ -37,8 +37,8 @@
                             <asp:BoundField DataField="KeyNumber" HeaderText="Key Number" />
                             <asp:BoundField DataField="Name" HeaderText="Name" />
                             <asp:BoundField DataField="PhoneNumber" HeaderText="Phone Number" />
-                            <asp:BoundField DataField="Time_Out" HeaderText="Time Out" />
-                            <asp:BoundField DataField="Time_in" HeaderText="Time In" />
+                            <asp:BoundField DataField="Time_Out" HeaderText="Time Out" DataFormatString="{0:yyyy-MM-dd hh:mm tt}" />
+                            <asp:BoundField DataField="Time_in" HeaderText="Time In" DataFormatString="{0:yyyy-MM-dd hh:mm tt}"/>
                         </Columns>
                     </asp:GridView>
                     <%--<asp:SqlDataSource ID="overviewkey" runat="server" ConnectionString="<%$ ConnectionStrings:RMSConnection %>" SelectCommand="select k.keys_name, w.worker_fname ,w.worker_lname, c.comp_phone, lk.keylend_date, lk.keyreturn_date, k.keyoutstanding as Status FROM lend_key as lk INNER JOIN keys as k ON lk.keys_id = k.keys_id INNER JOIN worker as w ON w.worker_id = lk.worker_id INNER JOIN company as c ON c.comp_id = w.comp_id "></asp:SqlDataSource>--%>

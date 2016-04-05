@@ -39,7 +39,7 @@
                             <asp:BoundField DataField="KeyNumber" HeaderText="Key Number" />
                             <asp:BoundField DataField="Name" HeaderText="Name" />
                             <asp:BoundField DataField="PhoneNumber" HeaderText="Phone Number" />
-                            <asp:BoundField DataField="Time_Out" HeaderText="Time Out" />
+                            <asp:BoundField DataField="Time_Out" HeaderText="Time Out" DataFormatString="{0:yyyy-MM-dd hh:mm tt}"/>
                             <asp:ButtonField ButtonType="Button" HeaderText="" Text="Return" CommandName="ReturnKey" ItemStyle-Width="55px" />
                         </Columns>
                     </asp:GridView>

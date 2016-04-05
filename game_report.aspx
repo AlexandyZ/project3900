@@ -45,11 +45,12 @@
                             <asp:BoundField DataField="student_id" HeaderText="Student ID" SortExpression="student_id" />
                             <asp:BoundField DataField="std_name" HeaderText="Student Name" SortExpression="std_name" ReadOnly="True" />
                             <asp:BoundField DataField="game_name" HeaderText="Game Name" SortExpression="game_name" />
-                            <asp:BoundField DataField="glend_date" HeaderText="SignOut Date" SortExpression="glend_date" DataFormatString="{0:MM-dd-yyyy}" />
-                            <asp:BoundField DataField="greturn_date" HeaderText="Return Date" SortExpression="greturn_date" DataFormatString="{0:MM-dd-yyyy}" />
+                            <asp:BoundField DataField="glend_date" HeaderText="SignOut Date" SortExpression="glend_date" DataFormatString="{0:yyyy-MM-dd}" />
+                            <asp:BoundField DataField="greturn_date" HeaderText="Return Date" SortExpression="greturn_date" DataFormatString="{0:yyyy-MM-dd}" />
                             <asp:BoundField DataField="game_qty" HeaderText="QTY" SortExpression="game_qty" />
                         </Columns>
                     </asp:GridView>
+                    <asp:Label ID="reportNote" runat="server" Text="Label">Note: QTY shows numbers of game which still haven't returned.</asp:Label>
                 </div>
             </div>
         </div>

@@ -39,8 +39,8 @@
                             <asp:BoundField DataField="house" HeaderText="House" SortExpression="house" />
                             <asp:BoundField DataField="room" HeaderText="Room" SortExpression="room" />
                             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="descript" />
-                            <asp:BoundField DataField="delivery_date" HeaderText="Delivery_Date" SortExpression="delivery_date" DataFormatString="{0:MM-dd-yyyy}" />
-                            <asp:BoundField DataField="pickup_date" HeaderText="pickup_date" SortExpression="pickup_date" DataFormatString="{0:MM-dd-yyyy}" />
+                            <asp:BoundField DataField="delivery_date" HeaderText="Delivery Date" SortExpression="delivery_date" DataFormatString="{0:MM-dd-yyyy}" />
+                            <asp:BoundField DataField="pickup_date" HeaderText="Pickup Date" SortExpression="pickup_date" DataFormatString="{0:MM-dd-yyyy}" />
                         </Columns>
                     </asp:GridView>
                 </div>

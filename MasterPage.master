@@ -42,7 +42,7 @@
                 <div class="navbar">
                     <ul id="navlink">
                         <li>
-                            <a id="key" href="key_overview.aspx" class="current" >KEYS</a>
+                            <a id="key" href="key_overview.aspx" class="">KEYS</a>
                         </li>
                         <li>
                             <a id="game" href="game_list.aspx" class="">GAMES</a>
