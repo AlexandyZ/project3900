@@ -142,9 +142,6 @@ a{
     color:#fff;
     background-color:#918e87;
 }
-.active{
-    background-color:#fff;
-}
 .current{
     display:inline;
     padding:7px 3.5%;
@@ -226,7 +223,9 @@ aside{
     padding:5px 0;
     border-bottom:1px solid #fff;
 }
-
+.menu .active{
+    background-color:#fff;
+}
 .primary{
     position:relative;
     float:right;
@@ -259,6 +258,60 @@ aside{
     margin:20px 0;
     width:80%;
 }
+.table{
+    margin:10px 0;
+    left:0;
+}
+.mGrid {   
+    width: 93%;   
+    background-color: #fff;   
+    margin: 5px 0 10px 0;   
+    border: solid 1px #525252;   
+    border-collapse:collapse;   
+}
+
+.mGrid td {   
+    padding: 1px;
+    height: 21px;
+    border: solid 1px #c1c1c1;   
+    color: #333333;
+}  
+.mGrid th {   
+    padding: 1px; 
+    text-align: center;  
+    color: #fff; 
+    height: 21px;
+    background: #025ea1;   
+    border-left: solid 1px #525252;   
+    font-size: 1.1em;   
+}
+.mGrid tr:hover {   
+    background: #d0e0e9;
+}
+.mGrid .alt { 
+    background: #fcfcfc url(../Images/grd_alt.png) repeat-x top; 
+}
+
+.info{
+    margin:0;
+    width:100%;
+}
+.infoBox{
+    margin:5px 0;
+    width:90%;
+}
+
+.submit{
+    position:relative;
+    margin:10px;
+    top: 0px;
+    left: 0px;
+}
+.required{
+    color:red;
+}
+
+
 footer{
     width:100%;
     height:80px;
@@ -268,9 +321,6 @@ footer{
     color:#2d2d2d;
     font-size:12px;
     background-color:#808080;
-}
-.required{
-    color:red;
 }
 .copyright{
     padding:10px;

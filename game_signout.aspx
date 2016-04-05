@@ -32,7 +32,7 @@
                 <h1>
                     <asp:Label ID="gamename" runat="server" Text="game name"></asp:Label>
                 </h1>
-                <table class="game_table">
+                <table class="table">
                     <tr>
                         <td>
                             <label class="info">Student ID</label>

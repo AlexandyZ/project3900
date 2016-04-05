@@ -38,7 +38,8 @@
                 <div class="result">
                     <asp:GridView ID="GameReturn" runat="server"
                         AutoGenerateColumns="False"
-                        AllowSorting="True"
+                        CssClass="mGrid" 
+                        AlternatingRowStyle-CssClass="alt"
                         OnSelectedIndexChanged="GameReturn_SelectedIndexChanged"
                         OnRowDataBound="GameReturn_RowDataBound"
                         OnRowCommand="Return_RowCommand"
@@ -49,7 +50,7 @@
                             <asp:BoundField DataField="game_name" HeaderText="Game Name" SortExpression="game_name" ReadOnly="True" />
                             <asp:BoundField DataField="game_qty" HeaderText="QTY" SortExpression="game_qty" />
                             <asp:BoundField DataField="glend_date" HeaderText="SignOut Date" SortExpression="glend_date" ReadOnly="True" DataFormatString="{0:MM/dd/yyyy}" />
-                            <asp:ButtonField ButtonType="Button" Text="Return" CommandName="Select" />
+                            <asp:ButtonField ButtonType="Button" Text="Return" CommandName="Select" ItemStyle-Width="55px" />
                         </Columns>
                     </asp:GridView>
                 </div>

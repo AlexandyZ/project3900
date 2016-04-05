@@ -25,7 +25,7 @@
         <!-- #primary -->
         <div class="primary">
             <div class="main">
-                <table class="game_table">
+                <table class="table">
                     <tr>
                         <td>
                             <asp:Label ID="First" runat="server" Text="First name "></asp:Label>

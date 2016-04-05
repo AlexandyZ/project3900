@@ -7,6 +7,7 @@
     <title>BCIT HRS</title>
     <link rel="stylesheet" href="/Styles/main.css" />
     <script type="text/javascript" src="/JS/main.js"></script>
+    <!--<script type="text/javascript" src="/JS/jquery-2.2.2.min.js"></script>-->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -41,16 +42,16 @@
                 <div class="navbar">
                     <ul id="navlink">
                         <li>
-                            <a id="key" href="key_overview.aspx" onclick="change_color()">KEYS</a>
+                            <a id="key" href="key_overview.aspx" class="current" >KEYS</a>
                         </li>
                         <li>
-                            <a id="game" href="game_list.aspx" onclick="change_color()">GAMES</a>
+                            <a id="game" href="game_list.aspx" class="">GAMES</a>
                         </li>
                         <li>
-                            <a id="package" href="package_pickup.aspx" onclick="change_color()">PACKAGES</a>
+                            <a id="package" href="package_pickup.aspx" class="">PACKAGES</a>
                         </li>
                         <li>
-                            <a id="import" href="import.aspx" onclick="change_color()">IMPORT</a>
+                            <a id="import" href="import.aspx" class="">IMPORT</a>
                         </li>
                     </ul>
                 </div>

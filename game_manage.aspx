@@ -29,7 +29,7 @@
         <!-- #primary -->
         <div class="primary">
             <div class="main">
-                <table class="game_table">
+                <table class="table">
                     <tr>
                         <td>
                             <label class="info">Game Name</label>
