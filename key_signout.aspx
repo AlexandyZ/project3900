@@ -17,7 +17,7 @@
         <aside class="menu">
             <ul>
                 <li><a href="key_overview.aspx">Key Overview</a></li>
-                <li><a href="key_signout.aspx">Key Sign Out</a></li>
+                <li class="active"><a href="key_signout.aspx">Key Sign Out</a></li>
                 <li><a href="key_report.aspx">Key Report</a></li>
             </ul>
         </aside>
