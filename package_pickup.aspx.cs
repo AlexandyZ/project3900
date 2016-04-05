@@ -13,10 +13,11 @@ using System.Configuration;
 
 public partial class package_pickup : System.Web.UI.Page
 {
+    string searchstr = "";
     protected void Page_Load(object sender, EventArgs e)
     {
         List<SqlParameter> spParams = new List<SqlParameter>();
-        spParams.Add(new SqlParameter("@StudentName", searchbar.Value));
+        spParams.Add(new SqlParameter("@StudentName", searchstr));
         DataSet ds = new DataSet();
         ds = DBHelper.ExecuteBySPName("Package_Search", spParams.ToArray());
         SearchResult.DataSource = ds.Tables[0];
@@ -24,8 +25,9 @@ public partial class package_pickup : System.Web.UI.Page
     }
     protected void SearchBtn_Click(object sender, EventArgs e)
     {
-        List<SqlParameter> spParams = new List<SqlParameter>();
-        spParams.Add(new SqlParameter("@StudentName", searchbar.Value));
+        searchstr = searchbar.Value;
+        List <SqlParameter> spParams = new List<SqlParameter>();
+        spParams.Add(new SqlParameter("@StudentName", searchstr));
         DataSet ds = new DataSet();
         ds = DBHelper.ExecuteBySPName("Package_Search", spParams.ToArray());
         SearchResult.DataSource = ds.Tables[0];

@@ -9,14 +9,14 @@ using System.Configuration;
 
 public partial class key_overview : System.Web.UI.Page
 {
-    
 
+    string searchstr = "";
     protected void Page_Load(object sender, EventArgs e)
 
     {
 
         List<SqlParameter> spParams = new List<SqlParameter>();
-        spParams.Add(new SqlParameter("@KeyName", searchbar.Value));
+        spParams.Add(new SqlParameter("@KeyName", searchstr));
 
         DataSet ds = new DataSet();
         ds = DBHelper.ExecuteBySPName("KeysOverview_GetByName", spParams.ToArray());
@@ -28,8 +28,9 @@ public partial class key_overview : System.Web.UI.Page
 
     protected void SearchBtn_Click(object sender, EventArgs e)
     {
-        List<SqlParameter> spParams = new List<SqlParameter>();
-        spParams.Add(new SqlParameter("@KeyName", searchbar.Value));
+        searchstr = searchbar.Value;
+        List <SqlParameter> spParams = new List<SqlParameter>();
+        spParams.Add(new SqlParameter("@KeyName", searchstr));
 
         DataSet ds = new DataSet();
         ds = DBHelper.ExecuteBySPName("KeysOverview_GetByName", spParams.ToArray());

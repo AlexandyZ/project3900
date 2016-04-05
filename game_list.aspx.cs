@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 
 public partial class game_list : System.Web.UI.Page
 {
+    string searchstr = "";
+
     protected void Page_Load(object sender, EventArgs e)
     {
         getGame();
@@ -14,6 +16,7 @@ public partial class game_list : System.Web.UI.Page
 
     protected void SearchBtn_Click(object sender, EventArgs e)
     {
+        searchstr = searchText.Text;
         getGame();
     }
     protected void GameGridView_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -44,7 +47,7 @@ public partial class game_list : System.Web.UI.Page
     private void getGame()
     {
         List<SqlParameter> spParams = new List<SqlParameter>();
-        spParams.Add(new SqlParameter("@GameName", searchText.Text));
+        spParams.Add(new SqlParameter("@GameName", searchstr));
         DataSet ds = new DataSet();
         ds = DBHelper.ExecuteBySPName("GameOverviewByGameName", spParams.ToArray());
         GameListView.DataSource = ds.Tables[0];
