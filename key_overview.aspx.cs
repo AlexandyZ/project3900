@@ -68,7 +68,8 @@ public partial class key_overview : System.Web.UI.Page
            // string firstName = value[0];
            // string lastName = value[1];
             //string sqlString = String.Format("UPDATE lk SET lk.keyreturn_date = GETDATE() FROM lend_key lk JOIN worker w ON w.worker_id = lk.worker_id WHERE lk.keyreturn_date IS NULL AND lk.keys_id = {0} AND w.worker_fname = '{1}' AND w.worker_lname = '{2}'", keys_id.ToString(), firstName, lastName);
-
+            
+            //fixed bug return
             string sqlString = String.Format("UPDATE lk SET lk.keyreturn_date = GETDATE() FROM lend_key lk JOIN worker w ON w.worker_id = lk.worker_id WHERE lk.keyreturn_date IS NULL AND lk.keys_id = {0}", keys_id.ToString());
             SqlCommand cmd = new SqlCommand(sqlString , conn);
 
