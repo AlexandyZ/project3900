@@ -34,8 +34,9 @@
                         AlternatingRowStyle-CssClass="alt"
                         AutoGenerateColumns="FALSE" runat="server" 
                         OnRowCommand="Button_click_event" 
-                        DataKeyNames="KeyID">
+                        DataKeyNames="KEYID">
                         <Columns>
+                            <%--<asp:BoundField DataField="LKID" HeaderText="ID" visible="false"/>--%>
                             <asp:BoundField DataField="KeyNumber" HeaderText="Key Number" />
                             <asp:BoundField DataField="Name" HeaderText="Name" />
                             <asp:BoundField DataField="PhoneNumber" HeaderText="Phone Number" />
