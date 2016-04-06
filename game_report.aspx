@@ -50,7 +50,7 @@
                             <asp:BoundField DataField="game_qty" HeaderText="QTY" SortExpression="game_qty" />
                         </Columns>
                     </asp:GridView>
-                    <asp:Label ID="reportNote" runat="server" Text="Label">Note: QTY shows numbers of game which still haven't returned.</asp:Label>
+                    <asp:Label CssClass="note" runat="server" >Note: QTY shows numbers of the game which still haven't returned.</asp:Label>
                 </div>
             </div>
         </div>

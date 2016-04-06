@@ -50,11 +50,12 @@
                             <td>
                                 <asp:TextBox ID="TextBoxUsername" runat="server"
                                     CssClass="infoBox"
-                                    OnTextChanged="Username_onTextChanged"></asp:TextBox>
+                                    OnTextChanged="Username_onTextChanged"
+                                    AutoPostBack="True"
+                                    AutoFocus="autofocus"></asp:TextBox>
                             </td>
                             <td>
-                                <asp:Label ID="validUsername" CssClass="required" runat="server" Text="" Display="Dynamic"></asp:Label>
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxUsername" ErrorMessage="Please enter username" CssClass="required" Display="Dynamic"></asp:RequiredFieldValidator>
+                                <asp:Label ID="validUsername" CssClass="required" runat="server" Text=""></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -67,8 +68,11 @@
                                     CssClass="infoBox"></asp:TextBox>
                             </td>
                             <td>   
-                                <asp:Label ID="validPassword" CssClass="required" runat="server" Text="" Display="Dynamic"></asp:Label>
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxPassword" ErrorMessage="Please enter password" CssClass="required" Display="Dynamic"></asp:RequiredFieldValidator>
+                                <asp:Label ID="validPassword" CssClass="required" runat="server" Text="" ></asp:Label>
+                                <!--<asp:RequiredFieldValidator runat="server" 
+                                    ControlToValidate="TextBoxPassword" 
+                                    ErrorMessage="Please enter password" 
+                                    CssClass="required" ></asp:RequiredFieldValidator>-->
                             </td>
                         </tr>
                     </table>

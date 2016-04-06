@@ -1,5 +1,5 @@
 ﻿html{
-    font-size:12px;
+    font-size:.8em;
     background-color:#aaa;
     display:block;
     height:90%;
@@ -247,7 +247,6 @@ aside{
     left:0;
 }
 .mGrid {   
-    width: 93%;   
     background-color: #fff;   
     margin: 5px 0 10px 0;   
     border: solid 1px #525252;   
@@ -283,6 +282,7 @@ aside{
 .infoBox{
     margin:5px 0;
     width:90%;
+    min-width: 120px;
 }
 .submit{
     position:relative;
@@ -293,7 +293,11 @@ aside{
 .required{
     color:red;
 }
-
+.note{
+    display:inline-block;
+    margin-top:10px;
+    font-style:italic;
+}
 
 footer{
     width:100%;
