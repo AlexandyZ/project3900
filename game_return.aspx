@@ -35,7 +35,7 @@
                     <input type="submit" runat="server" class="searchbtn" id="searchBtn" value="Search" onserverclick="SearchBtn_Click" />
                 </div>
                 <!-- /#search bar -->
-                <div class="result">
+                <div class="result" style="height:400px; overflow:auto" >
                     <asp:GridView ID="GameReturn" runat="server"
                         AutoGenerateColumns="False"
                         CssClass="mGrid" 

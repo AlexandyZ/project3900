@@ -28,7 +28,7 @@
                     <input type="text" runat="server" class="searchbox" id="searchbar" placeholder="search by student name" />
                     <input type="submit" runat="server" class="searchbtn" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" />
                 </div>
-                <div class="result">
+                <div class="result" style="height:400px; overflow:auto" >
                     <asp:GridView ID="SearchResult"
                         AutoGenerateColumns="FALSE" 
                         OnRowCommand="GridView1_RowCommand"
