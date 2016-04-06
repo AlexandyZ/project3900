@@ -28,7 +28,7 @@
                     <input type="text" runat="server" class="searchbox" id="searchbar" placeholder="search by key number" />
                     <input type="submit" runat="server" class="searchbtn" id="searchbtn" value="Search" onserverclick="SearchBtn_Click" />
                 </div>
-                <div class="result">
+                <div class="result" style="height:400px; overflow:auto" >
                     <asp:GridView ID="SearchResult" 
                         CssClass="mGrid" 
                         AlternatingRowStyle-CssClass="alt"

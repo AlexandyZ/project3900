@@ -37,7 +37,7 @@
                 
                 <!-- /#search bar -->
                 <!-- #overview table -->
-                <div class="result">
+                <div class="result" style="height:400px; overflow:auto" >
                     <asp:GridView ID="GameListView" runat="server"
                         CssClass="mGrid"
                         AlternatingRowStyle-CssClass="alt"
