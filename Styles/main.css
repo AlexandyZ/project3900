@@ -1,11 +1,10 @@
 ﻿html{
-    font-size:12px;
+    font-size:.8em;
     background-color:#aaa;
     display:block;
-    height:100%;
+    height:90%;
     min-width:980px;
 }
-
 body {
     display:block;
     color:#2d2d2d;
@@ -33,13 +32,11 @@ h1{
     padding:0;
     font-weight:bold;
 }
-
 a{
     color:#4487db;
     font-weight:bold;
     text-decoration:none;
 }
-
 .show_username{
     position:relative;
     width:100%;
@@ -61,7 +58,6 @@ a{
     display:inline-block;
     list-style-type:none;
 }
-
 .bcitlogo {
     position:relative;
     padding:0;
@@ -142,17 +138,7 @@ a{
     color:#fff;
     background-color:#918e87;
 }
-.current{
-    display:inline;
-    padding:7px 3.5%;
-    font-family:'Microsoft YaHei', 'Arial Narrow Bold', sans-serif;
-    font-size:medium;
-    font-style:italic;
-    line-height:2.2;
-    text-shadow:0 -1px 0 rgba(0,0,0,0.3);
-    color:#fff !important;
-    background-color:#918e87;
-}
+
 .banner{
     position:relative;
     margin:0 auto;
@@ -165,13 +151,11 @@ a{
     line-height:1;
     text-shadow:0 -1px 0 rgba(0,0,0,0.3);
 }
-
 .banner h1{
     font-size:28px;
     line-height:1.5;
     margin:0 0 0 30%;
 }
-
 .content{
     position:relative;
     width:75%;
@@ -263,7 +247,6 @@ aside{
     left:0;
 }
 .mGrid {   
-    width: 93%;   
     background-color: #fff;   
     margin: 5px 0 10px 0;   
     border: solid 1px #525252;   
@@ -299,8 +282,8 @@ aside{
 .infoBox{
     margin:5px 0;
     width:90%;
+    min-width: 120px;
 }
-
 .submit{
     position:relative;
     margin:10px;
@@ -310,11 +293,15 @@ aside{
 .required{
     color:red;
 }
-
+.note{
+    display:inline-block;
+    margin-top:10px;
+    font-style:italic;
+}
 
 footer{
     width:100%;
-    height:80px;
+    height:60px;
     margin:0 auto;
     position:fixed;
     bottom:0;
@@ -323,6 +310,6 @@ footer{
     background-color:#808080;
 }
 .copyright{
-    padding:10px;
+    padding:7px;
     font-weight:bold;
 }

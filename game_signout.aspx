@@ -59,19 +59,19 @@
                             <label class="info">Game Qty</label>
                         </td>
                         <td>
-                            <asp:TextBox Type="number" ID="amountNum" CssClass="infoBox" runat="server" OnTextChanged="Qty_onTextChanged"></asp:TextBox><span class="required"> *</span>
+                            <asp:TextBox Type="number" ID="amountNum" CssClass="infoBox" runat="server" ></asp:TextBox><span class="required"> *</span>
                         </td>
                         <td>
-                            <asp:RegularExpressionValidator  runat="server"     
+                            <!--<asp:RegularExpressionValidator  runat="server"     
                                     ErrorMessage="This cannot be a negative number or zero"
                                     ControlToValidate="amountNum"     
                                     ValidationGroup="fieldrequired"
-                                    ValidationExpression="^\d?[1-9]\d{0,2}$" CssClass="required" Display="Dynamic" />
+                                    ValidationExpression="^\d?[1-9]\d{0,2}$" CssClass="required" Display="Dynamic" />-->
                             <asp:Label ID="validateQTY" CssClass="required" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
                 </table>
-                <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" ValidationGroup="fieldrequired" />
+                <asp:Button ID="submit" CssClass="submit" runat="server" OnClick="Submit_Click" Text="Submit" ValidationGroup="fieldrequired" />
             </div>
         </div>
         <!-- /primary -->

@@ -6,11 +6,12 @@ using System.Windows.Forms;
 
 public partial class game_signout : System.Web.UI.Page
 {
+    string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         stdidText.TextChanged += new EventHandler(StdId_onTextChanged);
 
-        string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
         SqlConnection conn = new SqlConnection(constring);
         conn.Open();
 
@@ -28,7 +29,6 @@ public partial class game_signout : System.Web.UI.Page
 
     protected void Submit_Click(object sender, EventArgs e)
     {
-        string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
         SqlConnection conn = new SqlConnection(constring);
         conn.Open();
 
@@ -38,14 +38,12 @@ public partial class game_signout : System.Web.UI.Page
 
         if (string.IsNullOrWhiteSpace(amountNum.Text))
         {
-            string msg = "Required";
-            validateQTY.Text = msg;
+            validateQTY.Text = "Please enter a number";
         }
-        /* else if (!Regex.IsMatch(amountNum.Text, @"^\d?[1-9]\d{0,2}$"))
+        else if (!Regex.IsMatch(amountNum.Text, @"^\d?[1-9]\d{0,2}$"))
         {
-            string msg = "This cannot be a negative number or zero";
-            validateQTY.Text = msg;
-        } */
+            validateQTY.Text = "This cannot be a negative number or zero";
+        }
         else if(inv >= int.Parse(amountNum.Text))
         {
             SqlCommand sqlcmd = new SqlCommand("SELECT 1 FROM student WHERE student_id = @studentID", conn);
@@ -64,31 +62,24 @@ public partial class game_signout : System.Web.UI.Page
 
                 conn.Close();
 
+                validateQTY.Text = "";
                 MessageBox.Show(new Form { TopMost = true }, "Game signed out!");
                 Response.Redirect("game_list.aspx");
             }
             else
             {
-                string msg = "This student ID doesn't exist, please check it.";
-                validateStdID.Text = msg;
+                validateStdID.Text = "This student ID doesn't exist, please check it";
             }
         }
         else
         {
-            string msg = "Only have " + inv + " game(s) left...";
-            validateQTY.Text = msg;
+            validateQTY.Text = "Only have " + inv + " game(s) left...";
         }
         conn.Close();        
     }
 
-    protected void Qty_onTextChanged(object sender, EventArgs e)
-    {
-
-    }
-
     protected void StdId_onTextChanged(object sender, EventArgs e)
     {
-        string constring = ConfigurationManager.ConnectionStrings["RMSConnection"].ConnectionString;
         SqlConnection conn = new SqlConnection(constring);
         conn.Open();
         SqlCommand sqlcmd = new SqlCommand("SELECT 1 FROM student WHERE student_id = @studentID", conn);
@@ -97,18 +88,15 @@ public partial class game_signout : System.Web.UI.Page
         Regex r = new Regex(@"^[aA'.\s]{1}(\d{8})$");
         if (string.IsNullOrWhiteSpace(stdidText.Text))
         {
-            string msg1 = "Required";
-            validateStdID.Text = msg1;
+            validateStdID.Text = "Please enter a student ID";
         }
         else if (!r.IsMatch(stdidText.Text))
         {
-            string msg = "Wrong Student ID format! hint: A00123456";
-            validateStdID.Text = msg;
+            validateStdID.Text =  "Wrong Student ID format! hint: A00123456";
         }
         else if (!rd.Read())
         {
-            string msg = "This student ID doesn't exist, please check it.";
-            validateStdID.Text = msg;
+            validateStdID.Text = "This student ID doesn't exist, please check it.";
         }
         else
         {
