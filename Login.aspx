@@ -6,38 +6,7 @@
 <head runat="server">
     <title>BCIT HRS</title>
     <link rel="stylesheet" href="/Styles/main.css" />
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-
-        .auto-style2 {
-            width: 329px;
-        }
-
-        .auto-style3 {
-            width: 329px;
-            height: 19px;
-        }
-
-        .auto-style4 {
-            height: 19px;
-        }
-
-        .auto-style5 {
-            width: 329px;
-            text-align: right;
-        }
-
-        .auto-style6 {
-            width: 405px;
-        }
-
-        .auto-style7 {
-            height: 19px;
-            width: 405px;
-        }
-    </style>
+    <link rel="stylesheet" href="/Styles/login.css" />
 </head>
 
 <body>
@@ -65,55 +34,46 @@
         <!-- /header -->
 
         <!-- banner -->
-        <div class="banner">
+        <div id="banner">
             <h1>SIGN IN</h1>
         </div>
         <!-- /banner -->
 
         <!-- content -->
-        <section class="content">
-            <div id="login">
-                <div id="group_form">
-
-                    <table class="auto-style1">
+        <section id="content">
+                <div id="main">
+                    <table id="table">
                         <tr>
-                            <td class="auto-style5">Username</td>
-                            <td class="auto-style6">
-                                <asp:TextBox ID="TextBoxUsername" runat="server" Width="180px"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxUsername" ErrorMessage="Please enter user name" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <td>
+                                <label class="info">Username</label>
                             </td>
-                            <td>&nbsp;</td>
+                            <td>
+                                <asp:TextBox ID="TextBoxUsername" runat="server"
+                                    CssClass="infoBox"
+                                    OnTextChanged="Username_onTextChanged"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:Label ID="validUsername" CssClass="required" runat="server" Text="" Display="Dynamic"></asp:Label>
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxUsername" ErrorMessage="Please enter username" CssClass="required" Display="Dynamic"></asp:RequiredFieldValidator>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="auto-style5">Password</td>
-                            <td class="auto-style6">
-                                <asp:TextBox ID="TextBoxPassword" runat="server" TextMode="Password" Width="180px"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxPassword" ErrorMessage="Please enter password" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <td>
+                                <label class="info">Password</label>
                             </td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style2">&nbsp;</td>
-                            <td class="auto-style6">
-                                <asp:Button ID="Button_login" runat="server" OnClick="Button_login_Click" Text="Login" Width="150px" />
-                                <div id="login0">
-                                    <div id="group_form0">
-                                    </div>
-                                </div>
+                            <td>
+                                <asp:TextBox ID="TextBoxPassword" runat="server" 
+                                    TextMode="Password"
+                                    CssClass="infoBox"></asp:TextBox>
                             </td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style3"></td>
-                            <td class="auto-style7">
-                                <asp:Label ID="Label1" runat="server"></asp:Label>
+                            <td>   
+                                <asp:Label ID="validPassword" CssClass="required" runat="server" Text="" Display="Dynamic"></asp:Label>
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxPassword" ErrorMessage="Please enter password" CssClass="required" Display="Dynamic"></asp:RequiredFieldValidator>
                             </td>
-                            <td class="auto-style4"></td>
                         </tr>
                     </table>
-
+                    <asp:Button ID="Button_login" runat="server" OnClick="Button_login_Click" Text="Login" />
                 </div>
-            </div>
         </section>
         <!-- /content -->
     </form>

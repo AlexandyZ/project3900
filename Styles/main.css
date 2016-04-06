@@ -2,10 +2,9 @@
     font-size:12px;
     background-color:#aaa;
     display:block;
-    height:100%;
+    height:90%;
     min-width:980px;
 }
-
 body {
     display:block;
     color:#2d2d2d;
@@ -33,13 +32,11 @@ h1{
     padding:0;
     font-weight:bold;
 }
-
 a{
     color:#4487db;
     font-weight:bold;
     text-decoration:none;
 }
-
 .show_username{
     position:relative;
     width:100%;
@@ -61,7 +58,6 @@ a{
     display:inline-block;
     list-style-type:none;
 }
-
 .bcitlogo {
     position:relative;
     padding:0;
@@ -165,13 +161,11 @@ a{
     line-height:1;
     text-shadow:0 -1px 0 rgba(0,0,0,0.3);
 }
-
 .banner h1{
     font-size:28px;
     line-height:1.5;
     margin:0 0 0 30%;
 }
-
 .content{
     position:relative;
     width:75%;
@@ -300,7 +294,6 @@ aside{
     margin:5px 0;
     width:90%;
 }
-
 .submit{
     position:relative;
     margin:10px;
@@ -314,7 +307,7 @@ aside{
 
 footer{
     width:100%;
-    height:80px;
+    height:60px;
     margin:0 auto;
     position:fixed;
     bottom:0;
@@ -323,6 +316,6 @@ footer{
     background-color:#808080;
 }
 .copyright{
-    padding:10px;
+    padding:7px;
     font-weight:bold;
 }

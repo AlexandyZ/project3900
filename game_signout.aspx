@@ -71,7 +71,7 @@
                         </td>
                     </tr>
                 </table>
-                <asp:Button ID="submit" class="submit" runat="server" OnClick="Submit_Click" Text="Submit" ValidationGroup="fieldrequired" />
+                <asp:Button ID="submit" CssClass="submit" runat="server" OnClick="Submit_Click" Text="Submit" ValidationGroup="fieldrequired" />
             </div>
         </div>
         <!-- /primary -->

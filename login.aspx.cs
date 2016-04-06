@@ -33,12 +33,17 @@ public partial class login : System.Web.UI.Page
             }
             else
             {
-                Label1.Text = "Password is not correct!";
+                validPassword.Text = "Password is not correct!";
             }
         }
         else
         {
-            Label1.Text = "Username is not correct!";
+            validUsername.Text = "Username is not correct!";
         }
+    }
+
+    protected void Username_onTextChanged(object sender, EventArgs e)
+    {
+
     }
 }

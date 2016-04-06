@@ -1,0 +1,49 @@
+﻿#banner{
+    position:relative;
+    margin:0 auto;
+    width:75%;
+    background-color:#918e87;
+    text-align:left;
+    font-family:'Oswald','HelveticaNeue-CondensedBold','Helvetica Neue',Helvetica,sans-serif;
+    font-size:18px;
+    color:#fff;
+    line-height:1;
+    text-shadow:0 -1px 0 rgba(0,0,0,0.3);
+}
+#banner h1{
+    position: relative;
+    font-size:28px;
+    line-height:1.5;
+    margin-left:45%;
+}
+#content{
+    position:relative;
+    width:75%;
+    height:70%;
+    margin:0 auto;
+    text-align:center;
+    background-color:#fff;
+}
+#primary{
+    position:relative;
+    margin:auto;
+    width:75%;
+    background-color:#fff;
+    outline:0;
+    padding:0;
+    top: 0;
+    left: 0;
+}
+#main{
+    position:relative;
+    width:60%;
+    margin: 0 auto;
+}
+#table{
+    margin: 0 auto;
+    padding: 40px 0 20px 0;
+}
+#Button_login{
+    position:relative;
+    width:150px;
+}
