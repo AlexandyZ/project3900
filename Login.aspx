@@ -51,8 +51,7 @@
                                 <asp:TextBox ID="TextBoxUsername" runat="server"
                                     CssClass="infoBox"
                                     OnTextChanged="Username_onTextChanged"
-                                    AutoPostBack="True"
-                                    AutoFocus="autofocus"></asp:TextBox>
+                                    AutoPostBack="True"></asp:TextBox>
                             </td>
                             <td>
                                 <asp:Label ID="validUsername" CssClass="required" runat="server" Text=""></asp:Label>
